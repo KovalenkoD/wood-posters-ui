@@ -1,6 +1,13 @@
 @import "~normalize-scss/sass/_normalize.scss";
 @import "sass/variables";
+@import "sass/fonts";
+@import "sass/grid";
 
 //add normalize rules
 @include normalize();
+
+
+body, html {
+  font-family: 'Roboto';
+}
 
