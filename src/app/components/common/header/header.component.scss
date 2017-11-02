@@ -28,7 +28,8 @@
     display: flex;
     algin-items: center;
 
-    &:hover {
+    &:hover,
+    &.active{
       color: $gray-ab;
     }
 

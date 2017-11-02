@@ -11,6 +11,7 @@
     color: $black;
     font-weight: $font-medium;
 
+    &.active,
     &:hover {
       color: $gray-ab;
     }
