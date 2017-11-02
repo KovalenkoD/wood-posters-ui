@@ -9,5 +9,21 @@
 
 body, html {
   font-family: 'Roboto';
+  font-size: $base-font-size;
+  font-weight: $font-regular;
+}
+
+a {
+  display: inline-block;
+  transition: all .2s ease;
+  text-decoration: none;
+  line-height: 1;
+
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
 }
 

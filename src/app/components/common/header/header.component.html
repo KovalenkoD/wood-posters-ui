@@ -5,11 +5,18 @@
         <app-navigation></app-navigation>
       </div>
       <div class="header__logo">
-        <img src="/" alt="WOOD">
+        <img src="assets/images/logo.svg" alt="WOOD">
       </div>
       <ul class="header__actions">
-        <li><a routerLink="/not-found" class="header__link" routerLinkActive="_active">О нас</a></li>
-        <li><a routerLink="/not-found" class="header__link" routerLinkActive="_active">Рус</a></li>
+        <li class="header__link-wrap"><a routerLink="/not-found" class="header__link" routerLinkActive="_active">О нас</a></li>
+        <li class="header__link-wrap"><a routerLink="/not-found" class="header__link" routerLinkActive="_active">Рус</a></li>
+        <li class="header__link-wrap _search">
+          <a routerLink="/not-found" class="header__link" routerLinkActive="_active"><img src="assets/images/icon-search.svg" alt="icon-search"></a>
+        </li>
+        <li class="header__link-wrap _cart">
+          <a routerLink="/not-found" class="header__link" routerLinkActive="_active"><img src="assets/images/icon-bag.svg" alt="icon-search"></a>
+        </li>
+
       </ul>
     </div>
   </div>

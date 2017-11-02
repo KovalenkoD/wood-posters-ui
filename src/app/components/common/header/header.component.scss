@@ -1,0 +1,63 @@
+@import './src/sass/variables';
+
+.header {
+
+  &__logo {
+    position: absolute;
+    left: calc(50% - 45px);
+    top: calc(50% - 18px);
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__link {
+    font-weight: $font-medium;
+    display: flex;
+    algin-items: center;
+
+    &:hover {
+      color: $gray-ab;
+    }
+
+    &-wrap {
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      &._search {
+        margin-right: 60px;
+
+        &:after {
+          content: "";
+          position: absolute;
+          right: -30px;
+          top: calc(50% - 10px);
+          width: 1px;
+          height: 20px;
+          background-color: $gray-ab;
+        }
+      }
+
+      &._search a,
+      &._cart a {
+        &:hover {
+          opacity: .3;
+        }
+      }
+    }
+  }
+}
