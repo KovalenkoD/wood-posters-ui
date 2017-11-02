@@ -1,0 +1,50 @@
+@import './src/sass/variables';
+
+.footer {
+  padding: 65px 0;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 58px;
+  }
+
+  &__logo {
+    margin-right: 80px;
+  }
+
+  &__phone {
+    margin-left: auto;
+
+    a {
+      color: $black;
+      font-size: 18px;
+      font-weight: $font-medium;
+
+      &:hover {
+        color: $gray-ab;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $gray-ab;
+  }
+
+  &__socials {
+
+    &-link {
+      margin-left: 40px;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
