@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
@@ -17,6 +19,7 @@ import { CollectionsPageComponent } from './components/pages/collections-page/co
 import { TrendsPageComponent } from './components/pages/trends-page/trends-page.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { AboutUsPageComponent } from './components/pages/about-us-page/about-us-page.component';
+import { HomeSliderComponent } from './components/common/home-slider/home-slider.component';
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -58,7 +61,8 @@ const appRoutes: Routes = [
     CollectionsPageComponent,
     TrendsPageComponent,
     PaymentPageComponent,
-    AboutUsPageComponent
+    AboutUsPageComponent,
+    HomeSliderComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -67,7 +71,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgxCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

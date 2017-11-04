@@ -1,7 +1,11 @@
+//base
 @import "~normalize-scss/sass/_normalize.scss";
 @import "sass/variables";
 @import "sass/fonts";
 @import "sass/grid";
+
+//blocks
+@import "sass/blocks/button";
 
 //add normalize rules
 @include normalize();
@@ -13,7 +17,12 @@ body, html {
   font-weight: $font-regular;
 }
 
-a {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a, button {
   display: inline-block;
   transition: all .2s ease;
   text-decoration: none;
@@ -24,6 +33,7 @@ a {
   &:active,
   &:focus {
     text-decoration: none;
+    outline: none;
   }
 }
 

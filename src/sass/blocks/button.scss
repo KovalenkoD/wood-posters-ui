@@ -1,0 +1,19 @@
+@import './src/sass/variables';
+
+.button {
+  border: none;
+  box-shadow: none;
+  background-color: $black;
+  font-size: $base-font-size;
+  text-transform: uppercase;
+  color: $white;
+  font-weight: $font-medium;
+  padding: 14px 40px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $black-4c;
+  }
+}

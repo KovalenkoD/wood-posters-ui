@@ -1,0 +1,98 @@
+@import './src/sass/variables';
+
+.home-slider {
+  margin-bottom: 90px;
+
+  &__item {
+    position: relative;
+    height: 620px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    z-index: 10;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background-color: #fff;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__right,
+  &__left {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    background-color: $white-f3;
+    border-radius: 50%;
+    font-size: 26px;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    transition: all .2s ease;
+    cursor: pointer;
+
+    &:hover,
+    &:focus{
+      outline: none;
+      background-color: $white-f3 - 20;
+    }
+  }
+
+  &__text {
+    padding-left: 106px;
+    position: relative;
+    z-index: 20;
+  }
+
+  &__right {
+    right: 30px;
+    left: auto;
+  }
+
+  &__category {
+    font-size: 18px;
+    color: $white-f7;
+    font-weight: $font-medium;
+  }
+
+  &__name {
+    margin: 10px 0 22px;
+    font-size: 48px;
+    color: $black;
+    font-weight: normal;
+    max-width: 360px;
+    line-height: 50px;
+  }
+
+  &__price {
+    margin-bottom: 40px;
+    color: $white-f7;
+    font-size: 36px;
+    font-weight: $font-medium;
+  }
+
+  &__counter {
+    margin-top: -24px;
+    letter-spacing: 7px;
+    font-size: 16px;
+    font-weight: $font-medium;
+    color: $gray-ab;
+
+    span {
+      color: $black;
+    }
+  }
+}

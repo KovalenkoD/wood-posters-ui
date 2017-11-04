@@ -1,0 +1,35 @@
+<div class="home-slider">
+  <ngx-carousel
+    [inputs]="carouselOne"
+    (carouselLoad)="myfunc($event)"
+    (onMove)="onmoveFn($event)"
+    >
+      <ngx-item
+        *ngFor="let slide of slides"
+        NgxCarouselItem
+      >
+        <div class="home-slider__item" >
+          <div class="container home-slider__info">
+            <div class="home-slider__text">
+              <span class="home-slider__category">Шкатулки</span>
+              <h3 class="home-slider__name">“La Bella Provancale”</h3>
+              <div class="home-slider__price">320 грн.</div>
+              <div class="home-slider__button"><button class="button">В корзину</button></div>
+            </div>
+          </div>
+          <div
+            class="home-slider__img"
+            [ngStyle]="{'background-image': 'url(' + slide + ')'}"
+          ></div>
+        </div>
+      </ngx-item>
+      <button NgxCarouselPrev class='leftRs home-slider__left'><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+      <button NgxCarouselNext class='rightRs home-slider__right'><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+  </ngx-carousel>
+
+  <div class="home-slider__counter">
+    <div class="container">
+      <span>{{curentSlide}}</span> / 4
+    </div>
+  </div>
+</div>
