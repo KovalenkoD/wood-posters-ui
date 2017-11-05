@@ -1,0 +1,28 @@
+<div class="popular-products">
+  <div class="container popular-products__container">
+    <div class="popular-products__header">
+      <div class="popular-products__title">
+        Популярные товары
+      </div>
+      <div class="popular-products__to-catalog">
+        <a routerLink="/category">Перейти в каталог <i class="fa fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="popular-products__items">
+      <div
+        *ngFor="let product of products"
+        class="popular-products__item"
+        [ngStyle]="{'background-color': product.background}"
+      >
+        <div class="popular-products__item-category">{{product.category}}</div>
+        <div class="popular-products__item-img"
+          [ngStyle]="{'background-image': 'url(' + product.image + ')'}"
+        ></div>
+        <div class="popular-products__item-info">
+          <div class="popular-products__item-name">{{product.name}}</div>
+          <div class="popular-products__item-price">{{product.price}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

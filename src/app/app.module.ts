@@ -20,6 +20,7 @@ import { TrendsPageComponent } from './components/pages/trends-page/trends-page.
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { AboutUsPageComponent } from './components/pages/about-us-page/about-us-page.component';
 import { HomeSliderComponent } from './components/common/home-slider/home-slider.component';
+import { PopularProductsComponent } from './components/common/popular-products/popular-products.component';
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     TrendsPageComponent,
     PaymentPageComponent,
     AboutUsPageComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    PopularProductsComponent
   ],
   imports: [
     RouterModule.forRoot(
