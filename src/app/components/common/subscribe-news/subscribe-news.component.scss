@@ -1,0 +1,47 @@
+@import './src/sass/variables';
+
+.subscribe-news {
+  padding: 115px 0 140px;
+  background-color: $white-f3;
+  text-align: center;
+
+  &__title {
+    font-size: 36px;
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $white-f7;
+    max-width: 750px;
+    margin: 0 auto 48px;
+    line-height: 1.88
+  }
+
+  &__form {
+    position: relative;
+    width: 555px;
+    margin: 0 auto;
+    input {
+      height: 58px;
+      width: 100%;
+      border-radius: 4px;
+      background-color: $white;
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.08);
+      border: 0;
+      padding: 10px 178px 10px 24px;
+      color: $gray-ab;
+
+      &:focus {
+        ouline: none;
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+  }
+}

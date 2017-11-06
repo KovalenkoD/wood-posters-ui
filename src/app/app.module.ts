@@ -25,6 +25,7 @@ import { HomeSliderComponent } from './components/common/home-slider/home-slider
 import { PopularProductsComponent } from './components/common/popular-products/popular-products.component';
 import { PopularCollectionsComponent } from './components/common/popular-collections/popular-collections.component';
 import { InteractiveImageComponent } from './components/common/interactive-image/interactive-image.component';
+import { SubscribeNewsComponent } from './components/common/subscribe-news/subscribe-news.component';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -74,7 +75,8 @@ const appRoutes: Routes = [
     HomeSliderComponent,
     PopularProductsComponent,
     PopularCollectionsComponent,
-    InteractiveImageComponent
+    InteractiveImageComponent,
+    SubscribeNewsComponent
   ],
   imports: [
     RouterModule.forRoot(

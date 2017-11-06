@@ -17,6 +17,10 @@
     padding: 10px 20px;
   }
 
+  &._subscribe {
+    padding: 14px 19px;
+  }
+
   &:hover,
   &:focus {
     background-color: $black-4c;

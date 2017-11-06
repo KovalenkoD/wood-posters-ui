@@ -1,0 +1,14 @@
+<div class="subscribe-news">
+  <div class="container subscribe-news__container">
+    <div class="subscribe-news__title">Подписаться на новости</div>
+    <div class="subscribe-news__text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo feugiat sapien eu rutrum. Quisque ullamcorper viverra quam, vel iaculis neque venenatis et.
+    </div>
+    <div class="subscribe-news__form">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <input name="first" placeholder="Ваш email…" ngModel required #first="ngModel">
+        <button class="button _subscribe subscribe-news__button">Подписаться</button>
+      </form>
+    </div>
+  </div>
+</div>
