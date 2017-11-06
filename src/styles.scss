@@ -10,6 +10,9 @@
 //add normalize rules
 @include normalize();
 
+* {
+  box-sizing: border-box;
+}
 
 body, html {
   font-family: 'Roboto';
@@ -35,5 +38,10 @@ a, button {
     text-decoration: none;
     outline: none;
   }
+}
+
+.ps-container {
+  padding-left: 0!important;
+  padding-right: 0!important;
 }
 

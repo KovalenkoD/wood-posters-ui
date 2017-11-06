@@ -80,6 +80,7 @@ export class HomeSliderComponent implements OnInit {
   }
 
   onmoveFn(data: NgxCarouselStore) {
+    console.log(data);
     this.curentSlide = data.currentSlide + 1;
   }
 

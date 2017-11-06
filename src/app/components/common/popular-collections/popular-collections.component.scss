@@ -1,0 +1,147 @@
+@import './src/sass/variables';
+
+.popular-collections {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 15px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: $font-medium;
+  }
+
+  &__to-collections {
+
+    a {
+      font-size: 16px;
+      color: $white-f7;
+      font-weight: $font-medium;
+
+      &:hover {
+        color: $black;
+
+        i {
+          transform: translateX(2px);
+        }
+
+      }
+
+      i {
+        display: inline-block;
+        transition: all .2s ease;
+        font-size: 14px;
+        margin-left: 6px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &-img {
+      position: relative;
+      max-width: 768px;
+    }
+
+    &-info {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 456px;
+      padding: 40px 50px;
+      background-color: $white;
+      transform: translateY(-50%);
+
+    }
+
+    &-category {
+      font-size: 18px;
+      font-weight: $font-medium;
+      color: $white-f7;
+      margin-bottom: 15px;
+    }
+
+    &-name {
+      font-size: 48px;
+      line-height: 50px;
+      margin-bottom: 24px;
+    }
+
+    &-button {
+      margin-bottom: 35px;
+    }
+
+    &-to-product {
+      a {
+        font-size: 16px;
+        font-weight: $font-medium;
+        color: $white-f7;
+
+        i {
+          display: inline-block;
+          transition: all .2s ease;
+          font-size: 14px;
+          margin-left: 6px;
+        }
+
+        &:hover {
+          color: $black;
+
+          i {
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
+
+
+  &__right,
+  &__left {
+    position: absolute;
+    right: calc(100% + 57px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    background-color: $white-f3;
+    border-radius: 50%;
+    font-size: 26px;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    transition: all .2s ease;
+    cursor: pointer;
+
+    &:hover,
+    &:focus{
+      outline: none;
+      background-color: $white-f3 - 20;
+    }
+  }
+
+  &__right {
+    right: auto;
+    left: calc(100% + 57px);
+  }
+
+  &__counter {
+    margin-top: -24px;
+    letter-spacing: 7px;
+    font-size: 16px;
+    font-weight: $font-medium;
+    color: $gray-ab;
+    text-align: right;
+
+    span {
+      color: $black;
+    }
+  }
+}

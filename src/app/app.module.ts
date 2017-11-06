@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
+import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
@@ -21,6 +23,12 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { AboutUsPageComponent } from './components/pages/about-us-page/about-us-page.component';
 import { HomeSliderComponent } from './components/common/home-slider/home-slider.component';
 import { PopularProductsComponent } from './components/common/popular-products/popular-products.component';
+import { PopularCollectionsComponent } from './components/common/popular-collections/popular-collections.component';
+import { InteractiveImageComponent } from './components/common/interactive-image/interactive-image.component';
+
+const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -64,7 +72,9 @@ const appRoutes: Routes = [
     PaymentPageComponent,
     AboutUsPageComponent,
     HomeSliderComponent,
-    PopularProductsComponent
+    PopularProductsComponent,
+    PopularCollectionsComponent,
+    InteractiveImageComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -74,7 +84,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgxCarouselModule
+    NgxCarouselModule,
+    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],
   providers: [],
   bootstrap: [AppComponent]

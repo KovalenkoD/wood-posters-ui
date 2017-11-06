@@ -9,7 +9,8 @@
       </div>
     </div>
     <div class="popular-products__items">
-      <div
+      <a
+        routerLink="/category"
         *ngFor="let product of products"
         class="popular-products__item"
         [ngStyle]="{'background-color': product.background}"
@@ -22,7 +23,7 @@
           <div class="popular-products__item-name">{{product.name}}</div>
           <div class="popular-products__item-price">{{product.price}}</div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>

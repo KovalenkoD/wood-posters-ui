@@ -1,0 +1,48 @@
+<div class="popular-collections">
+  <div class="container popular-collections__container">
+    <div class="popular-collections__header">
+      <div class="popular-collections__title">
+        Популярные коллекции
+      </div>
+      <div class="popular-collections__to-collections">
+        <a routerLink="/collections">Перейти к коллекциям <i class="fa fa-angle-right"></i></a>
+      </div>
+    </div>
+  <div class="popular-collections__carousel">
+    <div class="popular-collections__carousel-inner">
+      <ngx-carousel
+          [inputs]="carouselSecond"
+          (onMove)="onmoveFn($event)"
+          >
+            <ngx-item
+              *ngFor="let collection of collections"
+              NgxCarouselItem
+            >
+              <div class="popular-collections__item">
+                  <div class="popular-collections__item-img">
+                    <app-interactive-image [image]="collection.image" [collections]="collection.products"></app-interactive-image>
+                  </div>
+                  <div class="popular-collections__item-info">
+                    <div class="popular-collections__item-category">Коллекция</div>
+                    <div class="popular-collections__item-name">The English Breakfast</div>
+                    <div class="popular-collections__item-button">
+                      <button class="button">Все в корзину</button>
+                    </div>
+                    <div class="popular-collections__item-to-product">
+                      <a routerLink="/category">{{collection.products.length}} товара<i class="fa fa-angle-right"></i></a>
+                    </div>
+                  </div>
+              </div>
+            </ngx-item>
+            <button NgxCarouselPrev class='leftRs popular-collections__left'><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+            <button NgxCarouselNext class='rightRs popular-collections__right'><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+        </ngx-carousel>
+        <div class="popular-collections__counter">
+          <div class="container">
+            <span>{{currentSlide}}</span> / {{collections.length}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
