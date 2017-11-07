@@ -27,10 +27,33 @@
     font-weight: $font-medium;
     display: flex;
     algin-items: center;
+    color: $black;
 
     &:hover,
     &.active{
       color: $gray-ab;
+    }
+
+    &._cart {
+      position: relative;
+
+      span {
+        position: absolute;
+        right: -6px;
+        bottom: -5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 17px;
+        border-radius: 50%;
+        background-color: $black;
+        color: $white;
+        font-size: 10px;
+        border: 2px solid $white;
+        padding: 0 4px;
+        z-index: 10;
+      }
     }
 
     &-wrap {

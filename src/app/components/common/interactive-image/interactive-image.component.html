@@ -1,29 +1,27 @@
 <div class="interactive-image">
-  <perfect-scrollbar class="container" [config]="config">
-    <div class="interactive-image__img">
-      <img src="{{image}}" alt="">
-    </div>
+  <div class="interactive-image__img">
+    <img src="{{image}}" alt="">
+  </div>
+  <div
+    *ngFor="let collection of collections"
+    class="interactive-image__dot"
+    [class.active]="collection.active"
+    [ngStyle]=collection.position
+    (click)="onToggleHint(collection)"
+  >
     <div
-      *ngFor="let collection of collections"
-      class="interactive-image__dot"
-      [class.active]="collection.active"
-      [ngStyle]=collection.position
-      (click)="onToggleHint(collection)"
+      *ngIf="collection.active"
+      class="interactive-image__hint"
     >
-      <div
-        *ngIf="collection.active"
-        class="interactive-image__hint"
-      >
-        <div class="interactive-image__hint-category">{{collection.category}}</div>
-        <div class="interactive-image__hint-image">
-          <img src="{{collection.image}}" alt="">
-        </div>
-        <div class="interactive-image__hint-name">{{collection.name}}</div>
-        <div class="interactive-image__hint-price">{{collection.price}}</div>
-        <div class="interactive-image__hint-button">
-          <button routerLink="{{collection.link}}" class="button _wider">Купить</button>
-        </div>
+      <div class="interactive-image__hint-category">{{collection.category}}</div>
+      <div class="interactive-image__hint-image">
+        <img src="{{collection.image}}" alt="">
+      </div>
+      <div class="interactive-image__hint-name">{{collection.name}}</div>
+      <div class="interactive-image__hint-price">{{collection.price}}</div>
+      <div class="interactive-image__hint-button">
+        <button routerLink="{{collection.link}}" class="button _wider">Купить</button>
       </div>
     </div>
-  </perfect-scrollbar>
+  </div>
 </div>
