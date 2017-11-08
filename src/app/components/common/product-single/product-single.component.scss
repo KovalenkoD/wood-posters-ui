@@ -1,0 +1,45 @@
+@import './src/sass/variables';
+
+.product-single {
+  display: block;
+  background-color: #fffbf5;
+  position: relative;
+  padding-top: 35px;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+  }
+
+  &__img {
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__category {
+    position: absolute;
+    left: 24px;
+    top: 25px;
+    color: $white-f7;
+    font-weight: $font-medium;
+    font-size: 16px;
+  }
+
+  &__info {
+    padding: 10px 24px 24px;
+  }
+
+  &__name {
+    font-size: 18px;
+    color: $black;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: $font-medium;
+    color: $white-f7;
+  }
+}

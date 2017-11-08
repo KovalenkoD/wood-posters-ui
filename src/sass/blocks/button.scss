@@ -12,6 +12,10 @@
   border-radius: 4px;
   cursor: pointer;
 
+  &._wide {
+    width: 100%;
+  }
+
   &._wider {
     width: 100%;
     padding: 10px 20px;

@@ -1,0 +1,29 @@
+@import './src/sass/variables';
+@import './src/sass/mixins';
+
+.search {
+  padding: 20px 0;
+
+  &__title {
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $black;
+    margin-bottom: 15px;
+  }
+
+  &__request {
+    margin-bottom: 45px;
+
+    &-form {
+      input {
+        font-size: 64px;
+        width: 100%;
+        border: none;
+        color: $black;
+        line-height: 84px;
+        @include placeholder($gray-d7);
+      }
+    }
+  }
+}
+

@@ -40,8 +40,21 @@ a, button, input {
   }
 }
 
-.ps-container {
-  padding-left: 0!important;
-  padding-right: 0!important;
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    display: block;
+    width: calc(33.33% - 8px);
+    margin-bottom: 12px;
+
+    &:not(:nth-child(3n)){
+      margin-right: 12px;
+    }
+  }
 }
 
+body perfect-scrollbar>.ps.ps--active-y>.ps__rail-y {
+  right: -18px !important;
+}

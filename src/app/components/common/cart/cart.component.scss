@@ -1,0 +1,140 @@
+@import './src/sass/variables';
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 430px;
+  background-color: $white;
+  padding: 30px 40px 25px;
+  box-shadow: -4px 0 30px 0 rgba(0, 0, 0, 0.12);
+  z-index: 200;
+
+  &__header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-e7;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: $font-medium;
+    color: $black;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    padding: 24px 0;
+    flex-grow: 1;
+  }
+
+  &__count {
+    color: $white-f7;
+  }
+
+  &__clear {
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 14px;
+      color: $gray-ab;
+      margin-top: 8px;
+      padding: 0;
+      cursor: pointer;
+      font-weight: $font-medium;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  &__product {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 56px;
+      height: 56px;
+      margin-right: 14px;
+
+      img {
+        width: 80%;
+      }
+    }
+
+    &-info {
+      flex-grow: 1;
+    }
+
+    &-top,
+    &-bot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-bot {
+      margin-top: 8px;
+    }
+
+    &-name,
+    &-price {
+      color: $black;
+    }
+
+    &-remove {
+      button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        display: block;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    &-counter {
+      &-input {
+        height: 19px;
+        width: 48px;
+        border: none;
+        text-align: center;
+        color: $black;
+        font-weight: $font-bold;
+      }
+
+      &-plus,
+      &-minus {
+        border: none;
+        background-color: transparent;
+        color: $black;
+        font-size: 12px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid $gray-e7;
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+  }
+}

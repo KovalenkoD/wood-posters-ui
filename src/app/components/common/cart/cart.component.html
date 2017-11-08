@@ -1,0 +1,50 @@
+<div class="cart">
+  <div class="cart__header">
+    <div class="cart__title">Корзина <span class="cart__count">{{products.length}}</span></div>
+    <div class="cart__clear">
+      <button>Очистить</button>
+    </div>
+  </div>
+  <perfect-scrollbar [config]="config" style="max-height: calc(100vh - 243px);">
+  <div class="cart__body">
+    <div class="cart__products">
+      <div class="cart__product"
+             *ngFor="let product of products"
+      >
+        <a
+          class="cart__product-img"
+          routerLink="/product"
+          [ngStyle]="{'background-color': product.background }"
+        >
+          <img src="{{product.image}}" alt="">
+        </a>
+        <div class="cart__product-info">
+          <div class="cart__product-top">
+            <div class="cart__product-name">{{product.name}}</div>
+            <div class="cart__product-price">{{product.price}}</div>
+          </div>
+          <div class="cart__product-bot">
+            <div class="cart__product-counter">
+              <button class="cart__product-counter-plus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+              <input type="text" value="1" class="cart__product-counter-input">
+              <button class="cart__product-counter-minus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+            <div class="cart__product-remove">
+              <button><img src="assets/images/icon-trash.svg" alt=""></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </perfect-scrollbar>
+  <div class="cart__footer">
+    <div class="cart__footer-top">
+      <div class="cart__footer-title">Итого</div>
+      <div class="cart__footer-total">3885 грн.</div>
+    </div>
+    <div class="cart__footer-order">
+      <button class="button _wide">Оформить</button>
+    </div>
+  </div>
+</div>

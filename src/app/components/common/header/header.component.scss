@@ -77,8 +77,9 @@
       }
 
       &._search a,
-      &._cart a {
-        &:hover {
+      &._cart a{
+        &:hover,
+        &.active {
           opacity: .3;
         }
       }
