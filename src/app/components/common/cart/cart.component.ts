@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../../services/cart.service';
 
 export interface Product {
  name?: string,
@@ -15,6 +16,10 @@ export interface Product {
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+
+  constructor(private cartService: CartService) { }
+
+  isOpened: boolean = this.cartService.opened;
 
   products: Product[] = [
     {
@@ -148,9 +153,12 @@ export class CartComponent implements OnInit {
         }
   ];
 
-  constructor() { }
-
   ngOnInit() {
+  }
+
+  onCartClose(): void {
+    this.cartService.closeCart();
+    this.isOpened = this.cartService.opened;
   }
 
 }

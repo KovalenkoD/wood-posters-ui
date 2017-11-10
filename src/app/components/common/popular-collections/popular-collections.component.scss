@@ -41,69 +41,6 @@
     }
   }
 
-  &__item {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    &-img {
-      position: relative;
-      max-width: 768px;
-    }
-
-    &-info {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      width: 456px;
-      padding: 40px 50px;
-      background-color: $white;
-      transform: translateY(-50%);
-
-    }
-
-    &-category {
-      font-size: 18px;
-      font-weight: $font-medium;
-      color: $white-f7;
-      margin-bottom: 15px;
-    }
-
-    &-name {
-      font-size: 48px;
-      line-height: 50px;
-      margin-bottom: 24px;
-    }
-
-    &-button {
-      margin-bottom: 35px;
-    }
-
-    &-to-product {
-      a {
-        font-size: 16px;
-        font-weight: $font-medium;
-        color: $white-f7;
-
-        i {
-          display: inline-block;
-          transition: all .2s ease;
-          font-size: 14px;
-          margin-left: 6px;
-        }
-
-        &:hover {
-          color: $black;
-
-          i {
-            transform: translateX(2px);
-          }
-        }
-      }
-    }
-  }
-
-
   &__right,
   &__left {
     position: absolute;

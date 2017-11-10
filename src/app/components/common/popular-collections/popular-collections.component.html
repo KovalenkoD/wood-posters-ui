@@ -18,21 +18,9 @@
               *ngFor="let collection of collections"
               NgxCarouselItem
             >
-              <div class="popular-collections__item">
-                  <div class="popular-collections__item-img">
-                    <app-interactive-image [image]="collection.image" [collections]="collection.products"></app-interactive-image>
-                  </div>
-                  <div class="popular-collections__item-info">
-                    <div class="popular-collections__item-category">Коллекция</div>
-                    <div class="popular-collections__item-name">The English Breakfast</div>
-                    <div class="popular-collections__item-button">
-                      <button class="button">Все в корзину</button>
-                    </div>
-                    <div class="popular-collections__item-to-product">
-                      <a routerLink="/category">{{collection.products.length}} товара<i class="fa fa-angle-right"></i></a>
-                    </div>
-                  </div>
-              </div>
+              <app-collection-single
+                [collection]="collection"
+              ></app-collection-single>
             </ngx-item>
             <button NgxCarouselPrev class='leftRs popular-collections__left'><i class="fa fa-angle-left" aria-hidden="true"></i></button>
             <button NgxCarouselNext class='rightRs popular-collections__right'><i class="fa fa-angle-right" aria-hidden="true"></i></button>

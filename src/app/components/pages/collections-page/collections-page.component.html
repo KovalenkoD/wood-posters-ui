@@ -1,3 +1,10 @@
-<div class="container">
-  <h1>COLLECTIONS PAGE</h1>
+<div class="collections-page">
+  <div class="container collections-page__grid">
+    <app-collection-single
+      *ngFor="let collection of collections; let idx = index"
+      [ngStyle]="{'margin-top' : '120px', 'display' : 'block'}"
+      [reverse]="idx"
+      [collection]="collection"
+    ></app-collection-single>
+  </div>
 </div>

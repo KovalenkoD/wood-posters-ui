@@ -14,10 +14,11 @@
           <a routerLink="/search" class="header__link" routerLinkActive="active"><img src="assets/images/icon-search.svg" alt="icon-search"></a>
         </li>
         <li class="header__link-wrap _cart">
-          <a routerLink="/not-found" class="header__link _cart" routerLinkActive="active"><img src="assets/images/icon-bag.svg" alt="icon-search">
+          <a  class="header__link _cart" routerLinkActive="active"><img src="assets/images/icon-bag.svg" alt="icon-search">
             <span>5</span>
           </a>
         </li>
+        <div (click)="onCartOpen()"></div>
       </ul>
     </div>
   </div>

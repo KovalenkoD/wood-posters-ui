@@ -22,7 +22,7 @@ export class InteractiveImageComponent implements OnInit {
 
   constructor() { }
 
-  @Input() collections: InteractiveImage[];
+  @Input() products: InteractiveImage[];
   @Input() image: string;
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class InteractiveImageComponent implements OnInit {
     if(target.active === true) {
       target.active = !target.active;
     } else {
-      this.collections.forEach((elem: any)=>{
+      this.products.forEach((elem: any)=>{
         elem.active = false;
       })
       target.active = !target.active;

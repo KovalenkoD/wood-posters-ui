@@ -1,4 +1,9 @@
-<div class="cart">
+<div class="cart"
+     [ngClass]="{'_opened' : isOpened}"
+>
+  <i class="cart__close"
+     (click)="onCartClose()"
+  ></i>
   <div class="cart__header">
     <div class="cart__title">Корзина <span class="cart__count">{{products.length}}</span></div>
     <div class="cart__clear">

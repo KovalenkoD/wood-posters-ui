@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+import { CartService } from './services/cart.service';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
@@ -30,6 +32,7 @@ import { SubscribeNewsComponent } from './components/common/subscribe-news/subsc
 import { SearchComponent } from './components/common/search/search.component';
 import { ProductSingleComponent } from './components/common/product-single/product-single.component';
 import { CartComponent } from './components/common/cart/cart.component';
+import { CollectionSingleComponent } from './components/common/collection-single/collection-single.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -83,7 +86,8 @@ const appRoutes: Routes = [
     SubscribeNewsComponent,
     SearchComponent,
     ProductSingleComponent,
-    CartComponent
+    CartComponent,
+    CollectionSingleComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -92,7 +96,7 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     NgxCarouselModule,
     PerfectScrollbarModule
   ],
@@ -100,7 +104,8 @@ const appRoutes: Routes = [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
+    },
+    CartService
   ],
   bootstrap: [AppComponent]
 })
