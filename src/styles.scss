@@ -1,5 +1,6 @@
 //base
 @import "~normalize-scss/sass/_normalize.scss";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "sass/variables";
 @import "sass/fonts";
 @import "sass/grid";
@@ -57,4 +58,53 @@ a, button, input {
 
 body perfect-scrollbar>.ps.ps--active-y>.ps__rail-y {
   right: -18px !important;
+}
+
+.input {
+  input.mat-input-element,
+  textarea.mat-input-element {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 1px $gray-e7;
+    font-size: 14px;
+    color: $black;
+    padding: 20px 12px 5px;
+  }
+
+  textarea.mat-input-element {
+    min-height: 150px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .mat-form-field-underline {
+    display: none;
+  }
+
+  .mat-form-field-placeholder {
+    top: 30px;
+    left: 12px;
+    font-size: 14px;
+    color: $gray-ab;
+  }
+
+  .mat-form-field-infix {
+    padding: 0;
+    margin: 0;
+  }
+
+  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder {
+    transform: translateY(-13px) scale(.85) perspective(100px) translateZ(.001px);
+  }
+}
+
+div.mat-checkbox-frame,
+div.mat-checkbox-background {
+  border-width: 1px;
+  border-color: $gray-e7;
+  border-radius: 4px;
 }

@@ -8,6 +8,8 @@ import 'hammerjs';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/material';
 
 import { CartService } from './services/cart.service';
 
@@ -98,7 +100,11 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     NgxCarouselModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule
   ],
   providers: [
     {
