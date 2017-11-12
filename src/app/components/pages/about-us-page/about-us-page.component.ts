@@ -9,6 +9,14 @@ export class AboutUsPageComponent implements OnInit {
 
   constructor() { }
 
+  person: any = {
+    name: '',
+    firstname: '',
+    message: '',
+    phone: '',
+    email: ''
+  }
+
   ngOnInit() {
   }
 

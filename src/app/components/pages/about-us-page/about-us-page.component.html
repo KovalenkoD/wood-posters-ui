@@ -11,40 +11,40 @@
         <div class="about-us-page__our-phone-label">Наш Телефон</div>
         <div class="about-us-page__our-phone-phone">556-626-4950</div>
       </div>
-      <form action="" class="about-us-page__form">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="about-us-page__form">
         <div class="about-us-page__form-title">
           Связаться с нами
         </div>
         <div class="about-us-page__form-body">
           <div class="input about-us-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email">
+              <input matInput placeholder="Имя" [(ngModel)]="person.name" name="name">
             </mat-form-field>
           </div>
           <div class="input about-us-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email">
+              <input matInput placeholder="Фамилия" [(ngModel)]="person.firstname" name="firstname">
             </mat-form-field>
           </div>
           <div class="input about-us-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email">
+              <input matInput placeholder="Email" [(ngModel)]="person.email" name="email">
             </mat-form-field>
           </div>
           <div class="input about-us-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email">
+              <input matInput placeholder="Номер телефона" [(ngModel)]="person.phone" name="phone">
             </mat-form-field>
           </div>
           <div class="input about-us-page__form-textarea">
             <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Leave a comment"></textarea>
+              <textarea matInput placeholder="Сообщение" [(ngModel)]="person.message" name="message"></textarea>
             </mat-form-field>
           </div>
         </div>
         <div class="about-us-page__form-footer">
           <div class="about-us-page__form-subscribe">
-            <mat-checkbox class="example-margin" [(ngModel)]="checked">Подписаться на рассылку</mat-checkbox>
+            <mat-checkbox class="example-margin" name="subscribe" [(ngModel)]="checked">Подписаться на рассылку</mat-checkbox>
           </div>
           <div class="about-us-page__form-send">
             <button class="button">Отправить</button>
