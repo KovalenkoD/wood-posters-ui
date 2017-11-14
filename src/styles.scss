@@ -108,3 +108,87 @@ div.mat-checkbox-background {
   border-color: $gray-e7;
   border-radius: 4px;
 }
+
+.mat-form-field-infix,
+.mat-form-field-placeholder-wrapper {
+
+}
+.filter-panel__sorting {
+  .mat-form-field-underline {
+    display: none;
+  }
+
+  .mat-form-field-placeholder {
+    color: $black;
+    font-weight: $font-medium;
+  }
+}
+
+.mat-select-panel:not([class*=mat-elevation-z]) {
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.mat-select-panel {
+  border-radius: 4px;
+}
+
+.mat-option,
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+  color: $black !important;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+.mat-expansion-panel-spacing {
+  margin-bottom: 0;
+}
+
+.mat-expansion-panel-spacing {
+  margin: 0 !important;
+}
+
+.mat-expansion-panel {
+  border-top: 1px solid $gray-ab;
+  color: $black !important;
+}
+
+.mat-content {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: $font-medium;
+  color: $black;
+
+  span {
+    color: $gray-ab;
+    margin-left: 5px;
+  }
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover {
+  background-color: $white;
+}
+
+.mat-checkbox-inner-container {
+  width: 14px !important;
+  height: 14px !important;
+
+  .mat-checkbox-frame {
+    border-radius: 0 !important;
+  }
+}
+
+.mat-expansion-panel-header,
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: $black;
+}
+
+.mat-checkbox-ripple * {
+  background-color: rgba(0,0,0,.3) !important;
+}

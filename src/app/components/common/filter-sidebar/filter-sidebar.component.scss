@@ -1,0 +1,114 @@
+@import './src/sass/variables';
+
+.filter-sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: $white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 30px;
+  z-index: 400;
+  box-shadow: 4px 0 30px 0 rgba(0, 0, 0, 0.12);
+
+  &__show-more {
+    position: relative;
+    margin-left: 36px;
+    cursor: pointer;
+    margin-top: 10px;
+
+    &:before,
+    &:after {
+      content: "";
+      width: 10px;
+      height: 1px;
+      background-color: $black;
+      position: absolute;
+      right: calc(100% + 5px);
+      top: 8px;
+    }
+
+    &:after {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__close {
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    right: 17px;
+    top: 20px;
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+      &:before{
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:after,
+    &:before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $gray-ab;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      transform: rotate(45deg);
+      transition: all .2s ease;
+    }
+
+    &:before {
+      right: 0;
+      left: auto;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__header {
+    padding: 0 20px;
+
+    &-title {
+      font-size: 20px;
+      font-weight: $font-medium;
+      text-transform: uppercase;
+
+      span {
+        color: $white-f7;
+      }
+    }
+  }
+
+  &__items {
+    padding-bottom: 20px;
+  }
+
+  &__item {
+    margin-bottom: 4px;
+  }
+
+  &__body {
+    padding: 20px;
+  }
+
+  &__reset {
+    font-size: 14px;
+    margin-top: 8px;
+    color: $gray-ab;
+    font-weight: $font-medium;
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}

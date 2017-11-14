@@ -6,7 +6,7 @@
   width: 100%;
   top: 0;
   background-color: $white;
-  z-index: 50;
+  z-index: 300;
 
   &__logo {
     position: absolute;
@@ -64,7 +64,7 @@
 
     &-wrap {
       position: relative;
-      &:not(:last-child) {
+      &:not(._cart) {
         margin-right: 40px;
       }
 

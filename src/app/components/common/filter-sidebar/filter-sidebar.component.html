@@ -1,0 +1,46 @@
+<div class="filter-sidebar">
+  <i class="filter-sidebar__close"></i>
+  <div class="filter-sidebar__header">
+    <div class="filter-sidebar__header-title">Фильтры <span>2</span></div>
+    <div class="filter-sidebar__reset">Сбросить</div>
+  </div>
+  <perfect-scrollbar [config]="config" style="max-height: calc(100vh - 110px);">
+  <div class="filter-sidebar__body">
+    <mat-accordion multi="true">
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header
+          collapsedHeight="59px"
+          expandedHeight="59px"
+        >
+          Группа <span>1</span>
+        </mat-expansion-panel-header>
+        <div class="filter-sidebar__items">
+          <div class="filter-sidebar__item"><mat-checkbox>Автомобиль</mat-checkbox></div>
+          <div class="filter-sidebar__item"><mat-checkbox>Юмор</mat-checkbox></div>
+          <div class="filter-sidebar__item"><mat-checkbox>Кухня</mat-checkbox></div>
+          <div class="filter-sidebar__item"><mat-checkbox>Здоровье</mat-checkbox></div>
+          <div class="filter-sidebar__show-more">Еще</div>
+        </div>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header
+          collapsedHeight="59px"
+          expandedHeight="59px"
+        >
+          Размеры <span>1</span>
+        </mat-expansion-panel-header>
+        <div class="filter-sidebar__items">
+          <div class="filter-sidebar__item"><mat-checkbox>Автомобиль</mat-checkbox></div>
+          <div class="filter-sidebar__item"><mat-checkbox>Юмор</mat-checkbox></div>
+          <div class="filter-sidebar__item"><mat-checkbox>Кухня</mat-checkbox></div>
+          <div class="filter-sidebar__item"><mat-checkbox>Здоровье</mat-checkbox></div>
+          <div class="filter-sidebar__show-more">Еще</div>
+        </div>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </div>
+  </perfect-scrollbar>
+</div>

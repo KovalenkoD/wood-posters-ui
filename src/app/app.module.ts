@@ -9,7 +9,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatExpansionModule} from '@angular/material';
 
 import { CartService } from './services/cart.service';
 
@@ -35,6 +35,9 @@ import { SearchComponent } from './components/common/search/search.component';
 import { ProductSingleComponent } from './components/common/product-single/product-single.component';
 import { CartComponent } from './components/common/cart/cart.component';
 import { CollectionSingleComponent } from './components/common/collection-single/collection-single.component';
+import { FilterPanelComponent } from './components/common/filter-panel/filter-panel.component';
+import { FilterSidebarComponent } from './components/common/filter-sidebar/filter-sidebar.component';
+import { FilterResultComponent } from './components/common/filter-result/filter-result.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -89,7 +92,10 @@ const appRoutes: Routes = [
     SearchComponent,
     ProductSingleComponent,
     CartComponent,
-    CollectionSingleComponent
+    CollectionSingleComponent,
+    FilterPanelComponent,
+    FilterSidebarComponent,
+    FilterResultComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -104,7 +110,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatExpansionModule
   ],
   providers: [
     {
