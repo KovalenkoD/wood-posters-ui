@@ -1,0 +1,32 @@
+@import './src/sass/variables';
+
+.poster {
+  background-repeat: no-repeat;
+
+  &._reverse &__title {
+    color: $white;
+  }
+  &._reverse &__count {
+    color: $gray-d7;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 400px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 48px;
+    font-weight: $font-medium;
+  }
+
+  &__count {
+    font-size: 24px;
+    color: $white-f7;
+    font-weight: $font-medium;
+  }
+}

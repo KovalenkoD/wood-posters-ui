@@ -1,12 +1,7 @@
 @import './src/sass/variables';
 
 .header {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  top: 0;
   background-color: $white;
-  z-index: 300;
 
   &__logo {
     position: absolute;
