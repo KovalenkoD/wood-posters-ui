@@ -9,7 +9,15 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatExpansionModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatSelectModule,
+  MatExpansionModule,
+  MatDialogModule,
+  MatButtonModule
+} from '@angular/material';
 import { Ng2StickyModule } from 'ng2-sticky';
 import { Parallax, ParallaxConfig } from 'ngx-parallax';
 
@@ -41,6 +49,8 @@ import { FilterPanelComponent } from './components/common/filter-panel/filter-pa
 import { FilterSidebarComponent } from './components/common/filter-sidebar/filter-sidebar.component';
 import { FilterResultComponent } from './components/common/filter-result/filter-result.component';
 import { PosterComponent } from './components/common/poster/poster.component';
+import { PostersGalleryComponent } from './components/common/posters-gallery/posters-gallery.component';
+import { ProductDetailsComponent } from './components/common/product-details/product-details.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -100,7 +110,9 @@ const appRoutes: Routes = [
     FilterSidebarComponent,
     FilterResultComponent,
     Parallax,
-    PosterComponent
+    PosterComponent,
+    PostersGalleryComponent,
+    ProductDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -118,6 +130,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSelectModule,
     MatExpansionModule,
+    MatDialogModule,
     Ng2StickyModule
   ],
   providers: [

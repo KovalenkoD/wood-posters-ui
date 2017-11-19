@@ -158,7 +158,7 @@ export class CartComponent implements OnInit {
 
   onCartClose(): void {
     this.cartService.closeCart();
-    this.isOpened = this.cartService.opened;
+    this.isOpened = this.cartService.opened;2
   }
 
 }

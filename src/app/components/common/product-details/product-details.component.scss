@@ -1,0 +1,233 @@
+@import './src/sass/variables';
+
+.product-details {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  margin-bottom: 50px;
+
+  &__image {
+    width: 612px;
+
+    &-main {
+      height: 510px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+
+      img {
+        height: 350px;
+        object-fit: contain;
+      }
+    }
+
+    &-on-wall {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 160px;
+      height: 36px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: $white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      background-color: rgba(127, 127, 127, 0.8);
+
+      &:hover {
+        background-color: rgba(127, 127, 127, 1);
+      }
+    }
+
+    &-open-gallery {
+      position: absolute;
+      left: 28px;
+      top: 28px;
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:before,
+      &:after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $black;
+        position: absolute;
+        left: 0;
+        top: 10px;
+      }
+
+      &:after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    position: relative;
+
+    &-item {
+      width: calc(25% - 6px);
+
+      img {
+        display: block;
+        height: 120px;
+        object-fit: cover;
+      }
+    }
+
+    &-show-more {
+      position: absolute;
+      width: calc(25% - 6px);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      right: 0;
+      top: 0;
+      font-size: 36px;
+      color: $white;
+      font-weight: $font-thin;
+      cursor: pointer;
+      transition: all .2s ease;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+  &__info {
+    width: 378px;
+    margin-left: 90px;
+  }
+
+  &__category {
+    font-size: 18px;
+    color: $white-f7;
+    margin-bottom: 26px;
+    font-weight: $font-medium;
+  }
+
+  &__name {
+    font-size: 34px;
+    color: $black;
+    margin-bottom: 36px;
+  }
+
+  &__price {
+    font-size: 36px;
+    color: $white-f7;
+    font-weight: $font-medium;
+  }
+
+  &__params {
+    padding: 30px 0;
+    margin: 30px 0 50px;
+    list-style-type: none;
+    border-top: 1px solid $gray-e7;
+    border-bottom: 1px solid $gray-e7;
+  }
+
+  &__param {
+    strong {
+      color: $white-f7;
+      font-weight: $font-regular;
+      margin-right: 14px;
+    }
+  }
+
+  &__param + &__param {
+    margin-top: 10px;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__counter {
+    width: 144px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid $gray-d7;
+
+    input {
+      width: 58px;
+      text-align: center;
+      border: none;
+      font-size: 18px;
+      font-weight: $font-bold;
+    }
+
+    button {
+      padding: 0;
+      margin: 0;
+      width: 23px;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      font-size: 23px;
+    }
+  }
+
+  &__button {
+    width: 200px;
+    height: 56px;
+  }
+
+  &__share {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+
+    &-text {
+      color: $white-f7;
+    }
+
+    &-icons {
+      display: flex;
+      align-items: center;
+
+      a {
+        font-size: 20px;
+        color: $white-f7;
+        margin-left: 24px;
+
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin: 50px 0 10px;
+
+    p {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
