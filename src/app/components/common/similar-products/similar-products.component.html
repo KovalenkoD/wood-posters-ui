@@ -1,0 +1,11 @@
+<div class="similar-products">
+  <h2 class="similar-products__title">Похожие товары</h2>
+  <div class="similar-products__items">
+    <div class="product-grid">
+      <app-product-single
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-single>
+    </div>
+  </div>
+</div>

@@ -15,8 +15,7 @@ import {
   MatInputModule,
   MatSelectModule,
   MatExpansionModule,
-  MatDialogModule,
-  MatButtonModule
+  MatDialogModule
 } from '@angular/material';
 import { Ng2StickyModule } from 'ng2-sticky';
 import { Parallax, ParallaxConfig } from 'ngx-parallax';
@@ -51,6 +50,7 @@ import { FilterResultComponent } from './components/common/filter-result/filter-
 import { PosterComponent } from './components/common/poster/poster.component';
 import { PostersGalleryComponent } from './components/common/posters-gallery/posters-gallery.component';
 import { ProductDetailsComponent } from './components/common/product-details/product-details.component';
+import { SimilarProductsComponent } from './components/common/similar-products/similar-products.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -112,7 +112,8 @@ const appRoutes: Routes = [
     Parallax,
     PosterComponent,
     PostersGalleryComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SimilarProductsComponent
   ],
   imports: [
     RouterModule.forRoot(
