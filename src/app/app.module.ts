@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxCarouselModule } from 'ngx-carousel';
+import { NguiStickyModule } from '@ngui/sticky';
 import 'hammerjs';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -17,7 +18,6 @@ import {
   MatExpansionModule,
   MatDialogModule
 } from '@angular/material';
-import { Ng2StickyModule } from 'ng2-sticky';
 import { Parallax, ParallaxConfig } from 'ngx-parallax';
 
 import { CartService } from './services/cart.service';
@@ -113,7 +113,7 @@ const appRoutes: Routes = [
     PosterComponent,
     PostersGalleryComponent,
     ProductDetailsComponent,
-    SimilarProductsComponent
+    SimilarProductsComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -132,7 +132,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatExpansionModule,
     MatDialogModule,
-    Ng2StickyModule
+    NguiStickyModule
   ],
   providers: [
     {

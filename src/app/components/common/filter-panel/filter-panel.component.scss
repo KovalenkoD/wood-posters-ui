@@ -1,11 +1,37 @@
 @import './src/sass/variables';
 
+:host {
+  display: block;
+  z-index: 999;
+
+  &.ngui-sticky-stuck {
+    .filter-panel {
+      min-height: 66px;
+      padding: 16px 0 10px;
+
+      &__category {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 .filter-panel {
-  margin-bottom: 30px;
+  padding: 36px 0 30px;
+  background-color: $white;
+  transition: all .5s ease;
+  min-height: 145px;
+  backface-visibility: hidden;
+  perspective: 1000;
+
+  &__inner {
+    background-color: $white;
+    width: 100%;
+    max-width: 1170px;
+  }
 
   &__top {
     position: relative;
-    margin: 36px 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,6 +88,7 @@
     transform: translate(-50%, -50%);
     font-size: 30px;
     font-weight: $font-medium;
+    transition: all .5s ease;
 
     span {
       font-weight: $font-regular;
@@ -71,6 +98,7 @@
   &__used-filters {
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 
     &-item {
       position: relative;

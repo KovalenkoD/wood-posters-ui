@@ -1,27 +1,29 @@
 <div class="filter-panel">
-  <div class="filter-panel__top">
-    <div class="filter-panel__filters">
-      <div class="filter-panel__filters-button">
-        <span></span><span></span><span></span>
+  <div class="filter-panel__inner" >
+    <div class="filter-panel__top">
+      <div class="filter-panel__filters">
+        <div class="filter-panel__filters-button">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="filter-panel__filters-name">
+          Фильтры <span>2</span>
+        </div>
       </div>
-      <div class="filter-panel__filters-name">
-        Фильтры <span>2</span>
+      <div class="filter-panel__category">Шкатулки <span>14</span></div>
+      <div class="filter-panel__sorting">
+        <mat-form-field>
+            <mat-select [(value)]="selected" placeholder="Сортировать по">
+              <mat-option value="option1">По новизне</mat-option>
+              <mat-option value="option2">По популярности</mat-option>
+              <mat-option value="option3">По цене</mat-option>
+            </mat-select>
+        </mat-form-field>
       </div>
     </div>
-    <div class="filter-panel__category">Шкатулки <span>14</span></div>
-    <div class="filter-panel__sorting">
-      <mat-form-field>
-          <mat-select [(value)]="selected" placeholder="Сортировать по">
-            <mat-option value="option1">По новизне</mat-option>
-            <mat-option value="option2">По популярности</mat-option>
-            <mat-option value="option3">По цене</mat-option>
-          </mat-select>
-      </mat-form-field>
+    <div class="filter-panel__used-filters">
+      <div class="filter-panel__used-filters-item">Покраска</div>
+      <div class="filter-panel__used-filters-item">Покраска</div>
     </div>
-  </div>
-  <div class="filter-panel__used-filters">
-    <div class="filter-panel__used-filters-item">Покраска</div>
-    <div class="filter-panel__used-filters-item">Покраска</div>
   </div>
   <app-filter-sidebar></app-filter-sidebar>
 </div>
