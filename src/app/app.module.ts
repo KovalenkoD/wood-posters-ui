@@ -51,6 +51,7 @@ import { PosterComponent } from './components/common/poster/poster.component';
 import { PostersGalleryComponent } from './components/common/posters-gallery/posters-gallery.component';
 import { ProductDetailsComponent } from './components/common/product-details/product-details.component';
 import { SimilarProductsComponent } from './components/common/similar-products/similar-products.component';
+import { WallGalleryPopupComponent } from './components/common/wall-gallery-popup/wall-gallery-popup.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -114,6 +115,7 @@ const appRoutes: Routes = [
     PostersGalleryComponent,
     ProductDetailsComponent,
     SimilarProductsComponent,
+    WallGalleryPopupComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -141,6 +143,7 @@ const appRoutes: Routes = [
     },
     CartService
   ],
+  entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
