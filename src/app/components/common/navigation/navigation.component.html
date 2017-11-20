@@ -1,4 +1,7 @@
-<ul class="navigation">
+<ul
+  class="navigation"
+  [ngClass]="{'_reverse' : reverse}"
+>
   <li class="navigation__link-wrap"><a routerLink="/trends" class="navigation__link" routerLinkActive="active">В тренде</a></li>
   <li class="navigation__link-wrap">
     <a routerLink="/category" class="navigation__link" routerLinkActive="active">

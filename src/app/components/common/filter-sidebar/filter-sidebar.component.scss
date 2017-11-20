@@ -1,5 +1,9 @@
 @import './src/sass/variables';
 
+:host {
+  pointer-events: auto;
+}
+
 .filter-sidebar {
   width: 300px;
   height: 100vh;

@@ -7,6 +7,24 @@
   margin: 0;
   list-style-type: none;
 
+  &._reverse &__submenu {
+    top: auto;
+    bottom: calc(100% + 20px);
+
+    &:before {
+      top: 100%;
+      bottom: auto;
+    }
+  }
+
+  &._reverse &__link-wrap:hover & {
+    &__submenu {
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   &__link {
     color: $black;
     font-weight: $font-medium;
