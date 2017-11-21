@@ -1,5 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
 
 
 @Component({
@@ -14,10 +15,32 @@ export class WallGalleryPopupComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
+  public wallCarousel: NgxCarousel
+  public currentImage: string = null;
+  public currentDot: number = 0;
+
   ngOnInit() {
+
+    this.wallCarousel = {
+        grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
+        slide: 1,
+        speed: 400,
+        point: {
+          visible: false,
+        },
+        load: 2,
+        touch: false,
+        loop: true,
+        custom: 'banner'
+      }
   }
 
-  onNoClick(): void {
+  onBgChange(backgrounds, background): any {
+    this.currentImage = background;
+    this.currentDot = backgrounds.indexOf(background);
+  }
+
+  onCloseClick(): void {
     this.dialogRef.close();
   }
 

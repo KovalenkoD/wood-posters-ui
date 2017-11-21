@@ -11,6 +11,18 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
+  public wallGallery: any = {
+    images: [
+      'assets/images/picture.jpg',
+      'assets/images/picture.jpg',
+    ],
+    backgrounds: [
+      'assets/images/wall-01.jpg',
+      'assets/images/wall-02.jpg',
+      'assets/images/wall-03.jpg',
+    ]
+  }
+
   ngOnInit() {
   }
 
@@ -18,8 +30,7 @@ export class ProductDetailsComponent implements OnInit {
     let dialogRef = this.dialog.open(WallGalleryPopupComponent, {
       width: '100vw',
       height: '100vh',
-      'max-width': '100vw',
-      data: { name: 'hello!' }
+      data: this.wallGallery
     });
 
     dialogRef.afterClosed().subscribe(result => {

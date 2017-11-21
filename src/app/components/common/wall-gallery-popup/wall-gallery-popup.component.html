@@ -1,3 +1,31 @@
-<div>
-  <app-home-slider></app-home-slider>
+<div class="wall-gallery-popup">
+  <div class="wall-gallery-popup__close" (click)="onCloseClick()"></div>
+  <div class="wall-gallery-popup__carousel"
+     [ngStyle]="{'background-image': 'url(' + (currentImage || data.backgrounds[0]) + ')' }"
+  >
+    <ngx-carousel
+      [inputs]="wallCarousel"
+      (carouselLoad)="myfunc($event)"
+      (onMove)="onmoveFn($event)"
+      >
+        <ngx-item
+          *ngFor="let image of data.images"
+          NgxCarouselItem
+        >
+          <div class="wall-gallery-popup__carousel-item">
+            <img src="{{image}}" alt="">
+          </div>
+        </ngx-item>
+        <button NgxCarouselPrev class='leftRs wall-gallery-popup__left'><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+        <button NgxCarouselNext class='rightRs wall-gallery-popup__right'><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+    </ngx-carousel>
+  </div>
+  <div class="wall-gallery-popup__walls">
+    <div class="wall-gallery-popup__walls-item"
+      *ngFor="let background of data.backgrounds; let i = index; "
+      [ngStyle]="{'background-image': 'url('+ background +')'}"
+      [ngClass]="{'_active' : i === currentDot}"
+      (click)="onBgChange(data.backgrounds, background)"
+    ></div>
+  </div>
 </div>
