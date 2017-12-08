@@ -10,7 +10,7 @@ import { ProductType } from '../../../model/product-type';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private productService:ProductTypeService) { }
+  constructor(private productTypeService:ProductTypeService) { }
 
   productTypes: ProductType[];
 
@@ -21,12 +21,10 @@ export class NavigationComponent implements OnInit {
   }
 
   loadProductTypes() {
-  // Get all comments
-    this.productService.getAllProductTypes()
+    this.productTypeService.getAllProductTypes()
       .subscribe(
-        productTypes => this.productTypes = productTypes, //Bind to view
+        productTypes => this.productTypes = productTypes,
         err => {
-          // Log errors if any
           console.log(err);
         });
     }

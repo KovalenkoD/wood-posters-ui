@@ -23,6 +23,8 @@ import { Parallax, ParallaxConfig } from 'ngx-parallax';
 
 import { CartService } from './services/cart.service';
 import { ProductTypeService } from './services/product-type.service';
+import { ProductService } from './services/product.service';
+
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
@@ -70,7 +72,7 @@ const appRoutes: Routes = [
   { path: 'about-us',
     component: AboutUsPageComponent
   },
-  { path: 'product',
+  { path: 'product/:id',
     component: ProductPageComponent
   },
   { path: 'collections',
@@ -147,7 +149,7 @@ const appRoutes: Routes = [
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService,ProductTypeService
+    CartService,ProductTypeService, ProductService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]

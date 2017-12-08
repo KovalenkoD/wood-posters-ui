@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import { WallGalleryPopupComponent } from '../wall-gallery-popup/wall-gallery-popup.component';
+import {Product} from "../../../model/product";
 
 @Component({
   selector: 'app-product-details',
@@ -8,6 +9,8 @@ import { WallGalleryPopupComponent } from '../wall-gallery-popup/wall-gallery-po
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
+
+  @Input() product : Product;
 
   constructor(public dialog: MatDialog) { }
 

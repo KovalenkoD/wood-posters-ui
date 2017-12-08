@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from "../../../model/product";
 
-export interface Product {
+/*export interface Product {
  name?: string,
  price?: string,
  category?: string,
  image?: string,
  link: string,
  background: string
-}
+}*/
 
 @Component({
   selector: 'app-filter-result',
@@ -16,12 +17,14 @@ export interface Product {
 })
 export class FilterResultComponent implements OnInit {
 
+  @Input() products: Product;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  products: Product[] = [
+  /*products: Product[] = [
     {
       name: 'Белое дерево1',
       category: 'Фонарики',
@@ -65,6 +68,6 @@ export class FilterResultComponent implements OnInit {
       image: 'http://лавкажеланий.рф/images/11shk.png',
       background: '#faf4f1'
     }
-  ];
+  ];*/
 
 }
