@@ -1,4 +1,4 @@
-<div class="product-details">
+<div class="product-details" *ngIf="isNotEmptyObject(product)">
   <div class="product-details__image">
     <div class="product-details__image-main">
       <img src="assets/images/fcba79ebde14ddf33065b3c144644696.jpg" alt="">
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="product-details__description">
-      <p>{{product.description}}</p>
+      <p>{{product.descriptifon}}</p>
       <div class="product-details__description-toggle">+ Еще</div>
     </div>
   </div>

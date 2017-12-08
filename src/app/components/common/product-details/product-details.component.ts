@@ -29,6 +29,10 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  isNotEmptyObject(obj:any): boolean {
+    return obj != null && obj;
+  }
+
   openDialog(): void {
     let dialogRef = this.dialog.open(WallGalleryPopupComponent, {
       width: '100vw',
