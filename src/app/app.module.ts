@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import {HttpModule} from "@angular/http";
 import { NgxCarouselModule } from 'ngx-carousel';
 import { NguiStickyModule } from '@ngui/sticky';
 import 'hammerjs';
@@ -21,6 +22,7 @@ import {
 import { Parallax, ParallaxConfig } from 'ngx-parallax';
 
 import { CartService } from './services/cart.service';
+import { ProductTypeService } from './services/product-type.service';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
@@ -80,6 +82,9 @@ const appRoutes: Routes = [
   { path: 'category',
     component: CategoryPageComponent
   },
+  { path: 'category/:id',
+    component: CategoryPageComponent
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -125,6 +130,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     NgxCarouselModule,
     PerfectScrollbarModule,
     BrowserAnimationsModule,
@@ -141,7 +147,7 @@ const appRoutes: Routes = [
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService
+    CartService,ProductTypeService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]

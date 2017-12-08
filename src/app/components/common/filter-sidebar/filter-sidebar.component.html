@@ -1,5 +1,5 @@
-<div class="filter-sidebar">
-  <i class="filter-sidebar__close"></i>
+<div class="filter-sidebar" [hidden]="hiddenSection">
+  <i class="filter-sidebar__close" (click)="hideFilters(true)"></i>
   <div class="filter-sidebar__header">
     <div class="filter-sidebar__header-title">Фильтры <span>2</span></div>
     <div class="filter-sidebar__reset">Сбросить</div>
