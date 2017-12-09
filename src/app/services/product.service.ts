@@ -13,7 +13,7 @@ export class ProductService {
   public popularTypeInTrend = 2;
   public popularType = 1;
   public productType = "P";
-  public productBundleType = "B";
+  public productBundleType = "BP";
   private productUrl = 'http://localhost:8080/products/getProductById';
   private mostPopularProductsByTypeUrl = 'http://localhost:8080/products/getMostPopularProducts';
 
