@@ -13,7 +13,7 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
   id: number;
   private sub: any;
 
-  products: Product[];
+  private products: Product[];
 
   constructor(private route: ActivatedRoute, private productTypeService:ProductTypeService) {}
 

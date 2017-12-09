@@ -18,9 +18,4 @@ export class FilterPanelComponent implements OnInit {
   showFilters (event) {
     this.hiddenSection = false;
   }
-
-  onVoted(hide: boolean) {
-    this.hiddenSection = hide;
-  }
-
 }

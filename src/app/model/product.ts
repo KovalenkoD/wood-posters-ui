@@ -8,9 +8,10 @@ export class Product {
     public id: number,
     public name: string,
     public size: string,
+    public image: string,
     public price: number,
     public description: string,
-    public productTypes: [ProductType],
+    public productType: ProductType,
     public technologies: [Technology],
     public categories: [Category],
     public materials: [Material]

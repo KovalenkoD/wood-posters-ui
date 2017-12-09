@@ -10,7 +10,12 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ProductService {
 
+  public popularTypeInTrend = 2;
+  public popularType = 1;
+  public productType = "P";
+  public productBundleType = "B";
   private productUrl = 'http://localhost:8080/products/getProductById';
+  private mostPopularProductsByTypeUrl = 'http://localhost:8080/products/getMostPopularProducts';
 
   constructor (private http: Http) {}
 
@@ -18,6 +23,12 @@ export class ProductService {
       return this.http.get(this.productUrl + "/" + id)
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  getMostPopularProductsByType(popularType:number) : Observable<Product[]> {
+    return this.http.get(this.mostPopularProductsByTypeUrl + "/" + this.productType + "/" + popularType)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
 

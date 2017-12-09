@@ -9,7 +9,7 @@ export class FilterSidebarComponent implements OnInit {
 
   @Input() hiddenSection: boolean;
 
-  @Output() onVoted = new EventEmitter<boolean>();
+  @Output() hiddenSectionChange = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -17,6 +17,6 @@ export class FilterSidebarComponent implements OnInit {
   }
 
   hideFilters(hide: boolean) {
-      this.onVoted.emit(hide);
+      this.hiddenSectionChange.emit(hide);
   }
 }
