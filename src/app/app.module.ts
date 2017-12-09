@@ -46,16 +46,19 @@ import { InteractiveImageComponent } from './components/common/interactive-image
 import { SubscribeNewsComponent } from './components/common/subscribe-news/subscribe-news.component';
 import { SearchComponent } from './components/common/search/search.component';
 import { ProductSingleComponent } from './components/common/product-single/product-single.component';
+import { CategorySingleComponent } from './components/common/category-single/category-single.component';
 import { CartComponent } from './components/common/cart/cart.component';
 import { CollectionSingleComponent } from './components/common/collection-single/collection-single.component';
 import { FilterPanelComponent } from './components/common/filter-panel/filter-panel.component';
 import { FilterSidebarComponent } from './components/common/filter-sidebar/filter-sidebar.component';
 import { FilterResultComponent } from './components/common/filter-result/filter-result.component';
+import { CategoriesResultComponent } from './components/common/categories-result/categories-result.component';
 import { PosterComponent } from './components/common/poster/poster.component';
 import { PostersGalleryComponent } from './components/common/posters-gallery/posters-gallery.component';
 import { ProductDetailsComponent } from './components/common/product-details/product-details.component';
 import { SimilarProductsComponent } from './components/common/similar-products/similar-products.component';
 import { WallGalleryPopupComponent } from './components/common/wall-gallery-popup/wall-gallery-popup.component';
+import {CategoriesPageComponent} from "./components/pages/categories-page/categories-page.component";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -82,7 +85,7 @@ const appRoutes: Routes = [
     component: TrendsPageComponent
   },
   { path: 'category',
-    component: CategoryPageComponent
+    component: CategoriesPageComponent
   },
   { path: 'category/:id',
     component: CategoryPageComponent
@@ -100,6 +103,7 @@ const appRoutes: Routes = [
     HomePageComponent,
     SearchPageComponent,
     CategoryPageComponent,
+    CategoriesPageComponent,
     ProductPageComponent,
     CollectionsPageComponent,
     TrendsPageComponent,
@@ -112,11 +116,13 @@ const appRoutes: Routes = [
     SubscribeNewsComponent,
     SearchComponent,
     ProductSingleComponent,
+    CategorySingleComponent,
     CartComponent,
     CollectionSingleComponent,
     FilterPanelComponent,
     FilterSidebarComponent,
     FilterResultComponent,
+    CategoriesResultComponent,
     Parallax,
     PosterComponent,
     PostersGalleryComponent,
