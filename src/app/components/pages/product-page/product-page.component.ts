@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ProductService} from "../../../services/product.service";
 import {Product} from "../../../model/product";
@@ -8,7 +8,7 @@ import {Product} from "../../../model/product";
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.scss']
 })
-export class ProductPageComponent implements OnInit {
+export class ProductPageComponent implements OnInit, OnDestroy {
   product : Product;
   id: number;
   private sub: any;
@@ -29,6 +29,10 @@ export class ProductPageComponent implements OnInit {
         err => {
           console.log(err);
         });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
 }
