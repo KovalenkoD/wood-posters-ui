@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
+import {ProductService} from "../../../services/product.service";
+import {Bundle} from "../../../model/bundle";
 
 @Component({
   selector: 'app-popular-collections',
@@ -8,70 +10,16 @@ import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
 })
 export class PopularCollectionsComponent implements OnInit {
 
-  constructor() { }
+  private collections: Bundle[];
 
-  public carouselSecond: NgxCarousel
+  constructor(private productService : ProductService) { }
+
+
+
+  public carouselSecond: NgxCarousel;
 
   currentSlide: number = 1;
-  collections: any = [
-    {
-      name: '',
-      category: '',
-      link: '',
-      image: 'https://walldeco.ua/img/for_page/poster5.jpg',
-      products: [
-        {
-          category: 'Постеры',
-          image: 'https://media.istockphoto.com/vectors/poster-mock-up-on-the-brick-wall-vector-id480850848',
-          name: 'London Calling',
-          price: '450 Грн.',
-          link: 'qweqwe',
-          position: {
-            left: '73%',
-            top: '13%'
-          }
-        },{
-          category: 'Постеры',
-          image: 'https://media.istockphoto.com/vectors/poster-mock-up-on-the-brick-wall-vector-id480850848',
-          name: 'London Calling',
-          price: '450 Грн.',
-          link: 'qweqwe',
-          position: {
-            left: '50%',
-            top: '56%'
-          }
-        }
-      ],
-    }, {
-      name: '',
-      category: '',
-      link: '',
-      image: 'https://iss.zillowstatic.com/image/traditional-living-room-with-crown-molding-i_g-IS5uy0dsrc66201000000000-godOy.jpg',
-      products: [
-        {
-          category: 'Постеры',
-          image: 'https://media.istockphoto.com/vectors/poster-mock-up-on-the-brick-wall-vector-id480850848',
-          name: 'London Calling',
-          price: '450 Грн.',
-          link: 'qweqwe',
-          position: {
-            left: '73%',
-            top: '13%'
-          }
-        },{
-          category: 'Постеры',
-          image: 'https://media.istockphoto.com/vectors/poster-mock-up-on-the-brick-wall-vector-id480850848',
-          name: 'London Calling',
-          price: '450 Грн.',
-          link: 'qweqwe',
-          position: {
-            left: '50%',
-            top: '56%'
-          }
-        }
-      ],
-    }
-  ]
+
 
   ngOnInit() {
     this.carouselSecond = {
@@ -87,11 +35,21 @@ export class PopularCollectionsComponent implements OnInit {
         loop: true,
         custom: 'banner'
       }
+    this.getMostPopularBundle();
   }
 
   onmoveFn(data: NgxCarouselStore) {
     console.log(data);
     this.currentSlide = data.currentSlide + 1;
+  }
+
+  getMostPopularBundle() {
+    this.productService.getMostPopularBundle(this.productService.popularType)
+      .subscribe(
+        collections => this.collections = collections,
+        err => {
+          console.log(err);
+        });
   }
 
 }

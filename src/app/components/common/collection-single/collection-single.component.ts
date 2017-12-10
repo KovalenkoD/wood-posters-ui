@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Bundle} from "../../../model/bundle";
 
 @Component({
   selector: 'app-collection-single',
@@ -9,8 +10,8 @@ export class CollectionSingleComponent implements OnInit {
 
   constructor() { }
 
-  @Input() collection: {}
-  @Input() reverse: number
+  @Input() collection: Bundle;
+  @Input() reverse: number;
 
   ngOnInit() {
   }
