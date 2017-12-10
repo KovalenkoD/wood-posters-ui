@@ -24,7 +24,7 @@ import { Parallax, ParallaxConfig } from 'ngx-parallax';
 import { CartService } from './services/cart.service';
 import { ProductTypeService } from './services/product-type.service';
 import { ProductService } from './services/product.service';
-
+import { SearchService } from './services/search.service';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
@@ -155,7 +155,7 @@ const appRoutes: Routes = [
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService,ProductTypeService, ProductService
+    CartService,ProductTypeService, ProductService,SearchService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]
