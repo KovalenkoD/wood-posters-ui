@@ -41,11 +41,11 @@
     </ul>
     <div class="product-details__buttons">
       <div class="product-details__counter">
-        <button>-</button>
-        <input value="1" type="text">
-        <button>+</button>
+        <button [disabled]="isMinusDisabled()" (click)="changeProductCountMinus()">-</button>
+        <input  value="{{productCount}}" type="text">
+        <button (click)="changeProductCountPlus()">+</button>
       </div>
-      <button class="button product-details__button">В корзину</button>
+      <button class="button product-details__button" (click)="addProductToCart(product)">В корзину</button>
     </div>
     <div class="product-details__share">
       <div class="product-details__share-text">Поделиться</div>

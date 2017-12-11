@@ -1,18 +1,21 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import { WallGalleryPopupComponent } from '../wall-gallery-popup/wall-gallery-popup.component';
 import {Product} from "../../../model/product";
+import {CartService} from "../../../services/cart.service";
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit, OnChanges {
 
   @Input() product : Product;
 
-  constructor(public dialog: MatDialog) { }
+  productCount:number = 1;
+
+  constructor(public dialog: MatDialog, private cartService: CartService) { }
 
   public wallGallery: any = {
     images: [
@@ -27,10 +30,31 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+
+  ngOnChanges() {
+    this.productCount = 1;
   }
 
   isNotEmptyObject(obj:any): boolean {
     return obj != null && obj;
+  }
+
+  isMinusDisabled() : boolean {
+    return this.productCount <= 1;
+  }
+
+  changeProductCountMinus() : void {
+    this.productCount = this.productCount - 1;
+  }
+
+  changeProductCountPlus() : void {
+    this.productCount = this.productCount + 1;
+  }
+
+  addProductToCart(product:Product): void {
+    this.cartService.addProductToCart(product, this.productCount);
   }
 
   openDialog(): void {
