@@ -8,7 +8,7 @@
       <div class="collection-single__category">Коллекция</div>
       <div class="collection-single__name">{{collection.name}}</div>
       <div class="collection-single__button">
-        <button class="button">Все в корзину</button>
+        <button class="button" (click)="addProductToCart(collection)">Все в корзину</button>
       </div>
       <div class="collection-single__to-product">
         <a routerLink="/category">{{collection.childItems.length}} товара<i class="fa fa-angle-right"></i></a>

@@ -54,7 +54,7 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
   }
 
   addProductToCart(product:Product): void {
-    this.cartService.addProductToCart(product, this.productCount);
+    this.cartService.addProductToCart(product.id, this.productCount);
   }
 
   openDialog(): void {

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Bundle} from "../../../model/bundle";
+import {CartService} from "../../../services/cart.service";
 
 @Component({
   selector: 'app-collection-single',
@@ -8,12 +9,16 @@ import {Bundle} from "../../../model/bundle";
 })
 export class CollectionSingleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   @Input() collection: Bundle;
   @Input() reverse: number;
 
   ngOnInit() {
+  }
+
+  addProductToCart(product:Bundle): void {
+    this.cartService.addProductToCart(product.id, 1);
   }
 
 }

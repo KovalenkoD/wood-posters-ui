@@ -38,8 +38,8 @@ export class CartService {
     return this.opened;
   }
 
-  addProductToCart(product:Product, count: number) : void {
-    this.http.get(this.addItemsToCartUrl + "/" + product.id + "/" + count, { withCredentials: true }).subscribe(data => {
+  addProductToCart(id:number, count: number) : void {
+    this.http.get(this.addItemsToCartUrl + "/" + id + "/" + count, { withCredentials: true }).subscribe(data => {
       this.cartResult = new CartResult(data['count'], data['cartItems'], data['fullPrice']);
       this.cartResultChanges.emit(this.cartResult);
     });
