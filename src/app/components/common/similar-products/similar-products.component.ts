@@ -1,13 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface Product {
- name?: string,
- price?: string,
- category?: string,
- image?: string,
- link: string,
- background: string
-}
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from "../../../model/product";
 
 @Component({
   selector: 'app-similar-products',
@@ -16,11 +8,10 @@ export interface Product {
 })
 export class SimilarProductsComponent implements OnInit {
 
-  constructor() { }
+  @Input() products : Product[];
 
-  products: Product[] = [];
+  constructor() { }
 
   ngOnInit() {
   }
-
 }

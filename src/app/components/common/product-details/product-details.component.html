@@ -3,20 +3,11 @@
     <div class="product-details__image-main">
       <img src="{{product.image}}" alt="">
       <button class="product-details__image-open-gallery"></button>
-      <button class="product-details__image-on-wall" (click)="openDialog()">Показать на стене</button>
+      <button class="product-details__image-on-wall" *ngIf="product.imagePresentation == 1" (click)="openDialog()">Показать на стене</button>
     </div>
-    <div class="product-details__images">
-      <div class="product-details__images-item">
-        <img src="https://trikon.kiev.ua/sites/default/files/shkatulka-kolets-orex-6.jpg" alt="">
-      </div>
-      <div class="product-details__images-item">
-        <img src="https://trikon.kiev.ua/sites/default/files/shkatulka-kolets-orex-6.jpg" alt="">
-      </div>
-      <div class="product-details__images-item">
-        <img src="https://trikon.kiev.ua/sites/default/files/shkatulka-kolets-orex-6.jpg" alt="">
-      </div>
-      <div class="product-details__images-item">
-        <img src="https://trikon.kiev.ua/sites/default/files/shkatulka-kolets-orex-6.jpg" alt="">
+    <div class="product-details__images" *ngIf="product.imagePresentation == 0">
+      <div class="product-details__images-item" *ngFor="let image of product.images">
+        <img [src]="image" alt="">
       </div>
 
       <div class="product-details__images-show-more">+8</div>

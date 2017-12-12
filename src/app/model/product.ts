@@ -14,6 +14,8 @@ export class Product {
     public productType: ProductType,
     public technologies: [Technology],
     public categories: [Category],
-    public materials: [Material]
+    public materials: [Material],
+    public images: [string],
+    public imagePresentation: number
   ){}
 }

@@ -12,6 +12,7 @@ import {CartService} from "../../../services/cart.service";
 export class ProductDetailsComponent implements OnInit, OnChanges {
 
   @Input() product : Product;
+  @Input() products : Product[];
 
   productCount:number = 1;
 
@@ -57,7 +58,23 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
     this.cartService.addProductToCart(product.id, this.productCount);
   }
 
+  sortProductArrayBasedOnCurrentProduct() : Product[]{
+    let clonedProducts = this.products.map(x => Object.assign({}, x));
+    let that = this;
+    clonedProducts.sort(function(a, b){
+      if (a.id == that.product.id){
+        return 1;
+      } else if ( b.id == that.product.id){
+        return 1;
+      }
+      return 0;
+    });
+    return clonedProducts;
+  }
+
   openDialog(): void {
+    this.wallGallery.product = this.product;
+    this.wallGallery.products = this.sortProductArrayBasedOnCurrentProduct();
     let dialogRef = this.dialog.open(WallGalleryPopupComponent, {
       width: '100vw',
       height: '100vh',

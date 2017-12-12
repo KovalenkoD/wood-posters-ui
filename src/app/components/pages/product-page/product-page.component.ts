@@ -10,6 +10,7 @@ import {Product} from "../../../model/product";
 })
 export class ProductPageComponent implements OnInit, OnDestroy {
   product : Product;
+  products : Product[];
   id: number;
   private sub: any;
 
@@ -17,6 +18,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
     this.id = +params['id'];
     this.loadProductById(this.id);
+    this.getRelatedProducts(this.id);
   }); }
 
   ngOnInit() {
@@ -26,6 +28,15 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     this.productService.getProductById(id)
       .subscribe(
         product => this.product = product,
+        err => {
+          console.log(err);
+        });
+  }
+
+  getRelatedProducts(id:number) {
+    this.productService.getRelatedProducts(id)
+      .subscribe(
+        products => this.products = products,
         err => {
           console.log(err);
         });

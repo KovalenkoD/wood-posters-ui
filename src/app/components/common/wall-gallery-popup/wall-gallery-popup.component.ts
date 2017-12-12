@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
+import {Router} from "@angular/router";
+import {Product} from "../../../model/product";
 
 
 @Component({
@@ -10,7 +12,7 @@ import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
 })
 export class WallGalleryPopupComponent implements OnInit {
 
-  constructor(
+  constructor(public router: Router,
     public dialogRef: MatDialogRef<WallGalleryPopupComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
@@ -42,6 +44,11 @@ export class WallGalleryPopupComponent implements OnInit {
 
   onCloseClick(): void {
     this.dialogRef.close();
+  }
+
+  selectProduct(product:Product) : void {
+    this.onCloseClick();
+    this.router.navigate(["/product", product.id]);
   }
 
 

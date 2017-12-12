@@ -9,11 +9,12 @@
       (onMove)="onmoveFn($event)"
       >
         <ngx-item
-          *ngFor="let image of data.images"
+          *ngFor="let product of data.products"
           NgxCarouselItem
         >
           <div class="wall-gallery-popup__carousel-item">
-            <img src="{{image}}" alt="">
+            <img src="{{product.image}}" alt="">
+            <div (click)="selectProduct(product)" [ngStyle]="{'background-color': '#f9f9f9'}">Выбрать</div>
           </div>
         </ngx-item>
         <button NgxCarouselPrev class='leftRs wall-gallery-popup__left'><i class="fa fa-angle-left" aria-hidden="true"></i></button>

@@ -21,7 +21,7 @@ export class NavigationComponent implements OnInit {
   }
 
   loadProductTypes() {
-    this.productTypeService.getAllProductTypes()
+    this.productTypeService.getAllVisibleProductTypes()
       .subscribe(
         productTypes => this.productTypes = productTypes,
         err => {

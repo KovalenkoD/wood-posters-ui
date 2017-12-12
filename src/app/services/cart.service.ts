@@ -39,37 +39,37 @@ export class CartService {
   }
 
   addProductToCart(id:number, count: number) : void {
-    this.http.get(this.addItemsToCartUrl + "/" + id + "/" + count, { withCredentials: true }).subscribe(data => {
-      this.cartResult = new CartResult(data['count'], data['cartItems'], data['fullPrice']);
+    this.http.get<CartResult>(this.addItemsToCartUrl + "/" + id + "/" + count, { withCredentials: true }).subscribe(data => {
+      this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
   }
 
   changeCountOfItemsFromCart(product:Product, count: number) : void {
-    this.http.get(this.changeCountOfItemsFromCartUrl + "/" + product.id + "/" + count, { withCredentials: true }).subscribe(data => {
-      this.cartResult = new CartResult(data['count'], data['cartItems'], data['fullPrice']);
+    this.http.get<CartResult>(this.changeCountOfItemsFromCartUrl + "/" + product.id + "/" + count, { withCredentials: true }).subscribe(data => {
+      this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
 
   }
 
   deleteProductFromCart(product:Product) : void {
-    this.http.get(this.deleteOrdersFormCartUrl + "/" + product.id, { withCredentials: true }).subscribe(data => {
-      this.cartResult = new CartResult(data['count'], data['cartItems'], data['fullPrice']);
+    this.http.get<CartResult>(this.deleteOrdersFormCartUrl + "/" + product.id, { withCredentials: true }).subscribe(data => {
+      this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
   }
 
   cleanCart() : void {
-    this.http.get(this.cleanCartUrl, { withCredentials: true }).subscribe(data => {
-      this.cartResult = new CartResult(data['count'], data['cartItems'], data['fullPrice']);
+    this.http.get<CartResult>(this.cleanCartUrl, { withCredentials: true }).subscribe(data => {
+      this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
   }
 
   getSalesOrderInfo() : void {
-    this.http.get(this.getSalesOrderInfoUrl, { withCredentials: true }).subscribe(data => {
-      this.cartResult = new CartResult(data['count'], data['cartItems'], data['fullPrice']);
+    this.http.get<CartResult>(this.getSalesOrderInfoUrl, { withCredentials: true }).subscribe(data => {
+      this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
   }

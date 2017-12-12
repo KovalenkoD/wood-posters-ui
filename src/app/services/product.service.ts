@@ -19,6 +19,7 @@ export class ProductService {
   private mostPopularProductsByTypeUrl = 'http://localhost:8080/products/getMostPopularProducts';
   private mostPopularBundleByTypeUrl = 'http://localhost:8080/products/getMostPopularBundle';
   private allBundlesUrl = 'http://localhost:8080/products/getAllBundles';
+  private relatedProductsUrl = 'http://localhost:8080/products/getRelatedProducts';
 
 
 
@@ -28,6 +29,12 @@ export class ProductService {
       return this.http.get(this.productUrl + "/" + id)
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  getRelatedProducts(id:number) : Observable<Product[]> {
+    return this.http.get(this.relatedProductsUrl + "/" + id)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getMostPopularProductsByType(popularType:number) : Observable<Product[]> {
