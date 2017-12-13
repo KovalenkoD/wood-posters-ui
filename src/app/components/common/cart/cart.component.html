@@ -1,40 +1,40 @@
-<div class="cart"
+<div class="cart" *ngIf="cartResult"
      [ngClass]="{'_opened' : isOpened}"
 >
   <i class="cart__close"
      (click)="onCartClose()"
   ></i>
   <div class="cart__header">
-    <div class="cart__title">Корзина <span class="cart__count">{{products.length}}</span></div>
+    <div class="cart__title">Корзина <span class="cart__count">{{cartResult.count}}</span></div>
     <div class="cart__clear">
-      <button>Очистить</button>
+      <button (click)="cleanCart()">Очистить</button>
     </div>
   </div>
   <perfect-scrollbar [config]="config" style="max-height: calc(100vh - 243px);">
   <div class="cart__body">
     <div class="cart__products">
       <div class="cart__product"
-             *ngFor="let product of products"
+             *ngFor="let cartItem of cartResult.cartItems"
       >
         <a
           class="cart__product-img"
-          routerLink="/product"
-          [ngStyle]="{'background-color': product.background }"
+          [routerLink]="['/product', cartItem.product.id]"
+          [ngStyle]="{'background-color': '#faf4f1'}"
         >
-          <img src="{{product.image}}" alt="">
+          <img src="{{cartItem.product.image}}" alt="">
         </a>
         <div class="cart__product-info">
           <div class="cart__product-top">
-            <div class="cart__product-name">{{product.name}}</div>
-            <div class="cart__product-price">{{product.price}}</div>
+            <div class="cart__product-name">{{cartItem.product.name}}</div>
+            <div class="cart__product-price">{{cartItem.calculatedPrice}}</div>
           </div>
           <div class="cart__product-bot">
             <div class="cart__product-counter">
-              <button class="cart__product-counter-plus"><i class="fa fa-minus" aria-hidden="true"></i></button>
-              <input type="text" value="1" class="cart__product-counter-input">
-              <button class="cart__product-counter-minus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+              <button class="cart__product-counter-plus" (click)="changeProductCountMinus(cartItem)" [disabled]="isMinusDisabled(cartItem)"><i class="fa fa-minus" aria-hidden="true"></i></button>
+              <input type="text" value="{{cartItem.count}}" class="cart__product-counter-input">
+              <button class="cart__product-counter-minus" (click)="changeProductCountPlus(cartItem)"><i class="fa fa-plus" aria-hidden="true"></i></button>
             </div>
-            <div class="cart__product-remove">
+            <div class="cart__product-remove" (click)="deleteItem(cartItem.product)">
               <button><img src="assets/images/icon-trash.svg" alt=""></button>
             </div>
           </div>
@@ -46,7 +46,7 @@
   <div class="cart__footer">
     <div class="cart__footer-top">
       <div class="cart__footer-title">Итого</div>
-      <div class="cart__footer-total">3885 грн.</div>
+      <div class="cart__footer-total">{{cartResult.fullPrice}} грн.</div>
     </div>
     <div class="cart__footer-order">
       <button class="button _wide">Оформить</button>

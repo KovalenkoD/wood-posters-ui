@@ -7,9 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FilterPanelComponent implements OnInit {
 
+  hiddenSection: boolean;
+
   constructor() { }
 
   ngOnInit() {
+    this.hiddenSection = true;
   }
 
+  showFilters (event) {
+    this.hiddenSection = false;
+  }
 }

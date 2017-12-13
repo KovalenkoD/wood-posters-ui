@@ -3,8 +3,8 @@
     <div class="search__request">
       <div class="search__title">Поиск</div>
       <div class="search__request-form">
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-          <input name="first" placeholder="Вы ищите…" ngModel #first="ngModel">
+        <form #myForm="ngForm"  (ngSubmit)="getFullSearchResult()" novalidate>
+          <input name="search" placeholder="Вы ищите…" [(ngModel)]="search">
         </form>
       </div>
     </div>

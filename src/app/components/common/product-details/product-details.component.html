@@ -1,43 +1,42 @@
-<div class="product-details">
+<div class="product-details" *ngIf="product">
   <div class="product-details__image">
     <div class="product-details__image-main">
-      <img src="assets/images/fcba79ebde14ddf33065b3c144644696.jpg" alt="">
+      <img src="{{product.image}}" alt="">
       <button class="product-details__image-open-gallery"></button>
-      <button class="product-details__image-on-wall" (click)="openDialog()">Показать на стене</button>
+      <button class="product-details__image-on-wall" *ngIf="product.imagePresentation == 1" (click)="openDialog()">Показать на стене</button>
     </div>
-    <div class="product-details__images">
-      <div class="product-details__images-item">
-        <img src="https://trikon.kiev.ua/sites/default/files/shkatulka-kolets-orex-6.jpg" alt="">
-      </div>
-      <div class="product-details__images-item">
-        <img src="https://trikon.kiev.ua/sites/default/files/shkatulka-kolets-orex-6.jpg" alt="">
-      </div>
-      <div class="product-details__images-item">
-        <img src="https://trikon.kiev.ua/sites/default/files/shkatulka-kolets-orex-6.jpg" alt="">
-      </div>
-      <div class="product-details__images-item">
-        <img src="https://trikon.kiev.ua/sites/default/files/shkatulka-kolets-orex-6.jpg" alt="">
+    <div class="product-details__images" *ngIf="product.imagePresentation == 0">
+      <div class="product-details__images-item" *ngFor="let image of product.images">
+        <img [src]="image" alt="">
       </div>
 
       <div class="product-details__images-show-more">+8</div>
     </div>
   </div>
   <div class="product-details__info">
-    <div class="product-details__category">Постеры</div>
-    <div class="product-details__name">"Costa Rica"</div>
-    <div class="product-details__price">700 грн.</div>
+    <div class="product-details__category">{{product.productType.name}}</div>
+    <div class="product-details__name">{{product.name}}</div>
+    <div class="product-details__price">{{product.price}} грн.</div>
     <ul class="product-details__params">
-      <li class="product-details__param"><strong>Размер</strong> <span>145 x 145 x 70</span></li>
-      <li class="product-details__param"><strong>Техника</strong> <span>Декупаж, Состаривание</span></li>
-      <li class="product-details__param"><strong>Материал</strong> <span>МДФ</span></li>
+      <li class="product-details__param"><strong>Размер</strong> <span>{{product.size}}</span></li>
+      <li class="product-details__param"><strong>Техника</strong>
+        <span *ngFor="let technology of product.technologies; let isLast=last">
+            {{technology.name}}{{isLast ? '' : ', '}}
+        </span>
+      </li>
+      <li class="product-details__param"><strong>Материал</strong>
+        <span *ngFor="let material of product.materials; let isLast=last">
+            {{material.name}}{{isLast ? '' : ', '}}
+        </span>
+      </li>
     </ul>
     <div class="product-details__buttons">
       <div class="product-details__counter">
-        <button>-</button>
-        <input value="1" type="text">
-        <button>+</button>
+        <button [disabled]="isMinusDisabled()" (click)="changeProductCountMinus()">-</button>
+        <input  value="{{productCount}}" type="text">
+        <button (click)="changeProductCountPlus()">+</button>
       </div>
-      <button class="button product-details__button">В корзину</button>
+      <button class="button product-details__button" (click)="addProductToCart(product)">В корзину</button>
     </div>
     <div class="product-details__share">
       <div class="product-details__share-text">Поделиться</div>
@@ -49,7 +48,7 @@
       </div>
     </div>
     <div class="product-details__description">
-      <p>Шкатулка – это удобная и практичная вещица для хранения драгоценностей и бижутерии, денег, всевозможный мелочей.</p>
+      <p>{{product.description}}</p>
       <div class="product-details__description-toggle">+ Еще</div>
     </div>
   </div>

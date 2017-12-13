@@ -2,21 +2,19 @@
   [ngClass]="{'_reverse' : reverse%2===0}"
 >
     <div class="collection-single__img">
-      <app-interactive-image [image]="collection.image" [products]="collection.products"></app-interactive-image>
+      <app-interactive-image  [collection]="collection"></app-interactive-image>
     </div>
     <div class="collection-single__info">
       <div class="collection-single__category">Коллекция</div>
-      <div class="collection-single__name">The English Breakfast</div>
+      <div class="collection-single__name">{{collection.name}}</div>
       <div class="collection-single__button">
-        <button class="button">Все в корзину</button>
+        <button class="button" (click)="addProductToCart(collection)">Все в корзину</button>
       </div>
       <div class="collection-single__to-product">
-        <a routerLink="/category">{{collection.products.length}} товара<i class="fa fa-angle-right"></i></a>
+        <a routerLink="/category">{{collection.childItems.length}} товара<i class="fa fa-angle-right"></i></a>
       </div>
       <div class="collection-single__description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Adipisci amet, consequatur, consequuntur deleniti
-        doloremque dolorum eaque enim ex expedita inventore
+       {{collection.description}}
       </div>
     </div>
 </div>

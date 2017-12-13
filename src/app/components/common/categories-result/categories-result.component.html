@@ -1,0 +1,11 @@
+<div class="filter-result">
+  <div class="filter-panel__category">Каталог</div>
+  <div class="filter-result__container">
+    <div class="product-grid">
+      <app-category-single
+        *ngFor="let productType of productTypes"
+        [productType]="productType"
+      ></app-category-single>
+    </div>
+  </div>
+</div>

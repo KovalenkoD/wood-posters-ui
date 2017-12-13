@@ -1,26 +1,26 @@
 <div class="interactive-image">
   <div class="interactive-image__img">
-    <img src="{{image}}" alt="">
+    <img src="{{collection.bundleImage}}" alt="">
   </div>
   <div
-    *ngFor="let product of products"
+    *ngFor="let childItem of collection.childItems"
     class="interactive-image__dot"
-    [class.active]="product.active"
-    [ngStyle]=product.position
-    (click)="onToggleHint(product)"
+    [class.active]="isActive(childItem)"
+    [ngStyle]="getPosition(childItem)"
+    (click)="onToggleHint(childItem)"
   >
     <div
-      *ngIf="product.active"
+      *ngIf="isActive(childItem)"
       class="interactive-image__hint"
     >
-      <div class="interactive-image__hint-category">{{product.category}}</div>
+      <div class="interactive-image__hint-category">{{childItem.product.category}}</div>
       <div class="interactive-image__hint-image">
-        <img src="{{product.image}}" alt="">
+        <img src="{{childItem.product.image}}" alt="">
       </div>
-      <div class="interactive-image__hint-name">{{product.name}}</div>
-      <div class="interactive-image__hint-price">{{product.price}}</div>
+      <div class="interactive-image__hint-name">{{childItem.product.name}}</div>
+      <div class="interactive-image__hint-price">{{childItem.product.price}} Грн.</div>
       <div class="interactive-image__hint-button">
-        <button routerLink="{{product.link}}" class="button _wider">Купить</button>
+        <button [routerLink]="['/product', childItem.product.id]" class="button _wider">Купить</button>
       </div>
     </div>
   </div>

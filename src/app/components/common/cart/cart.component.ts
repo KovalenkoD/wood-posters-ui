@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
+import {CartResult} from "../../../model/cart-result";
+import {Product} from "../../../model/product";
+import {CartItem} from "../../../model/cart-item";
 
-export interface Product {
- name?: string,
- price?: string,
- category?: string,
- image?: string,
- link: string,
- background: string
-}
 
 @Component({
   selector: 'app-cart',
@@ -17,148 +12,48 @@ export interface Product {
 })
 export class CartComponent implements OnInit {
 
-  constructor(private cartService: CartService) { }
+  isOpened: boolean;
 
-  isOpened: boolean = this.cartService.opened;
+  cartResult:CartResult;
 
-  products: Product[] = [
-    {
-      name: 'Белое дерево1',
-      category: 'Фонарики',
-      price: '300 грн.',
-      link: '/category',
-      image: 'http://omegatea.ru/img/big/522000.png',
-      background: '#f9f9f9'
-    },{
-      name: 'Route 66',
-      category: 'Постеры',
-      price: '320 грн.',
-      link: '/category',
-      image: 'http://лавкажеланий.рф/images/11shk.png',
-      background: '#fcf1f1'
-    },{
-      name: 'Rome',
-      category: 'Шкатулки',
-      price: '530 грн.',
-      link: '/category',
-      image: 'http://лавкажеланий.рф/images/11shk.png',
-      background: '#faf4f1'
-    },{
-      name: 'Белое дерево1',
-      category: 'Фонарики',
-      price: '300 грн.',
-      link: '/category',
-      image: 'http://omegatea.ru/img/big/522000.png',
-      background: '#f9f9f9'
-    },{
-      name: 'Route 66',
-      category: 'Постеры',
-      price: '320 грн.',
-      link: '/category',
-      image: 'http://лавкажеланий.рф/images/11shk.png',
-      background: '#fcf1f1'
-    },{
-      name: 'Rome',
-      category: 'Шкатулки',
-      price: '530 грн.',
-      link: '/category',
-      image: 'http://лавкажеланий.рф/images/11shk.png',
-      background: '#faf4f1'
-    },
-    {
-          name: 'Белое дерево1',
-          category: 'Фонарики',
-          price: '300 грн.',
-          link: '/category',
-          image: 'http://omegatea.ru/img/big/522000.png',
-          background: '#f9f9f9'
-        },{
-          name: 'Route 66',
-          category: 'Постеры',
-          price: '320 грн.',
-          link: '/category',
-          image: 'http://лавкажеланий.рф/images/11shk.png',
-          background: '#fcf1f1'
-        },{
-          name: 'Rome',
-          category: 'Шкатулки',
-          price: '530 грн.',
-          link: '/category',
-          image: 'http://лавкажеланий.рф/images/11shk.png',
-          background: '#faf4f1'
-        },{
-          name: 'Белое дерево1',
-          category: 'Фонарики',
-          price: '300 грн.',
-          link: '/category',
-          image: 'http://omegatea.ru/img/big/522000.png',
-          background: '#f9f9f9'
-        },{
-          name: 'Route 66',
-          category: 'Постеры',
-          price: '320 грн.',
-          link: '/category',
-          image: 'http://лавкажеланий.рф/images/11shk.png',
-          background: '#fcf1f1'
-        },{
-          name: 'Rome',
-          category: 'Шкатулки',
-          price: '530 грн.',
-          link: '/category',
-          image: 'http://лавкажеланий.рф/images/11shk.png',
-          background: '#faf4f1'
-        },
-    {
-          name: 'Белое дерево1',
-          category: 'Фонарики',
-          price: '300 грн.',
-          link: '/category',
-          image: 'http://omegatea.ru/img/big/522000.png',
-          background: '#f9f9f9'
-        },{
-          name: 'Route 66',
-          category: 'Постеры',
-          price: '320 грн.',
-          link: '/category',
-          image: 'http://лавкажеланий.рф/images/11shk.png',
-          background: '#fcf1f1'
-        },{
-          name: 'Rome',
-          category: 'Шкатулки',
-          price: '530 грн.',
-          link: '/category',
-          image: 'http://лавкажеланий.рф/images/11shk.png',
-          background: '#faf4f1'
-        },{
-          name: 'Белое дерево1',
-          category: 'Фонарики',
-          price: '300 грн.',
-          link: '/category',
-          image: 'http://omegatea.ru/img/big/522000.png',
-          background: '#f9f9f9'
-        },{
-          name: 'Route 66',
-          category: 'Постеры',
-          price: '320 грн.',
-          link: '/category',
-          image: 'http://лавкажеланий.рф/images/11shk.png',
-          background: '#fcf1f1'
-        },{
-          name: 'Rome',
-          category: 'Шкатулки',
-          price: '530 грн.',
-          link: '/category',
-          image: 'http://лавкажеланий.рф/images/11shk.png',
-          background: '#faf4f1'
-        }
-  ];
+  constructor(private cartService: CartService) {
+    cartService.cardIsOpenedChanges.subscribe(item => this.isOpened = item);
+    cartService.cartResultChanges.subscribe(cartResult => this.cartResult = cartResult);
+  }
+
 
   ngOnInit() {
+    this.isOpened = this.cartService.isOpenCart();
   }
 
   onCartClose(): void {
     this.cartService.closeCart();
-    this.isOpened = this.cartService.opened;2
+  }
+
+  deleteItem(product:Product): void {
+    this.cartService.deleteProductFromCart(product);
+  }
+
+  cleanCart(): void {
+    this.cartService.cleanCart();
+  }
+
+  isMinusDisabled(cartItem: CartItem) : boolean {
+    return cartItem.count <= 1;
+  }
+
+  changeProductCountMinus(cartItem: CartItem) : void {
+    let newCount = cartItem.count - 1;
+    this.changeProductCount(cartItem.product, newCount);
+  }
+
+  changeProductCountPlus(cartItem: CartItem) : void {
+    let newCount = cartItem.count + 1;
+    this.changeProductCount(cartItem.product, newCount);
+  }
+
+  changeProductCount(product:Product, count: number) : void {
+    this.cartService.changeCountOfItemsFromCart(product, count);
   }
 
 }
