@@ -1,0 +1,20 @@
+<div class="simple-category-container">
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProductType.nameRU" placeholder="Введите Название Катигории RU">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProductType.nameEN" placeholder="Введите Название Катигории EN">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProductType.nameUA" placeholder="Введите Название Катигории UA">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProductType.imageURL" placeholder="Введите URL рисунка">
+  </mat-form-field>
+
+  <button mat-button (click)="createOrUpdateCategory(adminProductType.id)" color="primary">Создать</button>
+</div>

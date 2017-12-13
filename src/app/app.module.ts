@@ -19,6 +19,10 @@ import {
   MatExpansionModule,
   MatDialogModule
 } from '@angular/material';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 import { Parallax, ParallaxConfig } from 'ngx-parallax';
 
 import { CartService } from './services/cart.service';
@@ -59,6 +63,10 @@ import { ProductDetailsComponent } from './components/common/product-details/pro
 import { SimilarProductsComponent } from './components/common/similar-products/similar-products.component';
 import { WallGalleryPopupComponent } from './components/common/wall-gallery-popup/wall-gallery-popup.component';
 import {CategoriesPageComponent} from "./components/pages/categories-page/categories-page.component";
+import { AdminPageComponent } from './components/pages/admin-page/admin-page.component';
+import { CategoriesComponent } from './components/common/admin/categories/categories.component';
+import { SingleCategoryComponent } from './components/common/admin/categories/single-category/single-category.component';
+import { CurrentCategoriesComponent } from './components/common/admin/categories/current-categories/current-categories.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -89,6 +97,9 @@ const appRoutes: Routes = [
   },
   { path: 'category/:id',
     component: CategoryPageComponent
+  },
+  { path: 'admin',
+    component: AdminPageComponent
   },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -129,6 +140,10 @@ const appRoutes: Routes = [
     ProductDetailsComponent,
     SimilarProductsComponent,
     WallGalleryPopupComponent,
+    AdminPageComponent,
+    CategoriesComponent,
+    SingleCategoryComponent,
+    CurrentCategoriesComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -148,6 +163,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatExpansionModule,
     MatDialogModule,
+    MatTabsModule,
+    MatFormFieldModule,
     NguiStickyModule
   ],
   providers: [
