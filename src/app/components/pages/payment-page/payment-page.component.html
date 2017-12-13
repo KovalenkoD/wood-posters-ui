@@ -1,4 +1,128 @@
-<div class="container">
-  <h1>PAYMENT PAGE</h1>
+<div class="payment-page">
+  <div class="container payment-page__container">
+    <form class="payment-page__form">
+      <div class="payment-page__form-row">
+        <h2 class="payment-page__title">Информация о покупателе</h2>
+        <div class="payment-page__form-inner">
+          <div class="input payment-page__form-input">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Имя" [(ngModel)]="person.name" name="name">
+            </mat-form-field>
+          </div>
+          <div class="input payment-page__form-input">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Фамилия" [(ngModel)]="person.firstname" name="name">
+            </mat-form-field>
+          </div>
+          <div class="input payment-page__form-input">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Емейл" [(ngModel)]="person.email" name="name">
+            </mat-form-field>
+          </div>
+          <div class="input payment-page__form-input">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Телефон" [(ngModel)]="person.phone" name="name">
+            </mat-form-field>
+          </div>
+          <div class="payment-page__form-subscribe">
+            <mat-checkbox class="example-margin" name="subscribe" [(ngModel)]="checked">Подписаться на рассылку</mat-checkbox>
+          </div>
+        </div>
+      </div>
+      <div class="payment-page__form-row">
+        <h2 class="payment-page__title">Доставка и оплата</h2>
+        <div class="payment-page__form-inner">
+          <div class=" payment-page__form-input _select">
+            <mat-form-field>
+              <mat-select placeholder="Способ доставки" [(ngModel)]="selectedValue1" name="payment">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let method of payment.methods" [value]="method">
+                  {{method}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class=" payment-page__form-input _select">
+            <mat-form-field>
+              <mat-select placeholder="Отделение" [(ngModel)]="selectedValue2" name="payment">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let department of payment.departments" [value]="department">
+                  {{department}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class=" payment-page__form-input _select">
+            <mat-form-field>
+              <mat-select placeholder="Способ оплаты" [(ngModel)]="selectedValue3" name="payment">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let way of payment.ways" [value]="way">
+                  {{way}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="payment-page__form-row">
+        <div class="payment-page__form-buttons">
+          <a class="payment-page__form-back">
+            <i class="fa fa-angle-left"></i>
+            <span>Вернуться к покупкам</span>
+          </a>
+          <button class="button payment-page__form-submit">Заказать</button>
+        </div>
+      </div>
+    </form>
+    <div class="payment-page__order">
+      <h2 class="payment-page__title">Ваш Заказ <span>6</span></h2>
+      <perfect-scrollbar [config]="config" style="max-height: 460px;">
+      <div class="payment-page__products">
+        <div *ngFor="let item of [1,2,3,4,5,6,7,8,9]" class="payment-page__product">
+          <a
+            class="payment-page__product-img"
+            routerLink="/product"
+            [ngStyle]="{'background-color' : '#fffef0' }"
+          >
+            <img src="http://лавкажеланий.рф/images/11shk.png" alt="">
+          </a>
+          <div class="payment-page__product-info">
+            <div class="payment-page__product-top">
+              <div class="payment-page__product-name">Шкатулка</div>
+              <div class="payment-page__product-price">350грн</div>
+            </div>
+            <div class="payment-page__product-bot">
+              <div class="payment-page__product-counter">
+                <button class="payment-page__product-counter-plus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                <input type="text" value="1" class="payment-page__product-counter-input">
+                <button class="payment-page__product-counter-minus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+              </div>
+              <div class="payment-page__product-remove">
+                <button><img src="assets/images/icon-trash.svg" alt=""></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </perfect-scrollbar>
+      <div class="payment-page__promo">
+        <div class="input">
+          <input type="text" placeholder="Введите Промо Код" class="payment-page__promo-input">
+        </div>
+        <button class="button _gray payment-page__promo-btn">Применить</button>
+      </div>
+      <div class="payment-page__price">
+        <div class="payment-page__price-title">Стоимость</div>
+        <div class="payment-page__price-num">3885 грн.</div>
+      </div>
+      <div class="payment-page__price">
+        <div class="payment-page__price-title">Стоимость</div>
+        <div class="payment-page__price-num">3885 грн.</div>
+      </div>
+      <div class="payment-page__price _bold">
+        <div class="payment-page__price-title">Стоимость</div>
+        <div class="payment-page__price-num">3885 грн.</div>
+      </div>
+    </div>
+  </div>
 </div>
-

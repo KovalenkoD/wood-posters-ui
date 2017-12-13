@@ -100,6 +100,17 @@ body perfect-scrollbar>.ps.ps--active-y>.ps__rail-y {
   .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder {
     transform: translateY(-13px) scale(.85) perspective(100px) translateZ(.001px);
   }
+
+  input {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 1px $gray-e7;
+    font-size: 14px;
+    color: $black;
+    padding: 5px 12px;
+  }
 }
 
 div.mat-checkbox-frame,

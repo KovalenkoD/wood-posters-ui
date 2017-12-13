@@ -25,6 +25,16 @@
     padding: 14px 19px;
   }
 
+  &._gray {
+    background-color: $gray-e7;
+    color: $black;
+    font-weight: $font-bold;
+
+    &:hover {
+      background-color: $gray-d7;
+    }
+  }
+
   &:hover {
     background-color: $black-4c;
   }

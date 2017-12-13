@@ -65,6 +65,9 @@ const appRoutes: Routes = [
   { path: 'home',
     component: HomePageComponent
   },
+  { path: 'payment',
+    component: PaymentPageComponent
+  },
   { path: 'about-us',
     component: AboutUsPageComponent
   },
