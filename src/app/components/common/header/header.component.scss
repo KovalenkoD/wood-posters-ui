@@ -16,6 +16,13 @@
     padding: 32px 0;
   }
 
+  &__nav {
+
+    @include ipad {
+      display: none;
+    }
+  }
+
   &__actions {
     display: flex;
     align-items: center;
@@ -62,6 +69,18 @@
       position: relative;
       &:not(._cart) {
         margin-right: 40px;
+      }
+
+
+      &._lang,
+      &._about {
+        @include ipad {
+          display: none;
+        }
+
+        @include mobile {
+          display: none;
+        }
       }
 
       &._search {

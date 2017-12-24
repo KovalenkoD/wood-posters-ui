@@ -19,3 +19,35 @@ $font-regular: 400;
 $font-medium:  500;
 $font-bold:    700;
 
+//media
+@mixin desktop {
+  @media (min-width : 1025px) {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    @content;
+  }
+}
+
+@mixin ipad-landscape {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    @content;
+  }
+}
+
+@mixin ipad-portrait {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+

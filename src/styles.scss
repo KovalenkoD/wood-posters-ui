@@ -45,13 +45,26 @@ a, button, input {
   display: flex;
   flex-wrap: wrap;
 
+  @include ipad {
+    justify-content: space-between;
+  }
+
   & > * {
     display: block;
     width: calc(33.33% - 8px);
     margin-bottom: 12px;
 
+    @include ipad {
+      width: calc(50% - 6px);
+      margin-right: 0 !important;
+    }
+
     &:not(:nth-child(3n)){
       margin-right: 12px;
+
+      @include ipad {
+        margin-right: 0!important;
+      }
     }
   }
 }

@@ -13,8 +13,11 @@
           NgxCarouselItem
         >
           <div class="wall-gallery-popup__carousel-item">
-            <img src="{{product.image}}" alt="">
-            <div (click)="selectProduct(product)" [ngStyle]="{'background-color': '#f9f9f9'}">Выбрать</div>
+            <div class="wall-gallery-popup__carousel-inner">
+              <img src="{{product.image}}" alt="">
+              <button class="button wall-gallery-popup__carousel-choose" (click)="selectProduct(product)" >Выбрать</button>
+            </div>
+
           </div>
         </ngx-item>
         <button NgxCarouselPrev class='leftRs wall-gallery-popup__left'><i class="fa fa-angle-left" aria-hidden="true"></i></button>

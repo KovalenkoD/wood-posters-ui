@@ -77,7 +77,13 @@
     height: 100%;
     background-size: cover;
 
+    &-inner {
+      position: relative;
+      text-align: center;
+    }
+
     &-item {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -87,6 +93,20 @@
       img {
         max-width: 60%;
       }
+    }
+
+    &-inner:hover &-choose {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    &-choose {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transition: all .2s ease;
+      opacity: 0;
+      transform: translate(-50%, 0%);
     }
   }
 

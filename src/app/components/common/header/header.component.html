@@ -1,6 +1,7 @@
 <header class="header">
   <div class="container header__inner">
     <div class="header__menu">
+      <app-mobile-nav></app-mobile-nav>
       <div class="header__nav">
         <app-navigation></app-navigation>
       </div>
@@ -8,8 +9,8 @@
         <a routerLink="/"><img src="assets/images/logo.svg" alt="WOOD"></a>
       </div>
       <ul class="header__actions">
-        <li class="header__link-wrap"><a routerLink="/about-us" class="header__link" routerLinkActive="active">О нас</a></li>
-        <li class="header__link-wrap"><a routerLink="/not-found" class="header__link" routerLinkActive="active">Рус</a></li>
+        <li class="header__link-wrap _about"><a routerLink="/about-us" class="header__link" routerLinkActive="active">О нас</a></li>
+        <li class="header__link-wrap _lang"><a routerLink="/not-found" class="header__link" routerLinkActive="active">Рус</a></li>
         <li class="header__link-wrap _search">
           <a routerLink="/search" class="header__link" routerLinkActive="active"><img src="assets/images/icon-search.svg" alt="icon-search"></a>
         </li>

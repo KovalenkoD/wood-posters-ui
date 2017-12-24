@@ -67,6 +67,7 @@ import { AdminPageComponent } from './components/pages/admin-page/admin-page.com
 import { CategoriesComponent } from './components/common/admin/categories/categories.component';
 import { SingleCategoryComponent } from './components/common/admin/categories/single-category/single-category.component';
 import { CurrentCategoriesComponent } from './components/common/admin/categories/current-categories/current-categories.component';
+import { MobileNavComponent } from './components/common/mobile-nav/mobile-nav.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -147,6 +148,7 @@ const appRoutes: Routes = [
     CategoriesComponent,
     SingleCategoryComponent,
     CurrentCategoriesComponent,
+    MobileNavComponent,
   ],
   imports: [
     RouterModule.forRoot(
