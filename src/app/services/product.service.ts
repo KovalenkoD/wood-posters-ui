@@ -7,6 +7,7 @@ import {Product} from "../model/product";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Bundle} from "../model/bundle";
+import {AdminProduct} from "../model/admin/admin-product";
 
 @Injectable()
 export class ProductService {
@@ -20,7 +21,7 @@ export class ProductService {
   private mostPopularBundleByTypeUrl = 'http://localhost:8080/products/getMostPopularBundle';
   private allBundlesUrl = 'http://localhost:8080/products/getAllBundles';
   private relatedProductsUrl = 'http://localhost:8080/products/getRelatedProducts';
-
+  private createProductUrl = 'http://localhost:8080/products/create';
 
 
   constructor (private http: Http) {}
@@ -54,6 +55,10 @@ export class ProductService {
     return this.http.get(this.allBundlesUrl)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  createProduct(product:AdminProduct) : void {
+    this.http.post(this.createProductUrl, product, { withCredentials: true }).subscribe();
   }
 
 }

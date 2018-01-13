@@ -11,6 +11,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -68,6 +69,11 @@ import { CategoriesComponent } from './components/common/admin/categories/catego
 import { SingleCategoryComponent } from './components/common/admin/categories/single-category/single-category.component';
 import { CurrentCategoriesComponent } from './components/common/admin/categories/current-categories/current-categories.component';
 import { MobileNavComponent } from './components/common/mobile-nav/mobile-nav.component';
+import {ProductsComponent} from "./components/common/admin/products/products.component";
+import {CurrentProductsComponent} from "./components/common/admin/products/current-products/current-products.component";
+import {SingleProductComponent} from "./components/common/admin/products/single-product/single-product.component";
+import {TechnologyService} from "./services/technology.service";
+import {MaterialService} from "./services/material.service";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -148,6 +154,9 @@ const appRoutes: Routes = [
     CategoriesComponent,
     SingleCategoryComponent,
     CurrentCategoriesComponent,
+    ProductsComponent,
+    SingleProductComponent,
+    CurrentProductsComponent,
     MobileNavComponent,
   ],
   imports: [
@@ -170,14 +179,15 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatTabsModule,
     MatFormFieldModule,
-    NguiStickyModule
+    NguiStickyModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService,ProductTypeService, ProductService,SearchService
+    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]

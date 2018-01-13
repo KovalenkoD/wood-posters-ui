@@ -1,0 +1,81 @@
+<div class="simple-category-container">
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.russianName" placeholder="Введите Название Продукта RU">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.englishName" placeholder="Введите Название Продукта EN">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.ukrainianName" placeholder="Введите Название Продукта UA">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.price" type="number" placeholder="Введите цену">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.size" placeholder="Введите размер">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Технологии" [formControl]="technologyForm" multiple required>
+      <mat-option *ngFor="let technology of technologyList" [value]="technology.id">{{technology.name}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="technologyForm.hasError('required')">Выбери технологию</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.russianDescription" placeholder="Введите Дескрипшен RU">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.englishDescription" placeholder="Введите Дескрипшен EN">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.ukrainianDescription" placeholder="Введите Дескрипшен UA">
+  </mat-form-field>
+
+
+
+
+
+
+  <mat-form-field>
+    <mat-select placeholder="Продукт тип" [(value)]="adminProduct.productTypeID" required>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let adminProductType of adminProductTypes" [value]="adminProductType.id">{{adminProductType.nameRU}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-select placeholder="Материал" [formControl]="materialForm" multiple required>
+      <mat-option *ngFor="let material of materialList" [value]="material.id">{{material.name}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="materialForm.hasError('required')">Выбери материал нах</mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-select placeholder="Популярный товар" [(value)]="adminProduct.productTypeID">
+      <mat-option [value]="1">Да</mat-option>
+      <mat-option [value]="0">Нет</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Показывать как постер" [(value)]="adminProduct.imagePresentation">
+      <mat-option [value]="1">Да</mat-option>
+      <mat-option [value]="0">Нет</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminProduct.image" placeholder="Введите URL рисунка">
+  </mat-form-field>
+
+  <button mat-button (click)="createOrUpdateProduct(adminProduct.id)" color="primary">Создать</button>
+</div>
