@@ -2,6 +2,7 @@ import {EventEmitter, Injectable} from '@angular/core';
 import {CartResult} from "../model/cart-result";
 import {Product} from "../model/product";
 import {HttpClient} from '@angular/common/http';
+import {Contact} from "../model/contact";
 
 @Injectable()
 export class CartService {
@@ -15,6 +16,8 @@ export class CartService {
   private deleteOrdersFormCartUrl = 'http://localhost:8080/quote/deleteOrdersFormSalesOrder';
   private cleanCartUrl = 'http://localhost:8080/quote/cleanSalesOrder';
   private getSalesOrderInfoUrl = 'http://localhost:8080/quote/getSalesOrderInfo';
+  private summitOrderUrl = 'http://localhost:8080/quote/submitOrder';
+
 
   private cartResult:CartResult;
 
@@ -74,5 +77,8 @@ export class CartService {
     });
   }
 
+  submitOrder(contact:Contact) : void {
+    this.http.post(this.summitOrderUrl, contact, { withCredentials: true }).subscribe();
+  }
 
 }

@@ -6,30 +6,30 @@
         <div class="payment-page__form-inner">
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Имя" [(ngModel)]="person.name" name="name">
+              <input matInput placeholder="Имя" [(ngModel)]="contact.firstName" name="name">
             </mat-form-field>
           </div>
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Фамилия" [(ngModel)]="person.firstname" name="name">
+              <input matInput placeholder="Фамилия" [(ngModel)]="contact.lastName" name="name">
             </mat-form-field>
           </div>
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Емейл" [(ngModel)]="person.email" name="name">
+              <input matInput placeholder="Емейл" [(ngModel)]="contact.email" name="name">
             </mat-form-field>
           </div>
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Телефон" [(ngModel)]="person.phone" name="name">
+              <input matInput placeholder="Телефон" [(ngModel)]="contact.phone" name="name">
             </mat-form-field>
           </div>
-          <div class="payment-page__form-subscribe">
+         <!-- <div class="payment-page__form-subscribe">
             <mat-checkbox class="example-margin" name="subscribe" [(ngModel)]="checked">Подписаться на рассылку</mat-checkbox>
-          </div>
+          </div>-->
         </div>
       </div>
-      <div class="payment-page__form-row">
+      <!--<div class="payment-page__form-row">
         <h2 class="payment-page__title">Доставка и оплата</h2>
         <div class="payment-page__form-inner">
           <div class=" payment-page__form-input _select">
@@ -63,14 +63,14 @@
             </mat-form-field>
           </div>
         </div>
-      </div>
+      </div>-->
       <div class="payment-page__form-row">
         <div class="payment-page__form-buttons">
           <a class="payment-page__form-back">
             <i class="fa fa-angle-left"></i>
             <span>Вернуться к покупкам</span>
           </a>
-          <button class="button payment-page__form-submit">Заказать</button>
+          <button class="button payment-page__form-submit" (click)="submitOrder()">Заказать</button>
         </div>
       </div>
     </form>

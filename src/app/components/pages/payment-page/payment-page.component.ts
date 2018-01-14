@@ -1,4 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Contact} from "../../../model/contact";
+import {CartService} from "../../../services/cart.service";
 
 
 @Component({
@@ -9,18 +11,15 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class PaymentPageComponent implements OnInit {
 
-  constructor() {
+  constructor(private cartService: CartService) {
   }
 
 
-  person: any = {
-    name: '',
-    firstname: '',
-    message: '',
-    phone: '',
-    email: ''
-  };
+  contact: Contact = new Contact("","","","","");
 
+  submitOrder(): void {
+    this.cartService.submitOrder(this.contact);
+  }
 
   payment: any = {
     methods: [
