@@ -27,6 +27,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { Parallax, ParallaxConfig } from 'ngx-parallax';
 
 import { CartService } from './services/cart.service';
+import { CategoryService } from './services/category.service';
 import { ProductTypeService } from './services/product-type.service';
 import { ProductService } from './services/product.service';
 import { SearchService } from './services/search.service';
@@ -68,6 +69,12 @@ import { AdminPageComponent } from './components/pages/admin-page/admin-page.com
 import { CategoriesComponent } from './components/common/admin/categories/categories.component';
 import { SingleCategoryComponent } from './components/common/admin/categories/single-category/single-category.component';
 import { CurrentCategoriesComponent } from './components/common/admin/categories/current-categories/current-categories.component';
+import { SingleMaterialComponent} from './components/common/admin/material/single-material/single-material.component';
+import { MaterialsComponent } from './components/common/admin/material/materials.component';
+import { CurrentMaterialsComponent } from './components/common/admin/material/current-materials/current-materials.component';
+import { TypesComponent } from './components/common/admin/type/types.component';
+import { CurrentTypesComponent } from './components/common/admin/type/current-types/current-types.component';
+import { SingleTypeComponent } from './components/common/admin/type/single-type/single-type.component';
 import { MobileNavComponent } from './components/common/mobile-nav/mobile-nav.component';
 import {ProductsComponent} from "./components/common/admin/products/products.component";
 import {CurrentProductsComponent} from "./components/common/admin/products/current-products/current-products.component";
@@ -152,7 +159,13 @@ const appRoutes: Routes = [
     WallGalleryPopupComponent,
     AdminPageComponent,
     CategoriesComponent,
+    SingleTypeComponent,
+    CurrentTypesComponent,
+    MaterialsComponent,
+    CurrentMaterialsComponent,
     SingleCategoryComponent,
+    SingleMaterialComponent,
+    TypesComponent,
     CurrentCategoriesComponent,
     ProductsComponent,
     SingleProductComponent,
@@ -187,7 +200,7 @@ const appRoutes: Routes = [
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService
+    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService,CategoryService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]

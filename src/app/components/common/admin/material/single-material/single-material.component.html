@@ -1,0 +1,16 @@
+<div class="simple-material-container">
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminBaseNameObject.nameRU" placeholder="Введите Название Катигории RU">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminBaseNameObject.nameEN" placeholder="Введите Название Катигории EN">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="adminBaseNameObject.nameUA" placeholder="Введите Название Катигории UA">
+  </mat-form-field>
+
+  <button mat-button (click)="createOrUpdateCategory(adminBaseNameObject.id)" color="primary">Создать</button>
+</div>
