@@ -54,6 +54,7 @@ import { SearchComponent } from './components/common/search/search.component';
 import { ProductSingleComponent } from './components/common/product-single/product-single.component';
 import { CategorySingleComponent } from './components/common/category-single/category-single.component';
 import { CartComponent } from './components/common/cart/cart.component';
+import { SummaryComponent } from './components/common/payment/summary/summary.component';
 import { CollectionSingleComponent } from './components/common/collection-single/collection-single.component';
 import { FilterPanelComponent } from './components/common/filter-panel/filter-panel.component';
 import { FilterSidebarComponent } from './components/common/filter-sidebar/filter-sidebar.component';
@@ -146,6 +147,7 @@ const appRoutes: Routes = [
     ProductSingleComponent,
     CategorySingleComponent,
     CartComponent,
+    SummaryComponent,
     CollectionSingleComponent,
     FilterPanelComponent,
     FilterSidebarComponent,

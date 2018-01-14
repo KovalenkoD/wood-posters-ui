@@ -1,34 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../../services/cart.service';
-import {CartResult} from "../../../model/cart-result";
-import {Product} from "../../../model/product";
-import {CartItem} from "../../../model/cart-item";
-import {Router} from "@angular/router";
+import {CartResult} from "../../../../model/cart-result";
+import {CartService} from "../../../../services/cart.service";
+import {Product} from "../../../../model/product";
+import {CartItem} from "../../../../model/cart-item";
+
 
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+  selector: 'app-summary',
+  templateUrl: './summary.component.html',
+  styleUrls: ['./summary.component.scss'],
 })
-export class CartComponent implements OnInit {
-
-  isOpened: boolean;
+export class SummaryComponent implements OnInit {
 
   cartResult:CartResult;
 
-  constructor(private cartService: CartService, private router: Router) {
-    cartService.cardIsOpenedChanges.subscribe(item => this.isOpened = item);
+  constructor(private cartService: CartService) {
     cartService.cartResultChanges.subscribe(cartResult => this.cartResult = cartResult);
+
   }
 
 
   ngOnInit() {
-    this.isOpened = this.cartService.isOpenCart();
-  }
-
-  onCartClose(): void {
-    this.cartService.closeCart();
+    this.cartService.getSalesOrderInfo();
   }
 
   deleteItem(product:Product): void {
@@ -55,11 +49,6 @@ export class CartComponent implements OnInit {
 
   changeProductCount(product:Product, count: number) : void {
     this.cartService.changeCountOfItemsFromCart(product, count);
-  }
-
-  navigateToPayment() : void {
-    this.cartService.closeCart();
-    this.router.navigateByUrl('/payment');
   }
 
 }
