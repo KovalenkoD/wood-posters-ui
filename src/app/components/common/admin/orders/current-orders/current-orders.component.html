@@ -1,0 +1,37 @@
+<div *ngFor="let adminSalesOrder of adminSalesOrders">
+  <span>Номер заказа : {{adminSalesOrder.id}}</span>
+  <span>Стутус заказа : {{adminSalesOrder.status}}</span>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Контактная информация
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+      <div>Имя : {{adminSalesOrder.contact.firstName}}</div>
+      <div>Фамилия : {{adminSalesOrder.contact.lastName}}</div>
+      <div>Телефон : {{adminSalesOrder.contact.phone}}</div>
+      <div>Email : {{adminSalesOrder.contact.email}}</div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Заказы
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div *ngFor="let order of adminSalesOrder.cartItems">
+        <span>Название продукта : {{order.product.name}} </span>
+        <span>Колличество : {{order.count}} </span>
+        <span>Цена : {{order.product.price}} </span>
+      </div>>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>

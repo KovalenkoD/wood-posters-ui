@@ -3,6 +3,8 @@ import {CartResult} from "../model/cart-result";
 import {Product} from "../model/product";
 import {HttpClient} from '@angular/common/http';
 import {Contact} from "../model/contact";
+import {AdminSalesOrder} from "../model/admin/admin-sales-order";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class CartService {
@@ -17,6 +19,7 @@ export class CartService {
   private cleanCartUrl = 'http://localhost:8080/quote/cleanSalesOrder';
   private getSalesOrderInfoUrl = 'http://localhost:8080/quote/getSalesOrderInfo';
   private summitOrderUrl = 'http://localhost:8080/quote/submitOrder';
+  private salesOrdersByStatus = 'http://localhost:8080/quote/getSalesOrdersByStatus';
 
 
   private cartResult:CartResult;
@@ -81,4 +84,9 @@ export class CartService {
     this.http.post(this.summitOrderUrl, contact, { withCredentials: true }).subscribe();
   }
 
+
+  getSalesOrdersByStatus(status:number) : Observable<AdminSalesOrder[]> {
+    return this.http.get<AdminSalesOrder[]>(this.salesOrdersByStatus + "/" + status, { withCredentials: true });
+
+  }
 }

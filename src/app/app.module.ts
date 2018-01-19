@@ -72,6 +72,9 @@ import { SingleCategoryComponent } from './components/common/admin/categories/si
 import { CurrentCategoriesComponent } from './components/common/admin/categories/current-categories/current-categories.component';
 import { SingleMaterialComponent} from './components/common/admin/material/single-material/single-material.component';
 import { MaterialsComponent } from './components/common/admin/material/materials.component';
+import { OrdersComponent } from './components/common/admin/orders/orders.component';
+import { CurrentOrdersComponent } from './components/common/admin/orders/current-orders/current-orders.component';
+
 import { CurrentMaterialsComponent } from './components/common/admin/material/current-materials/current-materials.component';
 import { TypesComponent } from './components/common/admin/type/types.component';
 import { CurrentTypesComponent } from './components/common/admin/type/current-types/current-types.component';
@@ -165,6 +168,8 @@ const appRoutes: Routes = [
     CurrentTypesComponent,
     MaterialsComponent,
     CurrentMaterialsComponent,
+    OrdersComponent,
+    CurrentOrdersComponent,
     SingleCategoryComponent,
     SingleMaterialComponent,
     TypesComponent,
