@@ -22,6 +22,9 @@ export class CartComponent implements OnInit {
     cartService.cartResultChanges.subscribe(cartResult => this.cartResult = cartResult);
   }
 
+  isCartHasItems(): boolean {
+    return this.cartResult.count > 0;
+  }
 
   ngOnInit() {
     this.isOpened = this.cartService.isOpenCart();

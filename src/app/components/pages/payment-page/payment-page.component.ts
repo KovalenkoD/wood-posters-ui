@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Contact} from "../../../model/contact";
+import {CartResult} from "../../../model/cart-result";
 import {CartService} from "../../../services/cart.service";
 import {Router} from "@angular/router";
 import {FormControl, Validators} from '@angular/forms';
@@ -13,6 +14,10 @@ import {FormControl, Validators} from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
 })
 export class PaymentPageComponent implements OnInit {
+
+  dontHaveItems: boolean = false;
+
+  cartResult:CartResult;
 
   constructor(private cartService: CartService, private router: Router) {
   }
@@ -47,10 +52,15 @@ export class PaymentPageComponent implements OnInit {
  }
 
   submitOrder(): void {
-    if(!this.hasErrorsInForm()){
+    if(!this.hasErrorsInForm() && !this.isCartDoesntHasItems()){
       this.cartService.submitOrder(this.contact);
       this.router.navigate(['thank-you']);
     }
+  }
+
+  isCartDoesntHasItems(): boolean {
+    this.dontHaveItems = this.cartResult.count === 0;
+    return this.dontHaveItems;
   }
 
   payment: any = {
@@ -75,6 +85,7 @@ export class PaymentPageComponent implements OnInit {
   };
 
   ngOnInit() {
+    this.cartService.cartResultChanges.subscribe(cartResult => this.cartResult = cartResult);
   }
 
 }
