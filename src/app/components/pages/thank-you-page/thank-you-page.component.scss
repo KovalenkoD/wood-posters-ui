@@ -1,0 +1,77 @@
+@import './src/sass/variables';
+
+.thank-you-page {
+  padding: 60px 0 100px;
+
+  &__buttons {
+      margin: auto;
+      width: 29%;
+  }
+  &__inner {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__description {
+    text-align: center;
+    color: $white-f7;
+    margin-bottom: 34px;
+  }
+
+  &__our-phone {
+    text-align: center;
+    font-weight: $font-medium;
+    margin-bottom: 60px;
+
+    &-label {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: $white-f7;
+    }
+
+    &-phone {
+      font-size: 24px;
+      color: $black;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    display: block;
+
+    &-title {
+      font-weight: $font-medium;
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    &-body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &-input {
+      width: calc(50% - 7px);
+      margin-bottom: 20px;
+    }
+
+    &-textarea {
+      width: 100%;
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

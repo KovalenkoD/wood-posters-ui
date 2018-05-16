@@ -6,22 +6,26 @@
         <div class="payment-page__form-inner">
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Имя" [(ngModel)]="contact.firstName" name="name">
+              <input matInput placeholder="Имя" [formControl]="firstName" [(ngModel)]="contact.firstName" required name="name">
+              <mat-error *ngIf="firstName.invalid">{{getFistNameErrorMessage()}}</mat-error>
             </mat-form-field>
           </div>
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Фамилия" [(ngModel)]="contact.lastName" name="name">
+              <input matInput placeholder="Фамилия" [formControl]="lastName" [(ngModel)]="contact.lastName" required name="lastName">
+              <mat-error *ngIf="lastName.invalid">{{getLastNameErrorMessage()}}</mat-error>
             </mat-form-field>
           </div>
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Емейл" [(ngModel)]="contact.email" name="name">
+              <input matInput placeholder="Емейл" [formControl]="email" [(ngModel)]="contact.email"  required name="email">
+              <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
             </mat-form-field>
           </div>
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Телефон" [(ngModel)]="contact.phone" name="name">
+              <input matInput placeholder="Телефон" [formControl]="phone" [(ngModel)]="contact.phone" required name="phone">
+              <mat-error *ngIf="phone.invalid">{{getPhoneErrorMessage()}}</mat-error>
             </mat-form-field>
           </div>
          <!-- <div class="payment-page__form-subscribe">
@@ -66,7 +70,7 @@
       </div>-->
       <div class="payment-page__form-row">
         <div class="payment-page__form-buttons">
-          <a class="payment-page__form-back">
+          <a class="payment-page__form-back" [routerLink]="['/home']">
             <i class="fa fa-angle-left"></i>
             <span>Вернуться к покупкам</span>
           </a>

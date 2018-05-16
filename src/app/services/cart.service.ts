@@ -80,8 +80,11 @@ export class CartService {
     });
   }
 
-  submitOrder(contact:Contact) : void {
-    this.http.post(this.summitOrderUrl, contact, { withCredentials: true }).subscribe();
+  submitOrder(contact:Contact) : void  {
+     this.http.post<CartResult>(this.summitOrderUrl, contact, { withCredentials: true }).subscribe(data => {
+      this.cartResult = data;
+      this.cartResultChanges.emit(this.cartResult);
+    });
   }
 
 

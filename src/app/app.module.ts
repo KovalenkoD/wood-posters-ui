@@ -45,6 +45,7 @@ import { CollectionsPageComponent } from './components/pages/collections-page/co
 import { TrendsPageComponent } from './components/pages/trends-page/trends-page.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { AboutUsPageComponent } from './components/pages/about-us-page/about-us-page.component';
+import { ThankYouPageComponent } from './components/pages/thank-you-page/thank-you-page.component';
 import { HomeSliderComponent } from './components/common/home-slider/home-slider.component';
 import { PopularProductsComponent } from './components/common/popular-products/popular-products.component';
 import { PopularCollectionsComponent } from './components/common/popular-collections/popular-collections.component';
@@ -104,6 +105,9 @@ const appRoutes: Routes = [
   { path: 'about-us',
     component: AboutUsPageComponent
   },
+  { path: 'thank-you',
+    component: ThankYouPageComponent
+  },
   { path: 'product/:id',
     component: ProductPageComponent
   },
@@ -141,6 +145,7 @@ const appRoutes: Routes = [
     TrendsPageComponent,
     PaymentPageComponent,
     AboutUsPageComponent,
+    ThankYouPageComponent,
     HomeSliderComponent,
     PopularProductsComponent,
     PopularCollectionsComponent,

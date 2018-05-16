@@ -1,6 +1,9 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Contact} from "../../../model/contact";
 import {CartService} from "../../../services/cart.service";
+import {Router} from "@angular/router";
+import {FormControl, Validators} from '@angular/forms';
+
 
 
 @Component({
@@ -11,14 +14,43 @@ import {CartService} from "../../../services/cart.service";
 })
 export class PaymentPageComponent implements OnInit {
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private router: Router) {
   }
 
-
+  firstName = new FormControl('', [Validators.required]);
+  lastName = new FormControl('', [Validators.required]);
+  email = new FormControl('', [Validators.required, Validators.email]);
+  phone = new FormControl('', [Validators.required]);
   contact: Contact = new Contact("","","","","");
 
+
+  getFistNameErrorMessage() {
+    return this.firstName.hasError('required') ? 'You must enter a value' : '';
+  }
+
+  getLastNameErrorMessage() {
+    return this.lastName.hasError('required') ? 'You must enter a value' : '';
+  }
+
+  getPhoneErrorMessage() {
+    return this.phone.hasError('required') ? 'You must enter a value' : '';
+  }
+
+  getErrorEmailMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
+  }
+
+  hasErrorsInForm() : boolean {
+    return this.firstName.hasError('required') || this.lastName.hasError('required') || this.email.hasError('required') || this.email.hasError('email') || this.phone.hasError('required')
+ }
+
   submitOrder(): void {
-    this.cartService.submitOrder(this.contact);
+    if(!this.hasErrorsInForm()){
+      this.cartService.submitOrder(this.contact);
+      this.router.navigate(['thank-you']);
+    }
   }
 
   payment: any = {
