@@ -12,6 +12,7 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
+import { NgxImageGalleryModule } from 'ngx-image-gallery';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -197,6 +198,7 @@ const appRoutes: Routes = [
     PerfectScrollbarModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    NgxImageGalleryModule,
     MatCheckboxModule,
     MatInputModule,
     MatSelectModule,

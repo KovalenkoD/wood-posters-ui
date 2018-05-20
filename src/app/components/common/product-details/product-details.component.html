@@ -2,15 +2,15 @@
   <div class="product-details__image">
     <div class="product-details__image-main">
       <img src="{{product.image}}" alt="">
-      <button class="product-details__image-open-gallery"></button>
+      <button class="product-details__image-open-gallery" (click)="openDialogBasedOnParameter(product.imagePresentation)"></button>
       <button class="product-details__image-on-wall" *ngIf="product.imagePresentation == 1" (click)="openDialog()">Показать на стене</button>
     </div>
     <div class="product-details__images" *ngIf="product.imagePresentation == 0">
-      <div class="product-details__images-item" *ngFor="let image of product.images">
-        <img [src]="image" alt="">
+      <div class="product-details__images-item" *ngFor="let image of product.images.slice(0,limitVariable); let i = index" [attr.data-index]="i">
+        <img class="gallery-list-image" [src]="image" alt="" (click)="openGallery(i);">
       </div>
 
-      <div class="product-details__images-show-more">+8</div>
+      <div class="product-details__images-show-more" *ngIf="product.images.length > limitVariable" (click)="changeLimitOfImages();">+{{product.images.length - limitVariable}}</div>
     </div>
   </div>
   <div class="product-details__info">
@@ -52,4 +52,14 @@
       <div class="product-details__description-toggle">+ Еще</div>
     </div>
   </div>
+
+  <ngx-image-gallery
+    [images]="galleryImages"
+    [conf]="conf"
+    (onOpen)="galleryOpened($event)"
+    (onClose)="galleryClosed()"
+    (onImageClicked)="galleryImageClicked($event)"
+    (onImageChange)="galleryImageChanged($event)"
+    (onDelete)="deleteImage($event)"
+  ></ngx-image-gallery>
 </div>

@@ -1,8 +1,11 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import { WallGalleryPopupComponent } from '../wall-gallery-popup/wall-gallery-popup.component';
 import {Product} from "../../../model/product";
 import {CartService} from "../../../services/cart.service";
+import { NgxImageGalleryComponent, GALLERY_IMAGE, GALLERY_CONF } from "ngx-image-gallery";
+import {isNullOrUndefined} from "util";
+
 
 @Component({
   selector: 'app-product-details',
@@ -15,6 +18,45 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
   @Input() products : Product[];
 
   productCount:number = 1;
+
+  limitVariable: number = 6;
+
+
+  // get reference to gallery component
+  @ViewChild(NgxImageGalleryComponent) ngxImageGallery: NgxImageGalleryComponent;
+
+  // gallery configuration
+  conf: GALLERY_CONF = {
+    imageOffset: '0px',
+    showDeleteControl: false,
+    showImageTitle: false,
+  };
+
+  galleryImages: GALLERY_IMAGE[] = [];
+
+  openDialogBasedOnParameter(representation) {
+    if(representation == 1) {
+      this.openDialog();
+    } else {
+      this.openGallery();
+    }
+  }
+
+  convertImagesToGalleryImage(images:string[]) {
+    let galleryImages = [];
+    images.forEach(image => {
+      let galleryImage = {
+        url: image,
+        altText: this.product.name,
+        title: this.product.name,
+        thumbnailUrl: image
+      };
+      galleryImages.push(galleryImage);
+    });
+    return galleryImages;
+  }
+
+
 
   constructor(public dialog: MatDialog, private cartService: CartService) { }
 
@@ -34,8 +76,16 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
 
   }
 
+  changeLimitOfImages() {
+    this.limitVariable = this.product.images.length;
+  }
+
   ngOnChanges() {
     this.productCount = 1;
+    this.limitVariable = 6;
+    if(!isNullOrUndefined(this.product) && !isNullOrUndefined(this.product.images)){
+      this.galleryImages = this.convertImagesToGalleryImage(this.product.images);
+    }
   }
 
   isNotEmptyObject(obj:any): boolean {
@@ -84,5 +134,61 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+
+
+  // METHODS
+  // open gallery
+  openGallery(index: number = 0) {
+    this.ngxImageGallery.open(index);
+  }
+
+  // close gallery
+  closeGallery() {
+    this.ngxImageGallery.close();
+  }
+
+  // set new active(visible) image in gallery
+  newImage(index: number = 0) {
+    this.ngxImageGallery.setActiveImage(index);
+  }
+
+  // next image in gallery
+  nextImage() {
+    this.ngxImageGallery.next();
+  }
+
+  // prev image in gallery
+  prevImage() {
+    this.ngxImageGallery.prev();
+  }
+
+  /**************************************************/
+
+  // EVENTS
+  // callback on gallery opened
+  galleryOpened(index) {
+    console.info('Gallery opened at index ', index);
+  }
+
+  // callback on gallery closed
+  galleryClosed() {
+    console.info('Gallery closed.');
+  }
+
+  // callback on gallery image clicked
+  galleryImageClicked(index) {
+    console.info('Gallery image clicked with index ', index);
+  }
+
+  // callback on gallery image changed
+  galleryImageChanged(index) {
+    console.info('Gallery image changed to index ', index);
+  }
+
+  // callback on user clicked delete button
+  deleteImage(index) {
+    console.info('Delete image at index ', index);
   }
 }

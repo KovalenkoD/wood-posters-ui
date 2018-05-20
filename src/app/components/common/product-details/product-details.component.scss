@@ -89,6 +89,10 @@
         height: 120px;
         object-fit: cover;
       }
+
+      .gallery-list-image {
+        cursor:pointer;
+      }
     }
 
     &-show-more {
