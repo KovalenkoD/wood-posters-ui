@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="popular-products__items">
-      <a *ngFor="let product of products"
+      <a *ngFor="let product of products | paginate: { itemsPerPage: 10, currentPage: page }"
         [routerLink]="['/product', product.id]"
         class="popular-products__item"
         [ngStyle]="{'background-color': '#f9f9f9'}">
@@ -22,6 +22,9 @@
           <div class="popular-products__item-price">{{product.price}}</div>
         </div>
       </a>
+    </div>
+    <div class="popular-products__pagination">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
     </div>
   </div>
 </div>

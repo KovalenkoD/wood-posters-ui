@@ -13,10 +13,13 @@ export class PopularProductsComponent implements OnInit {
 
   private products: Product[];
 
+  page: number = 1;
+
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.getMostPopularProductsByType()
+    this.page = 1;
   }
 
   getMostPopularProductsByType() {

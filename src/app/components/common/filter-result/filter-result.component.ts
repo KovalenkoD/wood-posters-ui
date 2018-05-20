@@ -19,6 +19,8 @@ export class FilterResultComponent implements OnInit {
 
   @Input() products: Product[];
 
+  page: number = 1;
+
   constructor() { }
 
   ngOnInit() {

@@ -2,9 +2,12 @@
   <div class="filter-result__container">
     <div class="product-grid">
       <app-product-single
-        *ngFor="let product of products"
+        *ngFor="let product of products | paginate: { itemsPerPage: 12, currentPage: page}"
         [product]="product"
       ></app-product-single>
     </div>
+  </div>
+  <div class="filter-result__pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
   </div>
 </div>

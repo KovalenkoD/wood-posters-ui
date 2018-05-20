@@ -11,6 +11,12 @@
     padding: 0 15px;
   }
 
+  &__pagination {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
   &__title {
     font-size: 30px;
     font-weight: $font-medium;

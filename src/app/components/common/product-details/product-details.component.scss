@@ -25,6 +25,8 @@
 
     &-on-wall {
       position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
       right: 20px;
       bottom: 20px;
       width: 160px;
