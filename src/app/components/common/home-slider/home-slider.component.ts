@@ -19,7 +19,7 @@ export class HomeSliderComponent implements OnInit {
 
   constructor() { }
 
-  public carouselOne: NgxCarousel
+  public carouselOne: NgxCarousel;
 
   ngOnInit() {
 
