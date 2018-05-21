@@ -106,4 +106,22 @@
       }
     }
   }
+
+  &-mat-form-field {
+    width: 50px;
+
+    /deep/ .mat-form-field-underline {
+      display: none;
+    }
+
+    /deep/ .mat-form-field-infix {
+      border: 0px;
+      padding: 0px;
+    }
+
+    &__select {
+      border: 0px;
+      padding: 0px;
+    }
+  }
 }

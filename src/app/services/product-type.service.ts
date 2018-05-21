@@ -22,10 +22,7 @@ export class ProductTypeService {
   constructor (private http: HttpClient, private oldHttp: Http) {}
 
   getAllVisibleProductTypes() : Observable<ProductType[]> {
-    return this.oldHttp.get(this.productUrl)
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
-
+    return this.http.get<ProductType[]>(this.productUrl, { withCredentials: true });
   }
 
   getProductByTypeId(id:number) : Observable<Product[]> {

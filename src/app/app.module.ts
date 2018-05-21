@@ -89,6 +89,7 @@ import {CurrentProductsComponent} from "./components/common/admin/products/curre
 import {SingleProductComponent} from "./components/common/admin/products/single-product/single-product.component";
 import {TechnologyService} from "./services/technology.service";
 import {MaterialService} from "./services/material.service";
+import {LocaleService} from "./services/locale.service";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -217,7 +218,7 @@ const appRoutes: Routes = [
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService,CategoryService
+    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService,CategoryService,LocaleService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]
