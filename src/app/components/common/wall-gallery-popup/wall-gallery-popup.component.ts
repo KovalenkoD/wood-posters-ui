@@ -17,7 +17,7 @@ export class WallGalleryPopupComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
-  public wallCarousel: NgxCarousel
+  public wallCarousel: NgxCarousel;
   public currentImage: string = null;
   public currentDot: number = 0;
 
@@ -49,6 +49,15 @@ export class WallGalleryPopupComponent implements OnInit {
   selectProduct(product:Product) : void {
     this.onCloseClick();
     this.router.navigate(["/product", product.id]);
+  }
+
+  public myfunc(event: Event) {
+    // carouselLoad will trigger this funnction when your load value reaches
+    // it is helps to load the data by parts to increase the performance of the app
+    // must use feature to all carousel
+  }
+
+  onmoveFn(data: NgxCarouselStore) {
   }
 
 
