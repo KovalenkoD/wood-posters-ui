@@ -20,8 +20,8 @@ export class SearchComponent implements OnInit {
     this.products = [];
   }
 
-  getFullSearchResult() : void {
-    if(this.search && this.search.length > 2){
+  getFullSearchResult(lengthForSearch:number = 1) : void {
+    if(this.search && this.search.length > lengthForSearch){
       this.searchService.getFullSearchResult(this.search)
         .subscribe(
           products => this.products = products,

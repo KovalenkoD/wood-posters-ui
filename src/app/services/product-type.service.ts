@@ -17,6 +17,7 @@ export class ProductTypeService {
   private productByProductTypeUrl = 'http://localhost:8080/productType/getProductsByProductType';
   private createProductTypeUrl = 'http://localhost:8080/productType/create';
   private productTypeAllUrl = 'http://localhost:8080/productType/getAllProductTypes';
+  private productTypeById = 'http://localhost:8080/productType/getProductTypeById';
 
   constructor (private http: HttpClient, private oldHttp: Http) {}
 
@@ -39,6 +40,11 @@ export class ProductTypeService {
 
   getAllProductTypes() : Observable<AdminProductType[]> {
     return this.http.get<AdminProductType[]>(this.productTypeAllUrl, { withCredentials: true });
+
+  }
+
+  getProductTypeById(id: number) : Observable<ProductType> {
+    return this.http.get<ProductType>(this.productTypeById + "/" + id, { withCredentials: true });
 
   }
 

@@ -2,14 +2,14 @@
   <div class="filter-panel__inner" >
     <div class="filter-panel__top">
       <div class="filter-panel__filters" (click)="showFilters()">
-        <div class="filter-panel__filters-button">
+        <!--<div class="filter-panel__filters-button">
           <span></span><span></span><span></span>
         </div>
         <div class="filter-panel__filters-name">
           Фильтры <span>2</span>
-        </div>
+        </div>-->
       </div>
-      <div class="filter-panel__category">Шкатулки <span>14</span></div>
+      <div class="filter-panel__category">{{categoryName}} <span>{{productSize}}</span></div>
       <div class="filter-panel__sorting">
         <mat-form-field>
             <mat-select [(value)]="selected" placeholder="Сортировать по">
@@ -20,10 +20,10 @@
         </mat-form-field>
       </div>
     </div>
-    <div class="filter-panel__used-filters">
+    <!--div class="filter-panel__used-filters">
       <div class="filter-panel__used-filters-item">Покраска</div>
       <div class="filter-panel__used-filters-item">Покраска</div>
-    </div>
+    </div-->
   </div>
   <app-filter-sidebar [(hiddenSection)]="hiddenSection"></app-filter-sidebar>
 </div>

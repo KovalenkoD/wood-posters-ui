@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Product} from "../../../model/product";
 
 @Component({
   selector: 'app-filter-panel',
@@ -6,6 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./filter-panel.component.scss']
 })
 export class FilterPanelComponent implements OnInit {
+
+  @Input() productSize: number = 0;
+  @Input() categoryName: string = '';
 
   hiddenSection: boolean;
 
