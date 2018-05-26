@@ -1,20 +1,28 @@
 <div class="simple-category-container">
-  <mat-form-field>
-    <input matInput [(ngModel)]="adminProductType.nameRU" placeholder="Введите Название Катигории RU">
-  </mat-form-field>
+  <div class="simple-category-container__with-border">
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminProductType.nameRU" placeholder="Название RU">
+    </mat-form-field>
 
-  <mat-form-field>
-    <input matInput [(ngModel)]="adminProductType.nameEN" placeholder="Введите Название Катигории EN">
-  </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminProductType.nameEN" placeholder="Название EN">
+    </mat-form-field>
 
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminProductType.nameUA" placeholder="Название UA">
+    </mat-form-field>
 
-  <mat-form-field>
-    <input matInput [(ngModel)]="adminProductType.nameUA" placeholder="Введите Название Катигории UA">
-  </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminProductType.imageURL" placeholder="Введите URL рисунка">
+    </mat-form-field>
 
-  <mat-form-field>
-    <input matInput [(ngModel)]="adminProductType.imageURL" placeholder="Введите URL рисунка">
-  </mat-form-field>
+    <button mat-button (click)="createOrUpdateCategory(adminProductType.id)" color="primary">Создать</button>
+  </div>
 
-  <button mat-button (click)="createOrUpdateCategory(adminProductType.id)" color="primary">Создать</button>
+  <div class="simple-category-container__simple-view">
+    <div class="simple-category-container__simple-view__category">{{adminProductType.nameRU}}</div>
+    <div class="simple-category-container__simple-view__img"
+         [ngStyle]="{'background-image': 'url(' + adminProductType.imageURL + ')'}"
+    ></div>
+  </div>
 </div>
