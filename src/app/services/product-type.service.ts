@@ -16,6 +16,8 @@ export class ProductTypeService {
   private productUrl = 'http://localhost:8080/productType/getAllVisibleProductTypes';
   private productByProductTypeUrl = 'http://localhost:8080/productType/getProductsByProductType';
   private createProductTypeUrl = 'http://localhost:8080/productType/create';
+  private updateProductTypeUrl = 'http://localhost:8080/productType/update';
+  private deleteProductTypeUrl = 'http://localhost:8080/productType/delete';
   private productTypeAllUrl = 'http://localhost:8080/productType/getAllProductTypes';
   private productTypeById = 'http://localhost:8080/productType/getProductTypeById';
 
@@ -33,6 +35,14 @@ export class ProductTypeService {
 
   createProductType(productType:AdminProductType) : void {
       this.http.post(this.createProductTypeUrl, productType, { withCredentials: true }).subscribe();
+  }
+
+  updateProductType(productType:AdminProductType) : void {
+    this.http.post(this.updateProductTypeUrl, productType, { withCredentials: true }).subscribe();
+  }
+
+  deleteProductType(productType:AdminProductType) : void {
+    this.http.post(this.deleteProductTypeUrl, productType, { withCredentials: true }).subscribe();
   }
 
   getAllProductTypes() : Observable<AdminProductType[]> {

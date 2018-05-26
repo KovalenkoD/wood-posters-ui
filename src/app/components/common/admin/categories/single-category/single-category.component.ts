@@ -20,6 +20,7 @@ export class SingleCategoryComponent implements OnInit {
     console.log(this.adminProductType);
     if(id == -1){
       this.productTypeService.createProductType(this.adminProductType);
+      this.adminProductType =  new AdminProductType(-1, "" ,"" ,"" ,"");
     } else {
 
     }
