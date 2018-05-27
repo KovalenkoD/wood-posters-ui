@@ -1,7 +1,7 @@
 <div class="current-types">
   <div class="current-types__list current-types__column">
     <div *ngFor="let adminBaseNameObject of adminBaseNameObjects">
-      <span (click)="modifyType(adminBaseNameObject)">{{adminBaseNameObject.nameRU}}</span>
+      <span class="current-types__list-item" (click)="modifyType(adminBaseNameObject)">{{adminBaseNameObject.nameRU}}</span>
     </div>
   </div>
 

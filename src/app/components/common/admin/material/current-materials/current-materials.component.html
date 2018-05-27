@@ -1,7 +1,7 @@
 <div class="current-materials">
   <div class="current-materials__list current-materials__column">
     <div *ngFor="let adminBaseNameObject of adminBaseNameObjects">
-      <span (click)="modifyMaterial(adminBaseNameObject)">{{adminBaseNameObject.nameRU}}</span>
+      <span class="current-materials__list-item"(click)="modifyMaterial(adminBaseNameObject)">{{adminBaseNameObject.nameRU}}</span>
     </div>
   </div>
 
