@@ -12,11 +12,35 @@ import {MaterialService} from "../../../../../services/material.service";
 export class CurrentMaterialsComponent implements OnInit {
 
   adminBaseNameObjects: AdminBaseNameObject[];
+  adminBaseNameObject: AdminBaseNameObject;
+  modify: boolean = false;
+  delete: boolean = false;
 
   constructor(private materialService: MaterialService) { }
 
   ngOnInit() {
     this.materialService.getAllMaterialsAdmin().subscribe(data => this.adminBaseNameObjects = data);
+  }
+
+  modifyMaterial(adminBaseNameObject: AdminBaseNameObject){
+    this.adminBaseNameObject = adminBaseNameObject;
+    this.modify = true;
+  }
+
+  deleteMaterialQuestion(deleteQuestion: boolean = true){
+    this.delete = deleteQuestion;
+  }
+
+  deleteMaterial(){
+    this.deleteMaterialQuestion(false);
+    this.modify = false;
+
+    this.adminBaseNameObjects = this.adminBaseNameObjects.filter(adminBaseNameObject => adminBaseNameObject !== this.adminBaseNameObject);
+    this.adminBaseNameObject = null;
+  }
+
+  updateMaterial(): void{
+    this.modify = false;
   }
 
 

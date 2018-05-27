@@ -12,11 +12,36 @@ import {AdminBaseNameObject} from "../../../../../model/admin/admin-base-name-ob
 export class CurrentTypesComponent implements OnInit {
 
   adminBaseNameObjects: AdminBaseNameObject[];
+  adminBaseNameObject: AdminBaseNameObject;
+  modify: boolean = false;
+  delete: boolean = false;
+
 
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.categoryService.getAllCategoriesAdmin().subscribe(data => this.adminBaseNameObjects = data);
+  }
+
+  modifyType(adminBaseNameObject: AdminBaseNameObject){
+    this.adminBaseNameObject = adminBaseNameObject;
+    this.modify = true;
+  }
+
+  deleteTypeQuestion(deleteQuestion: boolean = true){
+    this.delete = deleteQuestion;
+  }
+
+  deleteType(){
+    this.deleteTypeQuestion(false);
+    this.modify = false;
+
+    this.adminBaseNameObjects = this.adminBaseNameObjects.filter(adminBaseNameObject => adminBaseNameObject !== this.adminBaseNameObject);
+    this.adminBaseNameObject = null;
+  }
+
+  updateType(): void{
+    this.modify = false;
   }
 
 

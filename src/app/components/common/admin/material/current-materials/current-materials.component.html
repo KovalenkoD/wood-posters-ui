@@ -1,3 +1,32 @@
-<div *ngFor="let adminBaseNameObject of adminBaseNameObjects">
-  <span>{{adminBaseNameObject.nameRU}}</span>
+<div class="current-materials">
+  <div class="current-materials__list current-materials__column">
+    <div *ngFor="let adminBaseNameObject of adminBaseNameObjects">
+      <span (click)="modifyMaterial(adminBaseNameObject)">{{adminBaseNameObject.nameRU}}</span>
+    </div>
+  </div>
+
+  <div *ngIf="adminBaseNameObject && modify" class="current-materials__modify current-materials__column">
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameRU" placeholder="Название RU">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameEN" placeholder="Название EN">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameUA" placeholder="Название UA">
+    </mat-form-field>
+
+    <button mat-button (click)="updateMaterial()" color="primary">Сохранить</button>
+    <button mat-button (click)="deleteMaterialQuestion()" class="current-materials__modify-delete" color="primary">Delete</button>
+
+    <div *ngIf="delete">
+      <div class="current-materials__modify__delete-message">Вы точно хотете удалить этот материал?</div>
+      <div>
+        <button mat-button class="current-materials__modify__modify" (click)="deleteMaterial()">Да</button>
+        <button mat-button class="current-materials__modify__modify" (click)="deleteMaterialQuestion(false)">Нет</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,3 +1,32 @@
-<div *ngFor="let adminBaseNameObject of adminBaseNameObjects">
-  <span>{{adminBaseNameObject.nameRU}}</span>
+<div class="current-types">
+  <div class="current-types__list current-types__column">
+    <div *ngFor="let adminBaseNameObject of adminBaseNameObjects">
+      <span (click)="modifyType(adminBaseNameObject)">{{adminBaseNameObject.nameRU}}</span>
+    </div>
+  </div>
+
+  <div *ngIf="adminBaseNameObject && modify" class="current-types__modify current-types__column">
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameRU" placeholder="Название RU">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameEN" placeholder="Название EN">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameUA" placeholder="Название UA">
+    </mat-form-field>
+
+    <button mat-button (click)="updateType()" color="primary">Сохранить</button>
+    <button mat-button (click)="deleteTypeQuestion()" class="current-types__modify-delete" color="primary">Delete</button>
+
+    <div *ngIf="delete">
+      <div class="current-types__modify__delete-message">Вы точно хотете удалить этот тип?</div>
+      <div>
+        <button mat-button class="current-types__modify__modify" (click)="deleteType()">Да</button>
+        <button mat-button class="current-types__modify__modify" (click)="deleteTypeQuestion(false)">Нет</button>
+      </div>
+    </div>
+  </div>
 </div>
