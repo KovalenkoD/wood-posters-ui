@@ -21,6 +21,7 @@ export class SingleTypeComponent implements OnInit {
     console.log(this.adminBaseNameObject);
     if(id == -1){
       this.categoryService.createCategory(this.adminBaseNameObject);
+      this.adminBaseNameObject = new AdminBaseNameObject(-1, "" ,"" ,"");
     } else {
 
     }

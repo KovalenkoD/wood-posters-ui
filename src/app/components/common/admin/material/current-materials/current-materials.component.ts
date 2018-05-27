@@ -34,13 +34,14 @@ export class CurrentMaterialsComponent implements OnInit {
   deleteMaterial(){
     this.deleteMaterialQuestion(false);
     this.modify = false;
-
+    this.materialService.deleteMaterial(this.adminBaseNameObject);
     this.adminBaseNameObjects = this.adminBaseNameObjects.filter(adminBaseNameObject => adminBaseNameObject !== this.adminBaseNameObject);
     this.adminBaseNameObject = null;
   }
 
   updateMaterial(): void{
     this.modify = false;
+    this.materialService.updateMaterial(this.adminBaseNameObject);
   }
 
 

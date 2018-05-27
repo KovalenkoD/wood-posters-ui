@@ -35,15 +35,13 @@ export class CurrentTypesComponent implements OnInit {
   deleteType(){
     this.deleteTypeQuestion(false);
     this.modify = false;
-
+    this.categoryService.deleteCategory(this.adminBaseNameObject);
     this.adminBaseNameObjects = this.adminBaseNameObjects.filter(adminBaseNameObject => adminBaseNameObject !== this.adminBaseNameObject);
     this.adminBaseNameObject = null;
   }
 
   updateType(): void{
     this.modify = false;
+    this.categoryService.updateCategory(this.adminBaseNameObject);
   }
-
-
-
 }

@@ -21,6 +21,7 @@ export class SingleMaterialComponent implements OnInit {
     console.log(this.adminBaseNameObject);
     if(id == -1){
       this.materialService.createMaterial(this.adminBaseNameObject);
+      this.adminBaseNameObject = new AdminBaseNameObject(-1, "" ,"" ,"");
     } else {
 
     }

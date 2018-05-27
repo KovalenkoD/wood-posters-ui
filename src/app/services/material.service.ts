@@ -10,6 +10,8 @@ export class MaterialService {
   private getAllMaterialsURL = 'http://localhost:8080/materials/getAllMaterials';
   private getAllMaterialsAdminURL = 'http://localhost:8080/materials/getAllMaterialsAdmin';
   private createMaterialURL = 'http://localhost:8080/materials/create';
+  private updateMaterialURL = 'http://localhost:8080/materials/update';
+  private deleteMaterialURL = 'http://localhost:8080/materials/delete';
 
 
   constructor(private http: HttpClient) { }
@@ -22,6 +24,14 @@ export class MaterialService {
 
   createMaterial(material:AdminBaseNameObject) : void {
     this.http.post(this.createMaterialURL, material, { withCredentials: true }).subscribe();
+  }
+
+  updateMaterial(material:AdminBaseNameObject) : void {
+    this.http.post(this.updateMaterialURL, material, { withCredentials: true }).subscribe();
+  }
+
+  deleteMaterial(material:AdminBaseNameObject) : void {
+    this.http.post(this.deleteMaterialURL, material, { withCredentials: true }).subscribe();
   }
 
   getAllMaterialsAdmin() : Observable<AdminBaseNameObject[]> {
