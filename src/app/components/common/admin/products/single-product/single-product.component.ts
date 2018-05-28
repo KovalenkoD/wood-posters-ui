@@ -43,6 +43,14 @@ export class SingleProductComponent implements OnInit {
     this.categoryService.getAllCategories().subscribe(data => this.categoryList = data);
   }
 
+  addGalleryImage() {
+    this.adminProduct.images.push('');
+  }
+
+  removeGalleryImage() {
+    this.adminProduct.images.pop();
+  }
+
   createOrUpdateProduct(id:number) : void {
     console.log(this.adminProduct);
     this.adminProduct.technologyIDs = this.technologyForm.value;
@@ -50,6 +58,7 @@ export class SingleProductComponent implements OnInit {
     this.adminProduct.categoryIDs = this.categoryForm.value;
     if(id == -1){
       this.productService.createProduct(this.adminProduct);
+      this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "");
     } else {
 
     }
