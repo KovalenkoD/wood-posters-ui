@@ -28,7 +28,7 @@ export class ProductTypeService {
   }
 
   getProductByTypeId(id:number) : Observable<Product[]> {
-    return this.oldHttp.get(this.productByProductTypeUrl + "/" + id)
+    return this.oldHttp.get(this.productByProductTypeUrl + "/" + id, { withCredentials: true })
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }

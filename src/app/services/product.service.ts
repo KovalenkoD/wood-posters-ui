@@ -27,32 +27,32 @@ export class ProductService {
   constructor (private http: Http) {}
 
   getProductById(id:number) : Observable<Product> {
-      return this.http.get(this.productUrl + "/" + id)
+      return this.http.get(this.productUrl + "/" + id, { withCredentials: true })
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getRelatedProducts(id:number) : Observable<Product[]> {
-    return this.http.get(this.relatedProductsUrl + "/" + id)
+    return this.http.get(this.relatedProductsUrl + "/" + id, { withCredentials: true })
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getMostPopularProductsByType(popularType:number) : Observable<Product[]> {
-    return this.http.get(this.mostPopularProductsByTypeUrl + "/" + this.productType + "/" + popularType)
+    return this.http.get(this.mostPopularProductsByTypeUrl + "/" + this.productType + "/" + popularType, { withCredentials: true })
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getMostPopularBundle(popularType:number) : Observable<Bundle[]> {
-    return this.http.get(this.mostPopularBundleByTypeUrl + "/" + this.productBundleType + "/" + popularType)
+    return this.http.get(this.mostPopularBundleByTypeUrl + "/" + this.productBundleType + "/" + popularType, { withCredentials: true })
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
 
   getAllBundles() : Observable<Bundle[]> {
-    return this.http.get(this.allBundlesUrl)
+    return this.http.get(this.allBundlesUrl, { withCredentials: true })
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
