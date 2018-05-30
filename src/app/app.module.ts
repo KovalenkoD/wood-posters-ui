@@ -90,6 +90,9 @@ import {SingleProductComponent} from "./components/common/admin/products/single-
 import {TechnologyService} from "./services/technology.service";
 import {MaterialService} from "./services/material.service";
 import {LocaleService} from "./services/locale.service";
+import {CollectionsComponent} from "./components/common/admin/collections/collections.component";
+import {CurrentCollectionsComponent} from "./components/common/admin/collections/current-collections/current-collections.component";
+import {SingleCollectionComponent} from "./components/common/admin/collections/single-collection/single-collection.component";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -186,6 +189,9 @@ const appRoutes: Routes = [
     ProductsComponent,
     SingleProductComponent,
     CurrentProductsComponent,
+    CollectionsComponent,
+    CurrentCollectionsComponent,
+    SingleCollectionComponent,
     MobileNavComponent,
   ],
   imports: [

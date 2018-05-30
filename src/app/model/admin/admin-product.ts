@@ -17,6 +17,7 @@ export class AdminProduct {
     public popular: number,
     public imagePresentation: number,
     public images: string[],
-    public image : string
+    public image : string,
+    public bundleImage: string
   ){}
 }
