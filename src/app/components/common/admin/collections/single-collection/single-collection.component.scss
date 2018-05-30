@@ -1,0 +1,180 @@
+@import './src/sass/variables';
+
+.simple-collection {
+
+  background-color:#ececec;
+  padding-top: 30px;
+  width: 100%;
+
+  &-container {
+    display: table;
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+
+    &__column {
+      width: 30%;
+      display: inline-block;
+      float: left;
+
+      &-buttons {
+        display: inline-block;
+      }
+
+      &:last-child {
+        width: 40%;
+      }
+
+
+      &:first-child {
+        padding-left: 10%;
+      }
+
+      &:nth-child(2){
+        padding-left: 20px;
+      }
+
+      &-mat-form-field {
+        width: 100%;
+
+        &:first-child {
+          margin-top: 15px;
+        }
+
+        /deep/ .mat-select {
+          height: 50px;
+        }
+
+        /deep/ .mat-form-field-underline {
+          display: none;
+        }
+
+        /deep/ .mat-form-field-infix {
+          border: 0px;
+          padding: 0px;
+        }
+
+        input {
+          height: 40px;
+        }
+
+        &__select {
+          border: 0px;
+          padding: 0px;
+        }
+      }
+
+      &-block {
+        margin-bottom: 15px;
+
+        &-name {
+          margin-bottom: 10px;
+        }
+
+        .mat-form-field {
+          display: block;
+          padding-left: 15px;
+          padding-right: 10px;
+
+          input {
+            height: 40px;
+          }
+        }
+      }
+
+      .interactive-image {
+        position: relative;
+
+        &__dot {
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          opacity: 1;
+          background-color: $white;
+          z-index: 10;
+          cursor: pointer;
+          transition: all .2s ease;
+
+          &:after,
+          &:before {
+            content: "";
+            position: absolute;
+            left: calc(50% - 9px);
+            top: calc(50%);
+            width: 18px;
+            height: 2px;
+            background-color: $black;
+            transition: all .2s ease;
+          }
+
+          &:hover,
+          &:focus {
+            box-shadow: 0 0 4px rgba(0,0,0,.5);
+
+            &:after,
+            &:before {
+              background-color: #7dff56;
+            }
+          }
+
+          &:before {
+            transform: rotate(90deg);
+          }
+        }
+
+        &__dot.active &__hint {
+          display: block !important;
+        }
+
+        &__hint {
+          display: none;
+          position: absolute;
+          width: 180px;
+          padding: 14px 16px;
+          left: calc(50% - 90px);
+          top: calc(100% + 15px);
+          background-color: $white;
+          border-radius: 4px;
+          box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
+          font-weight: $font-medium;
+
+          &:after {
+            content: "";
+            left: 50%;
+            bottom: 100%;
+            border: 6px solid transparent;
+            border-bottom-color: $white;
+            margin-left: -6px;
+            position: absolute;
+          }
+
+          &-category {
+            font-size: 12px;
+            color: $white-f7;
+          }
+
+          &-image {
+            img {
+              width: 100%;
+              height: 120px;
+              object-fit: cover;
+            }
+          }
+
+          &-price {
+            color: $white-f7;
+            font-size: 12px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+    background-color:#c3d4c3;
+  }
+
+}
+
