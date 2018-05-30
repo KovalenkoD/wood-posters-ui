@@ -13,6 +13,7 @@ import {AdminProduct} from "../model/admin/admin-product";
 export class ProductService {
 
   public popularTypeInTrend = 2;
+  public homeSliderPopularType: number = 3;
   public popularType = 1;
   public productType = "P";
   public productBundleType = "BP";

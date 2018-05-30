@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
+import {Product} from "../../../model/product";
+import {ProductService} from "../../../services/product.service";
+import {CartService} from "../../../services/cart.service";
 
 @Component({
   selector: 'app-home-slider',
@@ -15,13 +18,16 @@ export class HomeSliderComponent implements OnInit {
     'http://www.perm-podarok.ru/images/catalog/544/Korobki-novogodnih-podarkov.jpg'
   ];
 
+  public products: Product[];
+
   curentSlide: number = 1;
 
-  constructor() { }
+  constructor(private productService : ProductService, private cartService: CartService) { }
 
   public carouselOne: NgxCarousel;
 
   ngOnInit() {
+    this.getHomeSliderProducts();
 
     this.carouselOne = {
       grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
@@ -82,6 +88,19 @@ export class HomeSliderComponent implements OnInit {
   onmoveFn(data: NgxCarouselStore) {
     console.log(data);
     this.curentSlide = data.currentSlide + 1;
+  }
+
+  getHomeSliderProducts() {
+    this.productService.getMostPopularProductsByType(this.productService.homeSliderPopularType)
+      .subscribe(
+        products => this.products = products,
+        err => {
+          console.log(err);
+        });
+  }
+
+  addProductToCart(product:Product): void {
+    this.cartService.addProductToCart(product.id, 1);
   }
 
 }

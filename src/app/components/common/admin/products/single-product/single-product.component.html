@@ -75,8 +75,10 @@
 
         <mat-form-field class="simple-product-container__column-mat-form-field">
           <mat-select placeholder="Популярный товар" [(value)]="adminProduct.popular">
-            <mat-option [value]="1">Да</mat-option>
+            <mat-option [value]="2">Да в тренде</mat-option>
+            <mat-option [value]="1">Да, домашняя страница страница</mat-option>
             <mat-option [value]="0">Нет</mat-option>
+            <mat-option [value]="3">Заголовок</mat-option>
           </mat-select>
         </mat-form-field>
 

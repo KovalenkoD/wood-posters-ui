@@ -1,25 +1,25 @@
-<div class="home-slider">
+<div class="home-slider" *ngIf="products && products.length > 0">
   <ngx-carousel
     [inputs]="carouselOne"
     (carouselLoad)="myfunc($event)"
     (onMove)="onmoveFn($event)"
     >
       <ngx-item
-        *ngFor="let slide of slides"
+        *ngFor="let product of products"
         NgxCarouselItem
       >
         <div class="home-slider__item" >
           <div class="container home-slider__info">
-            <div class="home-slider__text"> 
-              <span class="home-slider__category">Шкатулки</span>
-              <h3 class="home-slider__name">“La Bella Provancale”</h3>
-              <div class="home-slider__price">320 грн.</div>
-              <div class="home-slider__button"><button class="button">В корзину</button></div>
+            <div class="home-slider__text">
+              <span class="home-slider__category">{{product.productType.name}}</span>
+              <h3 class="home-slider__name">“{{product.name}}”</h3>
+              <div class="home-slider__price">{{product.price}} грн.</div>
+              <div class="home-slider__button" (click)="addProductToCart(product)"><button class="button">В корзину</button></div>
             </div>
           </div>
           <div
             class="home-slider__img"
-            [ngStyle]="{'background-image': 'url(' + slide + ')'}"
+            [ngStyle]="{'background-image': 'url(' + product.image + ')'}"
           ></div>
         </div>
       </ngx-item>
@@ -29,7 +29,7 @@
 
   <div class="home-slider__counter">
     <div class="container">
-      <span>{{curentSlide}}</span> / {{slides.length}}
+      <span>{{curentSlide}}</span> / {{products.length}}
     </div>
   </div>
 </div>
