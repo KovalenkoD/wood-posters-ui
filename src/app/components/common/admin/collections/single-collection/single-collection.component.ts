@@ -63,7 +63,8 @@ export class SingleCollectionComponent implements OnInit {
   }
 
   addProductToBundle() {
-    this.bundleChild.push(new BundleChild(-1, 13, 21, null, false));
+    let product = new Product(-1, null, null, null, null, null, null, null, null, null, null, null);
+    this.bundleChild.push(new BundleChild(-1, 13, 21, product, false));
   }
 
   removeProductFromBundle() {
@@ -110,5 +111,18 @@ export class SingleCollectionComponent implements OnInit {
       top: target.y_coordinate + '%'
     };
     return postition;
+  }
+
+  productIdChanged(productId : number, childItem: BundleChild){
+    this.productService.getProductById(productId).subscribe(product => {
+      childItem.product = product;
+      this.bundleChild.forEach(childFromBundleItem => {
+
+        console.log(productId + " | " + childFromBundleItem.id + " | " + childFromBundleItem.product.id + " | " + childFromBundleItem.product.name);
+      });
+    });
+
+
+
   }
 }

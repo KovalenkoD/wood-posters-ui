@@ -75,16 +75,7 @@
 
         <mat-form-field class="simple-collection-container__column-mat-form-field">
           <mat-select placeholder="Популярный товар" [(value)]="adminProduct.popular">
-            <mat-option [value]="2">Да в тренде</mat-option>
             <mat-option [value]="1">Да, домашняя страница страница</mat-option>
-            <mat-option [value]="0">Нет</mat-option>
-            <mat-option [value]="3">Заголовок</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <mat-form-field class="simple-collection-container__column-mat-form-field">
-          <mat-select placeholder="Показывать как постер" [(value)]="adminProduct.imagePresentation">
-            <mat-option [value]="1">Да</mat-option>
             <mat-option [value]="0">Нет</mat-option>
           </mat-select>
         </mat-form-field>
@@ -104,16 +95,6 @@
         <mat-form-field class="simple-collection-container__column-mat-form-field">
           <input matInput [(ngModel)]="adminProduct.bundleImage" placeholder="Введите URL рисунка">
         </mat-form-field>
-      </div>
-
-      <div class="simple-collection-container__column-block" *ngIf="adminProduct.imagePresentation == 0">
-        <div class="simple-collection-container__column-block-name">Изобрежения галлереи</div>
-        <mat-form-field *ngFor="let image of adminProduct.images; let i = index" class="simple-collection-container__column-mat-form-field">
-          <input matInput [(ngModel)]="adminProduct.images[i]" placeholder="Введите URL рисунка">
-        </mat-form-field>
-        <button mat-button (click)="addGalleryImage()" color="primary">Добавить</button>
-        <button mat-button (click)="removeGalleryImage()" color="primary">Удалить</button>
-
       </div>
     </div>
 
@@ -159,6 +140,12 @@
       <mat-form-field>
         <input matInput [(ngModel)]="childItem.y_coordinate" type="number" placeholder="Y coordinate">
       </mat-form-field>
+
+      <div>
+        <mat-form-field>
+          <input matInput [(ngModel)]="childItem.product.id" type="number" min="1" align="end" (change)="productIdChanged($event.target.value, childItem)" placeholder="Product ID">
+        </mat-form-field>
+      </div>
     </div>
   </div>
 
