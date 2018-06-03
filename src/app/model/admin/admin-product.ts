@@ -1,3 +1,5 @@
+import {AdminBundleProductItem} from "./admin-bundle-product-item";
+
 export class AdminProduct {
   constructor(
     public id: number,
@@ -18,6 +20,7 @@ export class AdminProduct {
     public imagePresentation: number,
     public images: string[],
     public image : string,
-    public bundleImage: string
+    public bundleImage: string,
+    public bundleProductItems: AdminBundleProductItem[] = []
   ){}
 }

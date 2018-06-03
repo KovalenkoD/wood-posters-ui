@@ -23,7 +23,7 @@ export class ProductService {
   private allBundlesUrl = 'http://localhost:8080/products/getAllBundles';
   private relatedProductsUrl = 'http://localhost:8080/products/getRelatedProducts';
   private createProductUrl = 'http://localhost:8080/products/create';
-
+  private createBundleUrl = 'http://localhost:8080/products/createBundle';
 
   constructor (private http: Http) {}
 
@@ -60,6 +60,10 @@ export class ProductService {
 
   createProduct(product:AdminProduct) : void {
     this.http.post(this.createProductUrl, product, { withCredentials: true }).subscribe();
+  }
+
+  createBundle(product:AdminProduct) : void {
+    this.http.post(this.createBundleUrl, product, { withCredentials: true }).subscribe();
   }
 
 }

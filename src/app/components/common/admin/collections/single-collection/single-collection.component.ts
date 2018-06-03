@@ -14,6 +14,7 @@ import {Bundle} from "../../../../../model/bundle";
 import {BundleChild} from "../../../../../model/bundle-child";
 import {ProductType} from "../../../../../model/product-type";
 import {Product} from "../../../../../model/product";
+import {AdminBundleProductItem} from "../../../../../model/admin/admin-bundle-product-item";
 
 @Component({
   selector: 'app-single-collection',
@@ -77,14 +78,22 @@ export class SingleCollectionComponent implements OnInit {
     this.adminProduct.materialIDs = this.materialForm.value;
     this.adminProduct.categoryIDs = this.categoryForm.value;
     if(id == -1){
-      this.productService.createProduct(this.adminProduct);
-      this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "");
+        this.adminProduct.bundleProductItems = this.convertBundleChildToBundleAdminProductItem();
+        console.log(this.adminProduct);
+        this.productService.createBundle(this.adminProduct);
+        this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "");
     } else {
 
     }
   }
+  convertBundleChildToBundleAdminProductItem(){
+    let adminProductCategoryLigthItems = [] as AdminBundleProductItem[];
 
-
+    this.bundleChild.forEach(child => {
+      adminProductCategoryLigthItems.push(new AdminBundleProductItem(child.id, child.x_coordinate, child.y_coordinate, child.product.id));
+    });
+    return adminProductCategoryLigthItems;
+  }
 
   onToggleHint(target: any): void {
     if(target.active === true) {
