@@ -4,6 +4,7 @@ export class AdminProductType {
     public nameRU: string,
     public nameEN: string,
     public nameUA: string,
-    public imageURL: string
+    public imageURL: string,
+    public visible: number = 1
   ){}
 }

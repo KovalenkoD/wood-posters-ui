@@ -12,6 +12,16 @@
     height: 400px;
     width: 100%;
 
+    .collections_cordinate {
+      /deep/ .mat-form-field-underline.mat-input-underline {
+        display: none;
+      }
+
+      input {
+        width: 50px;
+      }
+    }
+
     &__column {
       width: 30%;
       display: inline-block;
@@ -32,6 +42,12 @@
 
       &:nth-child(2){
         padding-left: 20px;
+      }
+
+      .collections_cordinate {
+        /deep/ .mat-form-field-underline.mat-input-underline {
+          display: none;
+        }
       }
 
       &-mat-form-field {

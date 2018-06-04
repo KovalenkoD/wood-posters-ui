@@ -133,7 +133,7 @@
       <button mat-button (click)="removeProductFromBundle()" color="primary">Удалить</button>
     </div>
 
-    <div *ngFor="let childItem of bundleChild">
+    <div *ngFor="let childItem of bundleChild" class="collections_cordinate">
       <mat-form-field>
         <input matInput [(ngModel)]="childItem.x_coordinate" type="number" placeholder="X coordinate">
       </mat-form-field>

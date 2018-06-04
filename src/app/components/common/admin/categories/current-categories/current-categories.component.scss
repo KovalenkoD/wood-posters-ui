@@ -66,6 +66,19 @@
       }
     }
 
+    /deep/ .mat-select {
+      height: 50px;
+    }
+
+    /deep/ .mat-form-field-underline {
+      display: none;
+    }
+
+    /deep/ .mat-form-field-infix {
+      border: 0px;
+      padding: 0px;
+    }
+
     .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
       background-color:#c3d4c3;
     }
