@@ -15,6 +15,11 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+
+    @include mobile {
+      left: 0;
+      transform: translate(0, 0);
+    }
   }
 
   &__title {
@@ -54,6 +59,10 @@
   }
 
   &__item {
+    @include mobile {
+      width: calc(100% - 8px);
+    }
+
     width: calc(33.33% - 6px);
     background-color: #fffbf5;
     margin-bottom: 10px;
@@ -67,6 +76,9 @@
 
     &:nth-child(2),
     &:nth-child(6) {
+      @include mobile {
+        width: calc(100% - 8px);
+      }
       width: calc(66.6% - 3px);
     }
 

@@ -1,6 +1,12 @@
 @import './src/sass/variables';
 
 .similar-products {
+/*  /deep/ .ngxcarouselPoint{
+    @include mobile {
+      padding: 12px 10% 12px 0;
+    }
+  }*/
+
   &__title {
     font-size: 30px;
     margin-top: 0;

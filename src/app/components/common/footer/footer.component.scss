@@ -9,6 +9,16 @@
     margin-bottom: 58px;
   }
 
+  &__nav {
+    @include ipad {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
   &__logo {
     margin-right: 80px;
   }

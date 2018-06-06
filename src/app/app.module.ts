@@ -14,6 +14,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
 import { NgxImageGalleryModule } from 'ngx-image-gallery';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 import {
   MatButtonModule,
@@ -208,6 +210,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     NgxImageGalleryModule,
+    MatMenuModule,
     NgxPaginationModule,
     MatCheckboxModule,
     MatInputModule,

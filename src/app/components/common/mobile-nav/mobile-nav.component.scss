@@ -7,6 +7,40 @@
 }
 
 .mobile-nav {
+  &__link {
+    color: $black;
+    font-weight: $font-medium;
+
+    &.active,
+    &:hover {
+      color: $gray-ab;
+    }
+
+    i {
+      margin-left: 4px;
+    }
+
+    &-wrap {
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__link-wrap:hover & {
+
+    &__link {
+      color: $gray-ab;
+    }
+
+    &__submenu {
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   &-trigger {
     width: 22px;
     height: 18px;

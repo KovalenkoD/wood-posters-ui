@@ -1,7 +1,14 @@
+@import './src/sass/variables';
+
 .filter-result{
   &__pagination {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+
+    @include mobile {
+      left: 0;
+      transform: translate(0, 0);
+    }
   }
 }

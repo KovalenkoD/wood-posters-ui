@@ -59,6 +59,10 @@ a, button, input {
       margin-right: 0 !important;
     }
 
+    @include mobile {
+      width: calc(100% - 8px);
+    }
+
     &:not(:nth-child(3n)){
       margin-right: 12px;
 
