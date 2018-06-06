@@ -9,6 +9,8 @@ export class PosterComponent implements OnInit {
 
   constructor() { }
 
+  @Input() productsLength: number = 0;
+
   image:string = '/assets/images/pexels-photo-220182.jpeg';
   @Input() white: boolean;
 
