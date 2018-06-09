@@ -1,10 +1,10 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {CartResult} from "../model/cart-result";
 import {Product} from "../model/product";
-import {HttpClient} from '@angular/common/http';
 import {Contact} from "../model/contact";
 import {AdminSalesOrder} from "../model/admin/admin-sales-order";
 import {Observable} from "rxjs/Observable";
+import {RestService} from "./rest.service";
 
 @Injectable()
 export class CartService {
@@ -13,18 +13,18 @@ export class CartService {
   public cartResultChanges: EventEmitter<CartResult>;
 
   private opened: boolean = false;
-  private addItemsToCartUrl = 'http://localhost:8080/quote/addOrdersToSalesOrder';
-  private changeCountOfItemsFromCartUrl = 'http://localhost:8080/quote/changeCountOfItemsFromSalesOrder';
-  private deleteOrdersFormCartUrl = 'http://localhost:8080/quote/deleteOrdersFormSalesOrder';
-  private cleanCartUrl = 'http://localhost:8080/quote/cleanSalesOrder';
-  private getSalesOrderInfoUrl = 'http://localhost:8080/quote/getSalesOrderInfo';
-  private summitOrderUrl = 'http://localhost:8080/quote/submitOrder';
-  private salesOrdersByStatus = 'http://localhost:8080/quote/getSalesOrdersByStatus';
+  private addItemsToCartUrl = 'quote/addOrdersToSalesOrder';
+  private changeCountOfItemsFromCartUrl = 'quote/changeCountOfItemsFromSalesOrder';
+  private deleteOrdersFormCartUrl = 'quote/deleteOrdersFormSalesOrder';
+  private cleanCartUrl = 'quote/cleanSalesOrder';
+  private getSalesOrderInfoUrl = 'quote/getSalesOrderInfo';
+  private summitOrderUrl = 'quote/submitOrder';
+  private salesOrdersByStatus = 'quote/getSalesOrdersByStatus';
 
 
   private cartResult:CartResult;
 
-  constructor(private http: HttpClient) {
+  constructor(private restService: RestService) {
     this.cardIsOpenedChanges = new EventEmitter();
     this.cartResultChanges = new EventEmitter();
     this.getSalesOrderInfo();
@@ -45,14 +45,14 @@ export class CartService {
   }
 
   addProductToCart(id:number, count: number) : void {
-    this.http.get<CartResult>(this.addItemsToCartUrl + "/" + id + "/" + count, { withCredentials: true }).subscribe(data => {
+    this.restService.get<CartResult>(this.addItemsToCartUrl,  id + "/" + count).subscribe(data => {
       this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
   }
 
   changeCountOfItemsFromCart(product:Product, count: number) : void {
-    this.http.get<CartResult>(this.changeCountOfItemsFromCartUrl + "/" + product.id + "/" + count, { withCredentials: true }).subscribe(data => {
+    this.restService.get<CartResult>(this.changeCountOfItemsFromCartUrl , product.id + "/" + count).subscribe(data => {
       this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
@@ -60,28 +60,28 @@ export class CartService {
   }
 
   deleteProductFromCart(product:Product) : void {
-    this.http.get<CartResult>(this.deleteOrdersFormCartUrl + "/" + product.id, { withCredentials: true }).subscribe(data => {
+    this.restService.get<CartResult>(this.deleteOrdersFormCartUrl , product.id).subscribe(data => {
       this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
   }
 
   cleanCart() : void {
-    this.http.get<CartResult>(this.cleanCartUrl, { withCredentials: true }).subscribe(data => {
+    this.restService.get<CartResult>(this.cleanCartUrl).subscribe(data => {
       this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
   }
 
   getSalesOrderInfo() : void {
-    this.http.get<CartResult>(this.getSalesOrderInfoUrl, { withCredentials: true }).subscribe(data => {
+    this.restService.get<CartResult>(this.getSalesOrderInfoUrl).subscribe(data => {
       this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
   }
 
   submitOrder(contact:Contact) : void  {
-     this.http.post<CartResult>(this.summitOrderUrl, contact, { withCredentials: true }).subscribe(data => {
+     this.restService.post<CartResult>(this.summitOrderUrl, contact).subscribe(data => {
       this.cartResult = data;
       this.cartResultChanges.emit(this.cartResult);
     });
@@ -89,7 +89,7 @@ export class CartService {
 
 
   getSalesOrdersByStatus(status:number) : Observable<AdminSalesOrder[]> {
-    return this.http.get<AdminSalesOrder[]>(this.salesOrdersByStatus + "/" + status, { withCredentials: true });
+    return this.restService.get<AdminSalesOrder[]>(this.salesOrdersByStatus , status);
 
   }
 }

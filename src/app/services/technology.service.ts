@@ -1,41 +1,41 @@
 import { Injectable } from '@angular/core';
 import {Technology} from "../model/technology";
 import {Observable} from "rxjs/Observable";
-import {HttpClient} from "@angular/common/http";
 import {AdminBaseNameObject} from "../model/admin/admin-base-name-object";
+import {RestService} from "./rest.service";
 
 @Injectable()
 export class TechnologyService {
 
-  private getAllTechnologiesURL = 'http://localhost:8080/technology/getAllTechnologies';
-  private getAllTechnologiesAdminURL = 'http://localhost:8080/technology/getAllTechnologiesAdmin';
-  private createTechnologyURL = 'http://localhost:8080/technology/create';
-  private updateTechnologyURL = 'http://localhost:8080/technology/update';
-  private deleteTechnologyURL = 'http://localhost:8080/technology/delete';
+  private getAllTechnologiesURL = 'technology/getAllTechnologies';
+  private getAllTechnologiesAdminURL = 'technology/getAllTechnologiesAdmin';
+  private createTechnologyURL = 'technology/create';
+  private updateTechnologyURL = 'technology/update';
+  private deleteTechnologyURL = 'technology/delete';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private restService: RestService) { }
 
 
   getAllTechnologies() : Observable<Technology[]> {
-    return this.http.get<Technology[]>(this.getAllTechnologiesURL, { withCredentials: true });
+    return this.restService.get<Technology[]>(this.getAllTechnologiesURL);
 
   }
 
   createTechnology(technology:AdminBaseNameObject) : void {
-    this.http.post(this.createTechnologyURL, technology, { withCredentials: true }).subscribe();
+    this.restService.post(this.createTechnologyURL, technology).subscribe();
   }
 
   updateTechnology(technology:AdminBaseNameObject) : void {
-    this.http.post(this.updateTechnologyURL, technology, { withCredentials: true }).subscribe();
+    this.restService.post(this.updateTechnologyURL, technology).subscribe();
   }
 
   deleteTechnology(technology:AdminBaseNameObject) : void {
-    this.http.post(this.deleteTechnologyURL, technology, { withCredentials: true }).subscribe();
+    this.restService.post(this.deleteTechnologyURL, technology).subscribe();
   }
 
   getAllTechnologiesAdmin() : Observable<AdminBaseNameObject[]> {
-    return this.http.get<AdminBaseNameObject[]>(this.getAllTechnologiesAdminURL, { withCredentials: true });
+    return this.restService.get<AdminBaseNameObject[]>(this.getAllTechnologiesAdminURL);
 
   }
 

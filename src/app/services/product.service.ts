@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import {Product} from "../model/product";
 
-// Import RxJs required methods
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 import {Bundle} from "../model/bundle";
 import {AdminProduct} from "../model/admin/admin-product";
+import {RestService} from "./rest.service";
 
 @Injectable()
 export class ProductService {
@@ -17,53 +14,43 @@ export class ProductService {
   public popularType = 1;
   public productType = "P";
   public productBundleType = "BP";
-  private productUrl = 'http://localhost:8080/products/getProductById';
-  private mostPopularProductsByTypeUrl = 'http://localhost:8080/products/getMostPopularProducts';
-  private mostPopularBundleByTypeUrl = 'http://localhost:8080/products/getMostPopularBundle';
-  private allBundlesUrl = 'http://localhost:8080/products/getAllBundles';
-  private relatedProductsUrl = 'http://localhost:8080/products/getRelatedProducts';
-  private createProductUrl = 'http://localhost:8080/products/create';
-  private createBundleUrl = 'http://localhost:8080/products/createBundle';
+  private productUrl = 'products/getProductById';
+  private mostPopularProductsByTypeUrl = 'products/getMostPopularProducts';
+  private mostPopularBundleByTypeUrl = 'products/getMostPopularBundle';
+  private allBundlesUrl = 'products/getAllBundles';
+  private relatedProductsUrl = 'products/getRelatedProducts';
+  private createProductUrl = 'products/create';
+  private createBundleUrl = 'products/createBundle';
 
-  constructor (private http: Http) {}
+  constructor (private restService: RestService) {}
 
   getProductById(id:number) : Observable<Product> {
-      return this.http.get(this.productUrl + "/" + id, { withCredentials: true })
-        .map((res:Response) => res.json())
-        .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+      return this.restService.get(this.productUrl , id);
   }
 
   getRelatedProducts(id:number) : Observable<Product[]> {
-    return this.http.get(this.relatedProductsUrl + "/" + id, { withCredentials: true })
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    return this.restService.get(this.relatedProductsUrl, id);
   }
 
   getMostPopularProductsByType(popularType:number) : Observable<Product[]> {
-    return this.http.get(this.mostPopularProductsByTypeUrl + "/" + this.productType + "/" + popularType, { withCredentials: true })
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    return this.restService.get(this.mostPopularProductsByTypeUrl , this.productType + "/" + popularType);
   }
 
   getMostPopularBundle(popularType:number) : Observable<Bundle[]> {
-    return this.http.get(this.mostPopularBundleByTypeUrl + "/" + this.productBundleType + "/" + popularType, { withCredentials: true })
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    return this.restService.get(this.mostPopularBundleByTypeUrl , this.productBundleType + "/" + popularType);
   }
 
 
   getAllBundles() : Observable<Bundle[]> {
-    return this.http.get(this.allBundlesUrl, { withCredentials: true })
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    return this.restService.get(this.allBundlesUrl);
   }
 
   createProduct(product:AdminProduct) : void {
-    this.http.post(this.createProductUrl, product, { withCredentials: true }).subscribe();
+    this.restService.post(this.createProductUrl, product).subscribe();
   }
 
   createBundle(product:AdminProduct) : void {
-    this.http.post(this.createBundleUrl, product, { withCredentials: true }).subscribe();
+    this.restService.post(this.createBundleUrl, product).subscribe();
   }
 
 }

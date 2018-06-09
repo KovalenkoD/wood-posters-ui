@@ -1,58 +1,51 @@
 import { Injectable } from '@angular/core';
-import {Response, Headers, RequestOptions, Http} from '@angular/http';
 import { ProductType } from '../model/product-type';
 import {Product} from '../model/product';
 import {Observable} from 'rxjs/Rx';
 
-// Import RxJs required methods
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import {HttpClient} from "@angular/common/http";
 import {AdminProductType} from "../model/admin/admin-product-type";
+import {RestService} from "./rest.service";
 
 @Injectable()
 export class ProductTypeService {
 
-  private productUrl = 'http://localhost:8080/productType/getAllVisibleProductTypes';
-  private productByProductTypeUrl = 'http://localhost:8080/productType/getProductsByProductType';
-  private createProductTypeUrl = 'http://localhost:8080/productType/create';
-  private updateProductTypeUrl = 'http://localhost:8080/productType/update';
-  private deleteProductTypeUrl = 'http://localhost:8080/productType/delete';
-  private productTypeAllUrl = 'http://localhost:8080/productType/getAllProductTypes';
-  private productTypeById = 'http://localhost:8080/productType/getProductTypeById';
+  private productUrl = 'productType/getAllVisibleProductTypes';
+  private productByProductTypeUrl = 'productType/getProductsByProductType';
+  private createProductTypeUrl = 'productType/create';
+  private updateProductTypeUrl = 'productType/update';
+  private deleteProductTypeUrl = 'productType/delete';
+  private productTypeAllUrl = 'productType/getAllProductTypes';
+  private productTypeById = 'productType/getProductTypeById';
 
-  constructor (private http: HttpClient, private oldHttp: Http) {}
+  constructor (private restService: RestService) {}
 
   getAllVisibleProductTypes() : Observable<ProductType[]> {
-    return this.http.get<ProductType[]>(this.productUrl, { withCredentials: true });
+    return this.restService.get<ProductType[]>(this.productUrl);
   }
 
   getProductByTypeId(id:number) : Observable<Product[]> {
-    return this.oldHttp.get(this.productByProductTypeUrl + "/" + id, { withCredentials: true })
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    return this.restService.get(this.productByProductTypeUrl, id);
   }
 
   createProductType(productType:AdminProductType) : void {
-      this.http.post(this.createProductTypeUrl, productType, { withCredentials: true }).subscribe();
+      this.restService.post(this.createProductTypeUrl, productType).subscribe();
   }
 
   updateProductType(productType:AdminProductType) : void {
-    this.http.post(this.updateProductTypeUrl, productType, { withCredentials: true }).subscribe();
+    this.restService.post(this.updateProductTypeUrl, productType).subscribe();
   }
 
   deleteProductType(productType:AdminProductType) : void {
-    this.http.post(this.deleteProductTypeUrl, productType, { withCredentials: true }).subscribe();
+    this.restService.post(this.deleteProductTypeUrl, productType).subscribe();
   }
 
   getAllProductTypes() : Observable<AdminProductType[]> {
-    return this.http.get<AdminProductType[]>(this.productTypeAllUrl, { withCredentials: true });
+    return this.restService.get<AdminProductType[]>(this.productTypeAllUrl);
 
   }
 
   getProductTypeById(id: number) : Observable<ProductType> {
-    return this.http.get<ProductType>(this.productTypeById + "/" + id, { withCredentials: true });
+    return this.restService.get<ProductType>(this.productTypeById, id);
 
   }
-
 }

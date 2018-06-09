@@ -3,40 +3,40 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 import {Material} from "../model/material";
 import {AdminBaseNameObject} from "../model/admin/admin-base-name-object";
+import {RestService} from "./rest.service";
 
 @Injectable()
 export class MaterialService {
 
-  private getAllMaterialsURL = 'http://localhost:8080/materials/getAllMaterials';
-  private getAllMaterialsAdminURL = 'http://localhost:8080/materials/getAllMaterialsAdmin';
-  private createMaterialURL = 'http://localhost:8080/materials/create';
-  private updateMaterialURL = 'http://localhost:8080/materials/update';
-  private deleteMaterialURL = 'http://localhost:8080/materials/delete';
+  private getAllMaterialsURL = 'materials/getAllMaterials';
+  private getAllMaterialsAdminURL = 'materials/getAllMaterialsAdmin';
+  private createMaterialURL = 'materials/create';
+  private updateMaterialURL = 'materials/update';
+  private deleteMaterialURL = 'materials/delete';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private restService: RestService) { }
 
 
   getAllMaterials() : Observable<Material[]> {
-    return this.http.get<Material[]>(this.getAllMaterialsURL, { withCredentials: true });
+    return this.restService.get<Material[]>(this.getAllMaterialsURL);
 
   }
 
   createMaterial(material:AdminBaseNameObject) : void {
-    this.http.post(this.createMaterialURL, material, { withCredentials: true }).subscribe();
+    this.restService.post(this.createMaterialURL, material).subscribe();
   }
 
   updateMaterial(material:AdminBaseNameObject) : void {
-    this.http.post(this.updateMaterialURL, material, { withCredentials: true }).subscribe();
+    this.restService.post(this.updateMaterialURL, material).subscribe();
   }
 
   deleteMaterial(material:AdminBaseNameObject) : void {
-    this.http.post(this.deleteMaterialURL, material, { withCredentials: true }).subscribe();
+    this.restService.post(this.deleteMaterialURL, material).subscribe();
   }
 
   getAllMaterialsAdmin() : Observable<AdminBaseNameObject[]> {
-    return this.http.get<AdminBaseNameObject[]>(this.getAllMaterialsAdminURL, { withCredentials: true });
-
+    return this.restService.get<AdminBaseNameObject[]>(this.getAllMaterialsAdminURL);
   }
 
 }

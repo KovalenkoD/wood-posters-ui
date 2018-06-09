@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {ProductType} from "../model/product-type";
 import {Observable} from "../../../node_modules/rxjs";
-import {AdminSalesOrder} from "../model/admin/admin-sales-order";
+import {RestService} from "./rest.service";
 
 @Injectable()
 export class LocaleService {
 
-  private changeLocaleUrl = 'http://localhost:8080/wizard/changeLocale';
-  private getCurrentLocaleUrl = 'http://localhost:8080/wizard/getCurrentLocale';
+  private changeLocaleUrl = 'wizard/changeLocale';
+  private getCurrentLocaleUrl = 'wizard/getCurrentLocale';
 
 
-  constructor(private http: HttpClient) {
+  constructor(private restService: RestService) {
 
   }
 
   changeLocale(locale: string) : void {
-     this.http.get<void>(this.changeLocaleUrl + "/" + locale, { withCredentials: true }).subscribe(value => location.reload());
+     this.restService.get<void>(this.changeLocaleUrl, locale).subscribe(value => location.reload());
   }
 
   getCurrentLocale() : Observable<any> {
-    return this.http.get<any>(this.getCurrentLocaleUrl, { withCredentials: true });
+    return this.restService.get<any>(this.getCurrentLocaleUrl);
   }
 
 

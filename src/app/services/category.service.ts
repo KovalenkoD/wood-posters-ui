@@ -1,40 +1,39 @@
 import { Injectable } from '@angular/core';
 import {ProductType} from "../model/product-type";
 import {Observable} from "rxjs/Observable";
-import {HttpClient} from "@angular/common/http";
 import {AdminBaseNameObject} from "../model/admin/admin-base-name-object";
+import {RestService} from "./rest.service";
 
 @Injectable()
 export class CategoryService {
 
-  private getAllCategoriesURL = 'http://localhost:8080/categories/getAllCategories';
-  private getAllCategoriesAdminURL = 'http://localhost:8080/categories/getAllCategoriesAdmin';
-  private createCategoryURL = 'http://localhost:8080/categories/create';
-  private updateCategoryURL = 'http://localhost:8080/categories/update';
-  private deleteCategoryURL = 'http://localhost:8080/categories/delete';
+  private getAllCategoriesURL = 'categories/getAllCategories';
+  private getAllCategoriesAdminURL = 'categories/getAllCategoriesAdmin';
+  private createCategoryURL = 'categories/create';
+  private updateCategoryURL = 'categories/update';
+  private deleteCategoryURL = 'categories/delete';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private restService: RestService) { }
 
   getAllCategories() : Observable<ProductType[]> {
-    return this.http.get<ProductType[]>(this.getAllCategoriesURL, { withCredentials: true });
+    return this.restService.get<ProductType[]>(this.getAllCategoriesURL);
   }
 
   createCategory(category:AdminBaseNameObject) : void {
-    this.http.post(this.createCategoryURL, category, { withCredentials: true }).subscribe();
+    this.restService.post(this.createCategoryURL, category).subscribe();
   }
 
   updateCategory(category:AdminBaseNameObject) : void {
-    this.http.post(this.updateCategoryURL, category, { withCredentials: true }).subscribe();
+    this.restService.post(this.updateCategoryURL, category).subscribe();
   }
 
   deleteCategory(category:AdminBaseNameObject) : void {
-    this.http.post(this.deleteCategoryURL, category, { withCredentials: true }).subscribe();
+    this.restService.post(this.deleteCategoryURL, category).subscribe();
   }
 
   getAllCategoriesAdmin() : Observable<AdminBaseNameObject[]> {
-    return this.http.get<AdminBaseNameObject[]>(this.getAllCategoriesAdminURL, { withCredentials: true });
+    return this.restService.get<AdminBaseNameObject[]>(this.getAllCategoriesAdminURL);
 
   }
-
 }
