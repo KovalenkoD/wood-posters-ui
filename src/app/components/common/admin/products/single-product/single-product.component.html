@@ -98,7 +98,8 @@
         </mat-form-field>
       </div>
 
-      <div class="simple-product-container__column-block" *ngIf="adminProduct.imagePresentation == 0">
+      <!--div class="simple-product-container__column-block" *ngIf="adminProduct.imagePresentation == 0"-->
+      <div class="simple-product-container__column-block">
         <div class="simple-product-container__column-block-name">Изобрежения галлереи</div>
         <mat-form-field *ngFor="let image of adminProduct.images; let i = index" class="simple-product-container__column-mat-form-field">
           <input matInput [(ngModel)]="adminProduct.images[i]" placeholder="Введите URL рисунка">

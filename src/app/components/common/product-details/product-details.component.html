@@ -2,10 +2,10 @@
   <div class="product-details__image">
     <div class="product-details__image-main">
       <img src="{{product.image}}" alt="">
-      <button class="product-details__image-open-gallery" (click)="openDialogBasedOnParameter(product.imagePresentation)"></button>
+      <button class="product-details__image-open-gallery" (click)="openDialogBasedOnParameter(product.images.length)"></button>
       <button class="product-details__image-on-wall" *ngIf="product.imagePresentation == 1" (click)="openDialog()">Показать на стене</button>
     </div>
-    <div class="product-details__images" *ngIf="product.imagePresentation == 0">
+    <div class="product-details__images" *ngIf="product.images.length > 0">
       <div class="product-details__images-item" *ngFor="let image of product.images.slice(0,limitVariable); let i = index" [attr.data-index]="i">
         <img class="gallery-list-image" [src]="image" alt="" (click)="openGallery(i);">
       </div>

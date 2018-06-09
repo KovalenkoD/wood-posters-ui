@@ -34,11 +34,11 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
 
   galleryImages: GALLERY_IMAGE[] = [];
 
-  openDialogBasedOnParameter(representation) {
-    if(representation == 1) {
-      this.openDialog();
-    } else {
+  openDialogBasedOnParameter(imagesLength) {
+    if(imagesLength > 0) {
       this.openGallery();
+    } else {
+      this.openDialog();
     }
   }
 
@@ -109,7 +109,7 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
   }
 
   sortProductArrayBasedOnCurrentProduct() : Product[]{
-    let clonedProducts = this.products.map(x => Object.assign({}, x));
+  /*  let clonedProducts = this.products.map(x => Object.assign({}, x));
     let that = this;
     clonedProducts.sort(function(a, b){
       if (a.id == that.product.id){
@@ -118,8 +118,33 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
         return 1;
       }
       return 0;
+    });*/
+    let clonedProducts = this.products.map(x => Object.assign({}, x));
+    let productIndex;
+      clonedProducts.forEach((value, index) =>  {
+      if(this.product.id === value.id){
+        productIndex = index;
+      }
     });
+    clonedProducts = this.move(clonedProducts, productIndex, 0);
     return clonedProducts;
+  }
+
+   move(arr, old_index, new_index) {
+    while (old_index < 0) {
+      old_index += arr.length;
+    }
+    while (new_index < 0) {
+      new_index += arr.length;
+    }
+    if (new_index >= arr.length) {
+      var k = new_index - arr.length;
+      while ((k--) + 1) {
+        arr.push(undefined);
+      }
+    }
+    arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+    return arr;
   }
 
   openDialog(): void {
