@@ -95,6 +95,9 @@ import {LocaleService} from "./services/locale.service";
 import {CollectionsComponent} from "./components/common/admin/collections/collections.component";
 import {CurrentCollectionsComponent} from "./components/common/admin/collections/current-collections/current-collections.component";
 import {SingleCollectionComponent} from "./components/common/admin/collections/single-collection/single-collection.component";
+import { TechnologyComponent } from './components/common/admin/technology/technology.component';
+import { CurrentTechnologiesComponent } from './components/common/admin/technology/current-technologies/current-technologies.component';
+import { SingleTechnologyComponent } from './components/common/admin/technology/single-technology/single-technology.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -195,6 +198,9 @@ const appRoutes: Routes = [
     CurrentCollectionsComponent,
     SingleCollectionComponent,
     MobileNavComponent,
+    TechnologyComponent,
+    CurrentTechnologiesComponent,
+    SingleTechnologyComponent,
   ],
   imports: [
     RouterModule.forRoot(

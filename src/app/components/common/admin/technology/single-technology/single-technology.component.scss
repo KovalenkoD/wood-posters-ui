@@ -1,0 +1,30 @@
+@import './src/sass/variables';
+
+.simple-technology-container {
+  display: flex;
+  background-color:#ececec;
+  padding-top: 30px;
+  width: 100%;
+
+  &__with-border {
+    position: relative;
+    padding-left: 10%;
+    min-width: 150px;
+    max-width: 350px;
+    float: left;
+
+    .mat-form-field {
+      display: block;
+
+      input {
+        height: 40px;
+      }
+    }
+
+    .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+      background-color:#c3d4c3;
+    }
+  }
+
+}
+
