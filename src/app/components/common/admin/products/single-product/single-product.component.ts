@@ -51,17 +51,12 @@ export class SingleProductComponent implements OnInit {
     this.adminProduct.images.pop();
   }
 
-  createOrUpdateProduct(id:number) : void {
-    console.log(this.adminProduct);
+  createProduct() : void {
     this.adminProduct.technologyIDs = this.technologyForm.value;
     this.adminProduct.materialIDs = this.materialForm.value;
     this.adminProduct.categoryIDs = this.categoryForm.value;
-    if(id == -1){
-      this.productService.createProduct(this.adminProduct);
-      this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "");
-    } else {
-
-    }
+    this.productService.createProduct(this.adminProduct);
+    this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "");
   }
 
 }

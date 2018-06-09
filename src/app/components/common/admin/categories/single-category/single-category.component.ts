@@ -16,14 +16,9 @@ export class SingleCategoryComponent implements OnInit {
   ngOnInit() {
   }
 
-  createOrUpdateCategory(id:number) : void {
-    console.log(this.adminProductType);
-    if(id == -1){
-      this.productTypeService.createProductType(this.adminProductType);
-      this.adminProductType =  new AdminProductType(-1, "" ,"" ,"" ,"");
-    } else {
-
-    }
+  createCategory() : void {
+    this.productTypeService.createProductType(this.adminProductType);
+    this.adminProductType =  new AdminProductType(-1, "" ,"" ,"" ,"");
   }
 
 }

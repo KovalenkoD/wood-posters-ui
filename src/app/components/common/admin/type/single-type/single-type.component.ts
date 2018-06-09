@@ -17,14 +17,9 @@ export class SingleTypeComponent implements OnInit {
   ngOnInit() {
   }
 
-  createOrUpdateCategory(id:number) : void {
-    console.log(this.adminBaseNameObject);
-    if(id == -1){
-      this.categoryService.createCategory(this.adminBaseNameObject);
-      this.adminBaseNameObject = new AdminBaseNameObject(-1, "" ,"" ,"");
-    } else {
-
-    }
+  createCategory() : void {
+    this.categoryService.createCategory(this.adminBaseNameObject);
+    this.adminBaseNameObject = new AdminBaseNameObject(-1, "" ,"" ,"");
   }
 
 }

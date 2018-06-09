@@ -15,17 +15,23 @@ export class ProductService {
   public productType = "P";
   public productBundleType = "BP";
   private productUrl = 'products/getProductById';
+  private productAdminUrl = 'products/getAdminProductById';
   private mostPopularProductsByTypeUrl = 'products/getMostPopularProducts';
   private mostPopularBundleByTypeUrl = 'products/getMostPopularBundle';
   private allBundlesUrl = 'products/getAllBundles';
   private relatedProductsUrl = 'products/getRelatedProducts';
   private createProductUrl = 'products/create';
+  private updateProductUrl = 'products/update';
   private createBundleUrl = 'products/createBundle';
 
   constructor (private restService: RestService) {}
 
   getProductById(id:number) : Observable<Product> {
       return this.restService.get(this.productUrl , id);
+  }
+
+  getAdminProductById(id:number) : Observable<AdminProduct> {
+    return this.restService.get(this.productAdminUrl , id);
   }
 
   getRelatedProducts(id:number) : Observable<Product[]> {
@@ -47,6 +53,10 @@ export class ProductService {
 
   createProduct(product:AdminProduct) : void {
     this.restService.post(this.createProductUrl, product).subscribe();
+  }
+
+  updateProduct(product:AdminProduct) : void {
+    this.restService.post(this.updateProductUrl, product).subscribe();
   }
 
   createBundle(product:AdminProduct) : void {

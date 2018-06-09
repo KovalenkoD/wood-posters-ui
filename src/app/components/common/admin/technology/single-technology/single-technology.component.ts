@@ -16,14 +16,9 @@ export class SingleTechnologyComponent implements OnInit {
   ngOnInit() {
   }
 
-  createOrUpdateTechnology(id:number) : void {
-    console.log(this.adminBaseNameObject);
-    if(id == -1){
-      this.technologyService.createTechnology(this.adminBaseNameObject);
-      this.adminBaseNameObject = new AdminBaseNameObject(-1, "" ,"" ,"");
-    } else {
-
-    }
+  createTechnology() : void {
+    this.technologyService.createTechnology(this.adminBaseNameObject);
+    this.adminBaseNameObject = new AdminBaseNameObject(-1, "" ,"" ,"");
   }
 
 
