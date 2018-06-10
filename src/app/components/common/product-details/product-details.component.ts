@@ -19,6 +19,10 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
 
   productCount:number = 1;
 
+  descriptionSliceSize: number = 100;
+
+  bigTextDescription: string = 'Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами.';
+
   limitVariable: number = 6;
 
 
@@ -80,9 +84,14 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
     this.limitVariable = this.product.images.length;
   }
 
+  increaseDescriptionSliceSize(){
+    this.descriptionSliceSize = 999;
+  }
+
   ngOnChanges() {
     this.productCount = 1;
     this.limitVariable = 6;
+    this.descriptionSliceSize = 100;
     if(!isNullOrUndefined(this.product) && !isNullOrUndefined(this.product.images)){
       this.galleryImages = this.convertImagesToGalleryImage(this.product.images);
     }
