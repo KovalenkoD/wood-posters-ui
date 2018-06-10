@@ -6,6 +6,10 @@
   padding: 50px 0;
   margin-bottom: 50px;
 
+  &__description-toggle {
+    cursor: pointer;
+  }
+
   &__image {
     width: 612px;
 
