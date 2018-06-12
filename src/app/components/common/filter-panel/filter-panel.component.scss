@@ -13,6 +13,10 @@
 
       &__category {
         font-size: 20px;
+
+        @include mobile {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -90,6 +94,13 @@
     font-size: 30px;
     font-weight: $font-medium;
     transition: all .2s ease;
+
+    @include mobile {
+      width:50%;
+      left: 0%;
+      transform: translate(0%, 0%);
+      font-size: 18px;
+    }
 
     span {
       font-weight: $font-regular;
