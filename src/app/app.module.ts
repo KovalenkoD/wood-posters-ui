@@ -75,6 +75,7 @@ import { SimilarProductsComponent } from './components/common/similar-products/s
 import { WallGalleryPopupComponent } from './components/common/wall-gallery-popup/wall-gallery-popup.component';
 import {CategoriesPageComponent} from "./components/pages/categories-page/categories-page.component";
 import { AdminPageComponent } from './components/pages/admin-page/admin-page.component';
+import {OrdersPageComponent} from './components/pages/orders-page/orders-page.component'
 import { CategoriesComponent } from './components/common/admin/categories/categories.component';
 import { SingleCategoryComponent } from './components/common/admin/categories/single-category/single-category.component';
 import { CurrentCategoriesComponent } from './components/common/admin/categories/current-categories/current-categories.component';
@@ -140,6 +141,9 @@ const appRoutes: Routes = [
   { path: 'admin',
     component: AdminPageComponent
   },
+  { path: 'orders',
+    component: OrdersPageComponent
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -182,6 +186,7 @@ const appRoutes: Routes = [
     SimilarProductsComponent,
     WallGalleryPopupComponent,
     AdminPageComponent,
+    OrdersPageComponent,
     CategoriesComponent,
     SingleTypeComponent,
     CurrentTypesComponent,
