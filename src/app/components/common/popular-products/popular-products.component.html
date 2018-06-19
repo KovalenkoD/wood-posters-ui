@@ -12,7 +12,7 @@
       <a *ngFor="let product of products | paginate: { itemsPerPage: 10, currentPage: page }"
         [routerLink]="['/product', product.id]"
         class="popular-products__item"
-        [ngStyle]="{'background-color': '#f9f9f9'}">
+        [ngStyle]="{'background-color': product.background}">
         <div class="popular-products__item-category">{{product.productType.name}}</div>
         <div class="popular-products__item-img"
           [ngStyle]="{'background-image': 'url(' + product.image + ')'}"

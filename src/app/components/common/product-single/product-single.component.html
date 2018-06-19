@@ -1,7 +1,7 @@
 <a
   [routerLink]="['/product', product.id]"
   class="product-single"
-  [ngStyle]="{'background-color': '#f9f9f9'}"
+  [ngStyle]="{'background-color': product.background}"
 >
   <div class="product-single__category">{{product.productType.name}}</div>
   <div class="product-single__img"

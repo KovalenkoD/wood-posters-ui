@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { NgxImageGalleryModule } from 'ngx-image-gallery';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatMenuModule} from '@angular/material/menu';
+import {ColorPickerModule} from 'ngx-color-picker';
 
 
 import {
@@ -227,7 +228,8 @@ const appRoutes: Routes = [
     MatTabsModule,
     MatFormFieldModule,
     NguiStickyModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ColorPickerModule
   ],
   providers: [
     {

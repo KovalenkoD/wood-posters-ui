@@ -16,6 +16,8 @@ export class Product {
     public categories: [Category],
     public materials: [Material],
     public images: [string],
-    public imagePresentation: number
+    public imagePresentation: number,
+    public background: string,
+    public articul:string
   ){}
 }

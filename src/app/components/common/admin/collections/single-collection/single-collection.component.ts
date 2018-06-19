@@ -23,7 +23,7 @@ import {AdminBundleProductItem} from "../../../../../model/admin/admin-bundle-pr
 })
 export class SingleCollectionComponent implements OnInit {
 
-  adminProduct: AdminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "");
+  adminProduct: AdminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "", [], null, "");
 
   bundleChild: [BundleChild] = [] as [BundleChild];
 
@@ -64,7 +64,7 @@ export class SingleCollectionComponent implements OnInit {
   }
 
   addProductToBundle() {
-    let product = new Product(-1, null, null, null, null, null, null, null, null, null, null, null);
+    let product = new Product(-1, null, null, null, null, null, null, null, null, null, null, null,null,null);
     this.bundleChild.push(new BundleChild(-1, 13, 21, product, false));
   }
 
@@ -81,7 +81,7 @@ export class SingleCollectionComponent implements OnInit {
         this.adminProduct.bundleProductItems = this.convertBundleChildToBundleAdminProductItem();
         console.log(this.adminProduct);
         this.productService.createBundle(this.adminProduct);
-        this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "");
+        this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "", [], null, "");
     } else {
 
     }
