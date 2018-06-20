@@ -161,6 +161,11 @@
   }
 
   &__param {
+    &-field{
+      width: 70px;
+      display: inline-block;
+    }
+
     strong {
       color: $white-f7;
       font-weight: $font-regular;

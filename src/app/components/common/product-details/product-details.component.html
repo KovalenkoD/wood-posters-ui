@@ -18,18 +18,18 @@
     <div class="product-details__name">{{product.name}}</div>
     <div class="product-details__price">{{product.price}} грн.</div>
     <ul class="product-details__params">
-      <li class="product-details__param"><strong>Размер</strong> <span>{{product.size}}</span></li>
-      <li class="product-details__param"><strong>Техника</strong>
+      <li class="product-details__param"><span class="product-details__param-field"><strong>Размер</strong></span> <span>{{product.size}}</span></li>
+      <li class="product-details__param"><span class="product-details__param-field"><strong>Техника</strong></span>
         <span *ngFor="let technology of product.technologies; let isLast=last">
             {{technology.name}}{{isLast ? '' : ', '}}
         </span>
       </li>
-      <li class="product-details__param"><strong>Материал</strong>
+      <li class="product-details__param"><span class="product-details__param-field"><strong>Материал</strong></span>
         <span *ngFor="let material of product.materials; let isLast=last">
             {{material.name}}{{isLast ? '' : ', '}}
         </span>
       </li>
-      <li class="product-details__param"><strong>Артикль</strong> <span>{{product.articul}}</span></li>
+      <li class="product-details__param"><span class="product-details__param-field"><strong>Артикль</strong></span> <span>{{product.articul}}</span></li>
     </ul>
     <div class="product-details__buttons">
       <div class="product-details__counter">
