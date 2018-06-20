@@ -6,6 +6,23 @@ import {CartService} from "../../../services/cart.service";
 import { NgxImageGalleryComponent, GALLERY_IMAGE, GALLERY_CONF } from "ngx-image-gallery";
 import {isNullOrUndefined} from "util";
 
+Object.defineProperty(NgxImageGalleryComponent.prototype, "onFirstImage", {
+  // if gallery is on : first image
+  get: function () {
+    return false;
+  },
+  enumerable: true,
+  configurable: true
+});
+
+Object.defineProperty(NgxImageGalleryComponent.prototype, "onLastImage", {
+  // if gallery is on : last image
+  get: function () {
+    return false
+  },
+  enumerable: true,
+  configurable: true
+});
 
 @Component({
   selector: 'app-product-details',
@@ -77,7 +94,22 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-
+// change prev image
+    NgxImageGalleryComponent.prototype.prev = function () {
+      if (this.onFirstImage == false) {
+        let imagesLength = this.images.length;
+        let navigationIndex = this.activeImageIndex == 0 ? imagesLength -1 : this.activeImageIndex - 1;
+        this.activateImage(navigationIndex);
+      }
+    };
+// change next image
+    NgxImageGalleryComponent.prototype.next = function () {
+      if (this.onLastImage == false) {
+        let imagesLength = this.images.length;
+        let navigationIndex = this.activeImageIndex == imagesLength -1 ? 0 : this.activeImageIndex + 1;
+        this.activateImage(navigationIndex);
+      }
+    };
   }
 
   changeLimitOfImages() {
