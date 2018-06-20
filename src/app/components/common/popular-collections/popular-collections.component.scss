@@ -59,6 +59,14 @@
     transition: all .2s ease;
     cursor: pointer;
 
+    @include mobile{
+      right: auto;
+    }
+
+    @include ipad {
+      right: auto;
+    }
+
     &:hover,
     &:focus{
       outline: none;
@@ -69,6 +77,15 @@
   &__right {
     right: auto;
     left: calc(100% + 57px);
+
+    @include mobile{
+      left: calc(90%);
+    }
+
+    @include ipad {
+      left: calc(100%);
+    }
+
   }
 
   &__counter {

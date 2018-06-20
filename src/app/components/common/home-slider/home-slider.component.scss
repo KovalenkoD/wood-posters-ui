@@ -25,6 +25,15 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include ipad {
+      width: 40%;
+    }
+
+    @include mobile {
+      height: 60%;
+      width: 40%;
+    }
   }
 
   &__right,
@@ -55,6 +64,10 @@
     padding-left: 106px;
     position: relative;
     z-index: 20;
+
+    @include mobile {
+      padding-left: 0px;
+    }
   }
 
   &__right {
@@ -75,6 +88,16 @@
     font-weight: normal;
     max-width: 360px;
     line-height: 50px;
+
+    @include mobile {
+      font-size: 20px;
+      max-width: 200px;
+    }
+
+    @include ipad {
+      font-size: 20px;
+      max-width: 310px;
+    }
   }
 
   &__price {
