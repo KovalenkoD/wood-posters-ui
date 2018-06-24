@@ -9,15 +9,12 @@
           Фильтры <span>2</span>
         </div>-->
       </div>
-      <div class="filter-panel__category">{{categoryName}} <span>{{productSize}}</span></div>
+      <div class="filter-panel__category" *ngIf="showProductAndCategoriesLabel">{{categoryName}} <span>{{productSize}}</span></div>
       <div class="filter-panel__sorting">
         <mat-form-field>
             <mat-select [(value)]="ordering" placeholder="Сортировать по" (change)="changeOrdering()">
-              <mat-option value="0">Без сортировки</mat-option>
-       <!--       <mat-option value="1">По новизне убывание</mat-option>
-              <mat-option value="2">По новизне возрастание</mat-option>-->
-              <mat-option value="3">По цене убывание</mat-option>
-              <mat-option value="4">По цене возрастание</mat-option>
+              <mat-option value="price:true">По цене убывание</mat-option>
+              <mat-option value="price:false">По цене возрастание</mat-option>
             </mat-select>
         </mat-form-field>
       </div>

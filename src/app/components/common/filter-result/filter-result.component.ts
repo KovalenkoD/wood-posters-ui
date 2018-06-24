@@ -12,7 +12,7 @@ export class FilterResultComponent implements OnInit {
 
   @Input() products: Product[];
 
-  ordering: number = 0;
+  ordering: string = '0';
 
   page: number = 1;
 

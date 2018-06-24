@@ -12,7 +12,9 @@ export class FilterPanelComponent implements OnInit {
   @Input() productSize: number = 0;
   @Input() categoryName: string = '';
 
-  ordering: number;
+  @Input() showProductAndCategoriesLabel: boolean = true;
+
+  ordering: string;
 
   hiddenSection: boolean;
 

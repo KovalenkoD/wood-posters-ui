@@ -2,7 +2,7 @@ import {EventEmitter, Injectable} from '@angular/core';
 
 @Injectable()
 export class FilterResultService {
-  public orderCriteria: EventEmitter<number> ;
+  public orderCriteria: EventEmitter<string> ;
 
   constructor() {
     this.orderCriteria = new EventEmitter();

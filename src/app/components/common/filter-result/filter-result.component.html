@@ -2,7 +2,7 @@
   <div class="filter-result__container">
     <div class="product-grid">
       <app-product-single
-        *ngFor="let product of products | paginate: { itemsPerPage: 12, currentPage: page}"
+        *ngFor="let product of products | orderBy:ordering | paginate: { itemsPerPage: 12, currentPage: page}"
         [product]="product"
       ></app-product-single>
     </div>

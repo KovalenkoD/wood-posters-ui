@@ -17,6 +17,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {MatMenuModule} from '@angular/material/menu';
 import {ColorPickerModule} from 'ngx-color-picker';
 
+import {OrderByPipe} from "./pypes/order.by.pipe"
+
 
 import {
   MatButtonModule,
@@ -209,6 +211,7 @@ const appRoutes: Routes = [
     TechnologyComponent,
     CurrentTechnologiesComponent,
     SingleTechnologyComponent,
+    OrderByPipe,
   ],
   imports: [
     RouterModule.forRoot(

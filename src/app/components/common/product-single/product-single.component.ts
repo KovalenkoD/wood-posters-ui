@@ -1,11 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-export interface Product {
-  name?: string,
-  price?: string,
-  category?: string,
-  image?: string
-}
+import {Product} from "../../../model/product";
 
 @Component({
   selector: 'app-product-single',
