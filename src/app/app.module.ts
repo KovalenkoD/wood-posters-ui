@@ -38,6 +38,7 @@ import { ProductTypeService } from './services/product-type.service';
 import { ProductService } from './services/product.service';
 import { SearchService } from './services/search.service';
 import {RestService} from "./services/rest.service";
+import {FilterResultService} from "./services/filter-result.service"
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
@@ -241,7 +242,7 @@ const appRoutes: Routes = [
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService,CategoryService,LocaleService, RestService
+    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService,CategoryService,LocaleService, RestService, FilterResultService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]

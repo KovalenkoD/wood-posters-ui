@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Product} from "../../../model/product";
+import {FilterResultService} from "../../../services/filter-result.service";
 
 @Component({
   selector: 'app-filter-panel',
@@ -11,9 +12,11 @@ export class FilterPanelComponent implements OnInit {
   @Input() productSize: number = 0;
   @Input() categoryName: string = '';
 
+  ordering: number;
+
   hiddenSection: boolean;
 
-  constructor() { }
+  constructor(private filterResultService: FilterResultService) { }
 
   ngOnInit() {
     this.hiddenSection = true;
@@ -21,5 +24,9 @@ export class FilterPanelComponent implements OnInit {
 
   showFilters (event) {
     this.hiddenSection = false;
+  }
+
+  changeOrdering(){
+    this.filterResultService.orderCriteria.next(this.ordering);
   }
 }

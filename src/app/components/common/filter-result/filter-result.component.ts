@@ -1,14 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../../model/product";
+import {FilterResultService} from "../../../services/filter-result.service";
 
-/*export interface Product {
- name?: string,
- price?: string,
- category?: string,
- image?: string,
- link: string,
- background: string
-}*/
 
 @Component({
   selector: 'app-filter-result',
@@ -19,10 +12,16 @@ export class FilterResultComponent implements OnInit {
 
   @Input() products: Product[];
 
+  ordering: number = 0;
+
   page: number = 1;
 
-  constructor() { }
+  constructor(private filterResultService: FilterResultService) { }
 
   ngOnInit() {
+    this.filterResultService.orderCriteria.subscribe(ordering => {
+     this.ordering = ordering;
+    });
+
   }
 }
