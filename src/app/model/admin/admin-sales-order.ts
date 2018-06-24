@@ -3,7 +3,7 @@ import {Contact} from "../contact";
 
 export class AdminSalesOrder {
   constructor(
-    public ud:number,
+    public id:number,
     public count: number,
     public status: number,
     public cartItems: CartItem[],

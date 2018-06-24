@@ -1,0 +1,143 @@
+@import './src/sass/variables';
+
+.current-orders {
+  display: table;
+  background-color:#ececec;
+  padding-top: 30px;
+  width: 100%;
+
+  &__header {
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 20px;
+    border-bottom: 2px solid;
+
+    &-text {
+      float: right;
+      font-size: 18px;
+      padding-right: 5%;
+    }
+
+    &-count {
+      color: red;
+    }
+
+    &-refresh {
+      .refresh-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: -8px;
+        cursor: pointer;
+        overflow: hidden;
+        transition-duration: 0.8s;
+        transition-property: transform;
+      }
+
+      .refresh-icon:hover {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+      }
+
+      .refresh-icon-disabled {
+        opacity: 0.3;
+        cursor: auto;
+      }
+
+    }
+  }
+
+  &__content{
+    padding-left: 5%;
+    padding-right: 5%;
+
+    &-container {
+
+      &-footer {
+
+        .change-status-button{
+          float: right;
+        }
+
+        .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+          background-color:#c3d4c3;
+        }
+
+        &-mat-form-field {
+          width: 160px;
+
+        &:first-child {
+          margin-top: 15px;
+        }
+
+        /deep/ .mat-select {
+          height: 50px;
+        }
+
+        /deep/ .mat-form-field-underline {
+          display: none;
+        }
+
+        /deep/ .mat-form-field-infix {
+          border: 0px;
+          padding: 0px;
+        }
+
+        input {
+          height: 40px;
+        }
+
+        &__select {
+          border: 0px;
+          padding: 0px;
+        }
+      }
+      }
+
+      .mat-expansion-panel {
+        background-color:#ececec;
+      }
+
+      .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover {
+        background-color:#e2e2dd;
+      }
+
+
+      &-information{
+        margin: 15px 0px 15px 15px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      &-table {
+        width: 100%;
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        td {
+          background-color: #f9f9f9;
+        }
+
+        .td-number {
+          width: 10%;
+        }
+
+        .td-name {
+          width: 65%;
+        }
+
+        .summary-tr {
+          font-weight: bold;
+          font-size: 18px;
+
+          td {
+            background-color: #a99393;
+          }
+        }
+      }
+    }
+  }
+}
+

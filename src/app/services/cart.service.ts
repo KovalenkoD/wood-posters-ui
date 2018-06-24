@@ -11,6 +11,7 @@ export class CartService {
 
   public cardIsOpenedChanges: EventEmitter<boolean>;
   public cartResultChanges: EventEmitter<CartResult>;
+  public adminNewSalesOrders = new EventEmitter<AdminSalesOrder[]>();
 
   private opened: boolean = false;
   private addItemsToCartUrl = 'quote/addOrdersToSalesOrder';
@@ -20,6 +21,13 @@ export class CartService {
   private getSalesOrderInfoUrl = 'quote/getSalesOrderInfo';
   private summitOrderUrl = 'quote/submitOrder';
   private salesOrdersByStatus = 'quote/getSalesOrdersByStatus';
+  private changeSalesOrderStatusURL = 'quote/changeSalesOrderStatus';
+
+  public salesOrderNewStatus: number = 0;
+  public salesOrderAnsweredStatus: number = 1;
+  public salesOrderTransitStatus: number = 2;
+  public salesOrderFinishStatus: number = 3;
+  public salesOrderCanceledStatus: number = 4;
 
 
   private cartResult:CartResult;
@@ -90,6 +98,15 @@ export class CartService {
 
   getSalesOrdersByStatus(status:number) : Observable<AdminSalesOrder[]> {
     return this.restService.get<AdminSalesOrder[]>(this.salesOrdersByStatus , status);
+  }
 
+  getAdminNewSalesOrders() : void {
+     this.getSalesOrdersByStatus(0).subscribe(data => {
+       this.adminNewSalesOrders.next(data);
+     });
+  }
+
+  changeSalesOrderStatus(salesOrderId: number, status:number) : void {
+    this.restService.post(this.changeSalesOrderStatusURL, {salesOrderId: salesOrderId, status: status}).subscribe();
   }
 }

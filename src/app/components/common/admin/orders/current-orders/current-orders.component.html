@@ -1,4 +1,86 @@
-<div *ngFor="let adminSalesOrder of adminSalesOrders">
+<div class="current-orders">
+  <div class="current-orders__header">
+    <div class="current-orders__header-text">
+      Новых заказов
+      <span class="current-orders__header-count">{{newOrders}}</span>
+      <a class="current-orders__header-refresh header__link" (click)="refresh()">
+        <img  class="refresh-icon" [class.refresh-icon-disabled]="newOrders == 0" src="assets/images/refresh.png" alt="icon-search">
+      </a>
+    </div>
+  </div>
+
+  <div class="current-orders__content">
+    <div class="current-orders__content-container">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let adminSalesOrder of adminSalesOrders"
+                             (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span>Номер заказа : {{adminSalesOrder.id}}</span>
+              <span>Сумма : {{adminSalesOrder.fullPrice}}</span>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+
+
+          <div class="current-orders__content-container-information">Контактная Информация</div>
+          <table class="current-orders__content-container-table">
+            <tr>
+              <th>Имя</th>
+              <th>Фамилия</th>
+              <th>Телефон</th>
+              <th>Email</th>
+            </tr>
+            <tr>
+              <td>{{adminSalesOrder.contact.firstName}}</td>
+              <td>{{adminSalesOrder.contact.lastName}}</td>
+              <td>{{adminSalesOrder.contact.phone}}</td>
+              <td>{{adminSalesOrder.contact.email}}</td>
+            </tr>
+          </table>
+
+          <div class="current-orders__content-container-information">Заказ</div>
+
+          <table class="current-orders__content-container-table">
+            <tr>
+              <th>Название</th>
+              <th>Артикль</th>
+              <th>Колличество</th>
+              <th>Цена</th>
+            </tr>
+            <tr *ngFor="let order of adminSalesOrder.cartItems">
+              <td class="td-name">{{order.product.name}} </td>
+              <td>{{order.product.articul}} </td>
+              <td class="td-number">{{order.count}}</td>
+              <td class="td-number">{{order.product.price}} / {{order.calculatedPrice}}</td>
+            </tr>
+
+            <tr class="summary-tr">
+              <td colspan="3">Полная сумма заказа</td>
+              <td>{{adminSalesOrder.fullPrice}}</td>
+            </tr>
+          </table>
+
+          <div class="current-orders__content-container-information">Статус</div>
+
+          <div class="current-orders__content-container-footer">
+            <mat-form-field class="current-orders__content-container-footer-mat-form-field">
+              <mat-select placeholder="Сменить статус на:" [(value)]="productStatus">
+                <mat-option [value]="1">Отвеченные</mat-option>
+                <mat-option [value]="4">Отмененные</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <button mat-button (click)="changeStatus(adminSalesOrder)" class="change-status-button" color="primary">Применить</button>
+          </div>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+<!--<div *ngFor="let adminSalesOrder of adminSalesOrders">
   <span>Номер заказа : {{adminSalesOrder.id}}</span>
   <span>Стутус заказа : {{adminSalesOrder.status}}</span>
 
@@ -33,5 +115,7 @@
     </mat-expansion-panel>
   </mat-accordion>
 
+
+</div>-->
 
 </div>

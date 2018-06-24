@@ -9,13 +9,26 @@ import {AdminSalesOrder} from "../../../../../model/admin/admin-sales-order";
 })
 export class CurrentOrdersComponent implements OnInit {
 
-  adminSalesOrders: AdminSalesOrder[];
+  newOrders: number = 5;
+  panelOpenState: boolean = false;
+  productStatus: number = 0;
 
+  adminSalesOrders: AdminSalesOrder[];
 
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    this.cartService.getSalesOrdersByStatus(0).subscribe(data => this.adminSalesOrders = data);
+    this.cartService.adminNewSalesOrders.subscribe(data => this.adminSalesOrders = data);
+    this.cartService.getAdminNewSalesOrders();
+  }
+
+  changeStatus(salesOrder: AdminSalesOrder){
+    this.cartService.changeSalesOrderStatus(salesOrder.id, this.productStatus);
+    this.adminSalesOrders = this.adminSalesOrders.filter(adminSalesOrder => adminSalesOrder.id !== salesOrder.id);
+  }
+
+  refresh(){
+    this.cartService.getAdminNewSalesOrders();
   }
 
 
