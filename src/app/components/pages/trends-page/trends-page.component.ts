@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../../../model/product";
 import {ProductService} from "../../../services/product.service";
+import {FilterResultService} from "../../../services/filter-result.service";
+
 
 @Component({
   selector: 'app-trends-page',
@@ -11,10 +13,15 @@ export class TrendsPageComponent implements OnInit {
 
   private products : Product[];
 
-  constructor(private productService : ProductService) { }
+  selectedFilterCategories: number[] = [];
+
+  constructor(private productService : ProductService, private filterResultService: FilterResultService) { }
 
   ngOnInit() {
     this.getMostPopularProductsByType()
+    this.filterResultService.categoryFilters.subscribe(selectedFilterCategories => {
+      this.selectedFilterCategories = selectedFilterCategories;
+    });
   }
 
   getMostPopularProductsByType() {
@@ -24,6 +31,10 @@ export class TrendsPageComponent implements OnInit {
         err => {
           console.log(err);
         });
+  }
+
+  getFilteredProductResult(){
+    return this.products.filter(product => this.filterResultService.containsAny(this.selectedFilterCategories, product.categories));
   }
 
 }

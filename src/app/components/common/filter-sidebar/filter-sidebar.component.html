@@ -1,8 +1,8 @@
 <div class="filter-sidebar" [hidden]="hiddenSection">
   <i class="filter-sidebar__close" (click)="hideFilters(true)"></i>
   <div class="filter-sidebar__header">
-    <div class="filter-sidebar__header-title">Фильтры <span>2</span></div>
-    <div class="filter-sidebar__reset">Сбросить</div>
+    <div class="filter-sidebar__header-title">Фильтры</div>
+    <div class="filter-sidebar__reset" (click)="clear()">Сбросить</div>
   </div>
   <perfect-scrollbar [config]="config" style="max-height: calc(100vh - 110px);">
   <div class="filter-sidebar__body">
@@ -12,19 +12,19 @@
         <mat-expansion-panel-header
           collapsedHeight="59px"
           expandedHeight="59px"
-        >
-          Группа <span>1</span>
+          >
+          Категории <span>{{getSelectedItemsLength(categoryList)}}</span>
         </mat-expansion-panel-header>
         <div class="filter-sidebar__items">
-          <div class="filter-sidebar__item"><mat-checkbox>Автомобиль</mat-checkbox></div>
-          <div class="filter-sidebar__item"><mat-checkbox>Юмор</mat-checkbox></div>
-          <div class="filter-sidebar__item"><mat-checkbox>Кухня</mat-checkbox></div>
-          <div class="filter-sidebar__item"><mat-checkbox>Здоровье</mat-checkbox></div>
-          <div class="filter-sidebar__show-more">Еще</div>
+          <div class="filter-sidebar__item" *ngFor="let category of (categoryList ? categoryList.slice(0,categoryLimit): [])">
+            <mat-checkbox [checked]="category.checked" (change)="onChange($event, i, category)">{{category.name}}</mat-checkbox>
+          </div>
+          <div class="filter-sidebar__show-more" *ngIf="categoryLimit < 5" (click)="showMoreCategories()">Еще</div>
         </div>
       </mat-expansion-panel>
 
-      <mat-expansion-panel>
+
+      <!--<mat-expansion-panel>
         <mat-expansion-panel-header
           collapsedHeight="59px"
           expandedHeight="59px"
@@ -38,7 +38,7 @@
           <div class="filter-sidebar__item"><mat-checkbox>Здоровье</mat-checkbox></div>
           <div class="filter-sidebar__show-more">Еще</div>
         </div>
-      </mat-expansion-panel>
+      </mat-expansion-panel>-->
 
     </mat-accordion>
   </div>

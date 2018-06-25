@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {ProductType} from "../model/product-type";
+import {Category} from "../model/category";
 import {Observable} from "rxjs/Observable";
 import {AdminBaseNameObject} from "../model/admin/admin-base-name-object";
 import {RestService} from "./rest.service";
@@ -16,8 +16,8 @@ export class CategoryService {
 
   constructor(private restService: RestService) { }
 
-  getAllCategories() : Observable<ProductType[]> {
-    return this.restService.get<ProductType[]>(this.getAllCategoriesURL);
+  getAllCategories() : Observable<Category[]> {
+    return this.restService.get<Category[]>(this.getAllCategoriesURL);
   }
 
   createCategory(category:AdminBaseNameObject) : void {

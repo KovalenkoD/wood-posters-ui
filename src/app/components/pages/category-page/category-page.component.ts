@@ -4,6 +4,8 @@ import {ProductTypeService} from "../../../services/product-type.service";
 import {Product} from "../../../model/product";
 import {Category} from "../../../model/category";
 import {ProductType} from "../../../model/product-type";
+import {FilterResultService} from "../../../services/filter-result.service";
+
 
 @Component({
   selector: 'app-category-page',
@@ -18,16 +20,33 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
   private products: Product[];
   private productType: ProductType;
 
-  constructor(private route: ActivatedRoute, private productTypeService:ProductTypeService) {}
+  filteredProducts: Product[] = [];
+  selectedFilterCategories: number[] = [];
+
+
+  constructor(private route: ActivatedRoute, private productTypeService:ProductTypeService, private filterResultService: FilterResultService) {}
 
   ngOnInit() {
     this.products = [];
     this.sub = this.route.params.subscribe(params => {
+      this.filterResultService.clearFilters.next(true);
       this.id = +params['id']; // (+) converts string 'id' to a number
       this.loadProductTypes(this.id);
       this.loadProductTypeById(this.id);
     });
+
+    this.filterResultService.categoryFilters.subscribe(selectedFilterCategories => {
+      this.selectedFilterCategories = selectedFilterCategories;
+    });
+
   }
+
+  getFilteredProductResult(){
+    this.filteredProducts = this.products.filter(product => this.filterResultService.containsAny(this.selectedFilterCategories, product.categories));
+    return this.filteredProducts;
+  }
+
+
 
   ngOnDestroy() {
     this.sub.unsubscribe();
