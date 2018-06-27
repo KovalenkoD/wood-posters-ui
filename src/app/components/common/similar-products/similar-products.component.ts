@@ -10,10 +10,16 @@ import {NgxCarousel, NgxCarouselStore} from "ngx-carousel";
 export class SimilarProductsComponent implements OnInit {
 
   @Input() products : Product[];
+  @Input() product : Product;
+
 
   public carouselOne: NgxCarousel;
 
   constructor() { }
+
+  removeCurrentProductFromProducts(){
+    return this.products.filter(product => this.product.id != product.id);
+  }
 
   ngOnInit() {
     this.carouselOne = {
@@ -51,7 +57,7 @@ export class SimilarProductsComponent implements OnInit {
             cursor: pointer;
           }
           .ngxcarouselPoint li.active {
-              background: rgba(0, 0, 0, 1); 
+              background: rgba(0, 0, 0, 1);
               padding: 5px;
               position: relative;
               top: -2px;

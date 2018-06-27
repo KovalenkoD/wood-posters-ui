@@ -9,7 +9,7 @@
       (onMove)="onmoveFn($event)"
     >
       <ngx-item
-        *ngFor="let product of products"
+        *ngFor="let product of removeCurrentProductFromProducts()"
         NgxCarouselItem>
         <div class="similar-products-slider__container">
         <app-product-single
