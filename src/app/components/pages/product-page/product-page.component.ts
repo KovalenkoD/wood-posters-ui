@@ -2,6 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ProductService} from "../../../services/product.service";
 import {Product} from "../../../model/product";
+import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
+import {isNullOrUndefined} from "util";
+
 
 @Component({
   selector: 'app-product-page',
@@ -14,7 +17,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   id: number;
   private sub: any;
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) {
+  constructor(private route: ActivatedRoute, private productService: ProductService, private scrollToService: ScrollToService) {
     this.sub = this.route.params.subscribe(params => {
     this.id = +params['id'];
     this.loadProductById(this.id);
@@ -24,13 +27,35 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
+  public triggerScrollToProductPageContainer() {
+
+    const config: ScrollToConfigOptions = {
+      target: 'product-page-container'
+    };
+
+    this.scrollToService.scrollTo(config);
+  }
+
   loadProductById(id: number) {
     this.productService.getProductById(id)
       .subscribe(
-        product => this.product = product,
-        err => {
+        product => {
+          if(!isNullOrUndefined(this.product)){
+            this.triggerScrollToOffsetOnly(-9999);
+          }
+          this.product = product;},
+      err => {
           console.log(err);
         });
+  }
+
+  public triggerScrollToOffsetOnly(offset: number = 0) {
+
+    const config: ScrollToConfigOptions = {
+      offset
+    };
+
+    this.scrollToService.scrollTo(config);
   }
 
   getRelatedProducts(id:number) {

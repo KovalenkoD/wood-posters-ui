@@ -16,6 +16,8 @@ import { NgxImageGalleryModule } from 'ngx-image-gallery';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatMenuModule} from '@angular/material/menu';
 import {ColorPickerModule} from 'ngx-color-picker';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+
 
 import {OrderByPipe} from "./pypes/order.by.pipe"
 
@@ -218,6 +220,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }
     ),
+    ScrollToModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpClientModule,
