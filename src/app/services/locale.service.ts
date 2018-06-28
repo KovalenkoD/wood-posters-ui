@@ -14,7 +14,7 @@ export class LocaleService {
   }
 
   changeLocale(locale: string) : void {
-     this.restService.get<void>(this.changeLocaleUrl, locale).subscribe(value => location.reload());
+     this.restService.get<void>(this.changeLocaleUrl, locale).subscribe();
   }
 
   getCurrentLocale() : Observable<any> {

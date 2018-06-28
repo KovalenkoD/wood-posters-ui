@@ -20,10 +20,18 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.localeService.getCurrentLocale().subscribe(locale => {
-      this.languageControl = new FormControl(locale.localeName);
+      let pathName = window.location.pathname;
+      let localeName = "ru";
+      if(pathName.startsWith("/en")){
+        localeName = "en";
+      } else if (pathName.startsWith("/ua")){
+        localeName = "ua";
+      }
+      this.languageControl = new FormControl(localeName);
       this.languageControl.valueChanges.subscribe(
         (selectedValue) => {
-          this.localeService.changeLocale(selectedValue);
+          var originalPath = window.location.pathname.replace("/en/", "/").replace("/ru/", "/").replace("/ua/", "/");
+          window.location.pathname = selectedValue + originalPath;
         }
       );
     });
