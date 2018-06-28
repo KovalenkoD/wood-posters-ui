@@ -6,9 +6,9 @@
   </div>
 
   <div *ngIf="adminProductType" class="current-categories__view current-categories__column">
-    <div class="current-categories__view__category">{{adminProductType.nameRU}}</div>
+    <div class="current-categories__view__category" [ngStyle]="{'background-color': adminProductType.background}">{{adminProductType.nameRU}}</div>
     <div class="current-categories__view__img"
-         [ngStyle]="{'background-image': 'url(' + adminProductType.imageURL + ')'}"
+         [ngStyle]="{'background-image': 'url(' + adminProductType.imageURL + ')', 'background-color': adminProductType.background, 'background-blend-mode': 'darken'}"
     ></div>
     <button mat-button class="current-categories__view__modify" (click)="modifyCategory()">Modify</button>
     <button mat-button class="current-categories__view__modify" (click)="showDeleteMessage()">Delete</button>
@@ -44,6 +44,11 @@
         <mat-option [value]="0">Нет</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <div>
+      <div>Background</div>
+      <input [(colorPicker)]="adminProductType.background" [style.background]="adminProductType.background"/>
+    </div>
 
     <button mat-button (click)="updateCategory()" color="primary">Сохранить</button>
   </div>

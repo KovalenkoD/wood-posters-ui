@@ -9,7 +9,7 @@ import {ProductTypeService} from "../../../../../services/product-type.service";
 })
 export class SingleCategoryComponent implements OnInit {
 
-  adminProductType: AdminProductType = new AdminProductType(-1, "" ,"" ,"" ,"");
+  adminProductType: AdminProductType = new AdminProductType(-1, "" ,"" ,"", "" ,"");
 
   constructor(private productTypeService: ProductTypeService) { }
 
@@ -18,7 +18,7 @@ export class SingleCategoryComponent implements OnInit {
 
   createCategory() : void {
     this.productTypeService.createProductType(this.adminProductType);
-    this.adminProductType =  new AdminProductType(-1, "" ,"" ,"" ,"");
+    this.adminProductType =  new AdminProductType(-1, "" ,"" ,"", "" ,"");
   }
 
 }
