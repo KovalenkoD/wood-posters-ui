@@ -1,0 +1,24 @@
+ng xi18n --output-path src/i18n
+
+      <source>Hello World!</source>
+      <target>Привет мир!</target>
+
+
+https://medium.com/@feloy/deploying-an-i18n-angular-app-with-angular-cli-fc788f17e358
+
+"scripts": {
+    "build-i18n:ru": "ng build --output-path=dist/ru --aot -prod --bh /ru/ --locale=ru",
+    "build-i18n:ua": "ng build --output-path=dist/ua --aot -prod --bh /ua/ --i18n-file=src/i18n/messages.ua.xlf --i18n-format=xlf --locale=ru",
+    "build-i18n:en": "ng build --output-path=dist/en --aot -prod --bh /en/ --i18n-file=src/i18n/messages.en.xlf --i18n-format=xlf --locale=en",
+    "build-i18n": "npm run build-i18n:ru && npm run build-i18n:en && npm run build-i18n:ua"
+  }
+
+  npm run build-i18n
+
+
+
+
+ng serve --aot \
+           --i18n-file=src/i18n/messages.en.xlf \
+           --locale=en \
+           --i18n-format=xlf

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="b4703be7a39a0cec20b8744b0c7ef49aea74e34c" datatype="html">
+        <source>В тренде</source>
+        <target>Сало</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/navigation/navigation.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="86dc8ead9e5d94b0272bc98eb42bc8388b5388fc" datatype="html">
+        <source>Коллекции</source>
+        <target>Свинка</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/navigation/navigation.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
