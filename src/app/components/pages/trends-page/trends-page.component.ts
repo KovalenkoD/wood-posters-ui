@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from "../../../model/product";
 import {ProductService} from "../../../services/product.service";
 import {FilterResultService} from "../../../services/filter-result.service";
+import {isNullOrUndefined} from "util";
+
 
 
 @Component({
@@ -34,7 +36,7 @@ export class TrendsPageComponent implements OnInit {
   }
 
   getFilteredProductResult(){
-    return this.products.filter(product => this.filterResultService.containsAny(this.selectedFilterCategories, product.categories));
+    return isNullOrUndefined(this.products) ? [] : this.products.filter(product => this.filterResultService.containsAny(this.selectedFilterCategories, product.categories));
   }
 
 }
