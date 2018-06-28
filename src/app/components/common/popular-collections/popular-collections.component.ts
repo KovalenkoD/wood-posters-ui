@@ -10,7 +10,7 @@ import {Bundle} from "../../../model/bundle";
 })
 export class PopularCollectionsComponent implements OnInit {
 
-  private collections: Bundle[];
+  collections: Bundle[];
 
   constructor(private productService : ProductService) { }
 

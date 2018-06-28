@@ -9,7 +9,7 @@ import {ProductService} from "../../../services/product.service";
 })
 export class CollectionsPageComponent implements OnInit {
 
-  private collections: Bundle[];
+  collections: Bundle[];
 
   constructor(private productService : ProductService) { }
 

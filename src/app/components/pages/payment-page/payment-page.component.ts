@@ -17,6 +17,10 @@ export class PaymentPageComponent implements OnInit {
 
   dontHaveItems: boolean = false;
 
+  selectedValue1: any;
+  selectedValue2: any;
+  selectedValue3: any;
+
   cartResult:CartResult;
 
   constructor(private cartService: CartService, private router: Router) {

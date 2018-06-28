@@ -11,7 +11,7 @@ import {FilterResultService} from "../../../services/filter-result.service";
 })
 export class TrendsPageComponent implements OnInit {
 
-  private products : Product[];
+  products : Product[];
 
   selectedFilterCategories: number[] = [];
 

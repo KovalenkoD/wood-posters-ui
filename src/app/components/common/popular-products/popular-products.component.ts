@@ -11,7 +11,7 @@ import {ProductService} from "../../../services/product.service";
 
 export class PopularProductsComponent implements OnInit {
 
-  private products: Product[];
+  products: Product[];
 
   page: number = 1;
 

@@ -17,8 +17,8 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
   id: number;
   private sub: any;
 
-  private products: Product[];
-  private productType: ProductType;
+  products: Product[];
+  productType: ProductType;
 
   filteredProducts: Product[] = [];
   selectedFilterCategories: number[] = [];

@@ -9,6 +9,9 @@ export class AboutUsPageComponent implements OnInit {
 
   constructor() { }
 
+  checked:any;
+  onSubmit:any;
+
   person: any = {
     name: '',
     firstname: '',

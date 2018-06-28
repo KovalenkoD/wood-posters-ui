@@ -10,7 +10,7 @@ import {SearchService} from "../../../services/search.service";
 })
 export class SearchComponent implements OnInit {
 
-  private products: Product[];
+  products: Product[];
   search: string;
 
   constructor(private searchService:SearchService) { }

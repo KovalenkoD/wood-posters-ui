@@ -24,7 +24,7 @@ export class FilterPanelComponent implements OnInit {
     this.hiddenSection = true;
   }
 
-  showFilters (event) {
+  showFilters () {
     this.hiddenSection = false;
   }
 

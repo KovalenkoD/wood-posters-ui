@@ -34,8 +34,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 
-import { Parallax, ParallaxConfig } from 'ngx-parallax';
-
 import { CartService } from './services/cart.service';
 import { CategoryService } from './services/category.service';
 import { ProductTypeService } from './services/product-type.service';
@@ -184,7 +182,6 @@ const appRoutes: Routes = [
     FilterSidebarComponent,
     FilterResultComponent,
     CategoriesResultComponent,
-    Parallax,
     PosterComponent,
     PostersGalleryComponent,
     ProductDetailsComponent,
