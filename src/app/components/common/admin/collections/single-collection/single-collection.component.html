@@ -72,6 +72,13 @@
         </mat-form-field>
 
         <mat-form-field class="simple-collection-container__column-mat-form-field">
+          <mat-select placeholder="Цвета" [formControl]="productColorForm" multiple required>
+            <mat-option *ngFor="let productColor of productColorList" [value]="productColor.id">{{productColor.name}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="productColorForm.hasError('required')">Выбери цвет</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="simple-collection-container__column-mat-form-field">
           <mat-select placeholder="Технологии" [formControl]="technologyForm" multiple required>
             <mat-option *ngFor="let technology of technologyList" [value]="technology.id">{{technology.name}}</mat-option>
           </mat-select>

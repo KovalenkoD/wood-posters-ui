@@ -6,6 +6,8 @@ import {TechnologyService} from "../../../../../services/technology.service";
 import {Technology} from "../../../../../model/technology";
 import {MaterialService} from "../../../../../services/material.service";
 import {Material} from "../../../../../model/material";
+import {ProductColorService} from "../../../../../services/product.color.service";
+import {ProductColor} from "../../../../../model/product-color";
 import {AdminProductType} from "../../../../../model/admin/admin-product-type";
 import {ProductTypeService} from "../../../../../services/product-type.service";
 import {Category} from "../../../../../model/category";
@@ -18,7 +20,7 @@ import {CategoryService} from "../../../../../services/category.service";
 })
 export class SingleProductComponent implements OnInit {
 
-  adminProduct: AdminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "", [], null, "");
+  adminProduct: AdminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], [], 0, 1, [], "", "", [], null, "");
 
   technologyForm = new FormControl();
 
@@ -28,19 +30,24 @@ export class SingleProductComponent implements OnInit {
 
   materialList:Material[];
 
+  productColorForm = new FormControl();
+
+  productColorList:ProductColor[];
+
   categoryForm = new FormControl();
 
   categoryList:Category[];
 
   adminProductTypes: AdminProductType[];
 
-  constructor(private productService: ProductService, private technologyService: TechnologyService, private materialService: MaterialService, private productTypeService: ProductTypeService, private categoryService : CategoryService) { }
+  constructor(private productService: ProductService, private technologyService: TechnologyService, private materialService: MaterialService, private productColorService: ProductColorService, private productTypeService: ProductTypeService, private categoryService : CategoryService) { }
 
   ngOnInit() {
     this.technologyService.getAllTechnologies().subscribe(data => this.technologyList = data);
     this.materialService.getAllMaterials().subscribe(data => this.materialList = data);
     this.productTypeService.getAllProductTypes().subscribe(data => this.adminProductTypes = data);
     this.categoryService.getAllCategories().subscribe(data => this.categoryList = data);
+    this.productColorService.getAllProductColors().subscribe(data => this.productColorList = data);
   }
 
   addGalleryImage() {
@@ -54,9 +61,10 @@ export class SingleProductComponent implements OnInit {
   createProduct() : void {
     this.adminProduct.technologyIDs = this.technologyForm.value;
     this.adminProduct.materialIDs = this.materialForm.value;
+    this.adminProduct.productColorIDs = this.productColorForm.value;
     this.adminProduct.categoryIDs = this.categoryForm.value;
     this.productService.createProduct(this.adminProduct);
-    this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], 0, 1, [], "", "", [], null, "");
+    this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], [], 0, 1, [], "", "", [], null, "");
   }
 
 }

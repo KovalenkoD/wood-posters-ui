@@ -97,6 +97,8 @@ import {CurrentProductsComponent} from "./components/common/admin/products/curre
 import {SingleProductComponent} from "./components/common/admin/products/single-product/single-product.component";
 import {TechnologyService} from "./services/technology.service";
 import {MaterialService} from "./services/material.service";
+import {ProductColorService} from "./services/product.color.service";
+
 import {LocaleService} from "./services/locale.service";
 import {CollectionsComponent} from "./components/common/admin/collections/collections.component";
 import {CurrentCollectionsComponent} from "./components/common/admin/collections/current-collections/current-collections.component";
@@ -245,7 +247,7 @@ const appRoutes: Routes = [
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService,CategoryService,LocaleService, RestService, FilterResultService
+    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService,ProductColorService, CategoryService,LocaleService, RestService, FilterResultService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]

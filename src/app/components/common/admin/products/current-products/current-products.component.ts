@@ -7,6 +7,8 @@ import {CategoryService} from "../../../../../services/category.service";
 import {TechnologyService} from "../../../../../services/technology.service";
 import {MaterialService} from "../../../../../services/material.service";
 import {Material} from "../../../../../model/material";
+import {ProductColorService} from "../../../../../services/product.color.service";
+import {ProductColor} from "../../../../../model/product-color";
 import {Technology} from "../../../../../model/technology";
 import {ProductService} from "../../../../../services/product.service";
 import {FormControl} from "@angular/forms";
@@ -32,13 +34,17 @@ export class CurrentProductsComponent implements OnInit {
 
   materialList:Material[];
 
+  productColorForm = new FormControl();
+
+  productColorList:ProductColor[];
+
   categoryForm = new FormControl();
 
   categoryList:Category[];
 
   adminProductTypes: AdminProductType[];
 
-  constructor(private productService: ProductService, private technologyService: TechnologyService, private materialService: MaterialService, private productTypeService: ProductTypeService, private categoryService : CategoryService) { }
+  constructor(private productService: ProductService, private technologyService: TechnologyService, private materialService: MaterialService, private productColorService: ProductColorService, private productTypeService: ProductTypeService, private categoryService : CategoryService) { }
 
   ngOnInit() {}
 
@@ -57,6 +63,7 @@ export class CurrentProductsComponent implements OnInit {
         this.materialService.getAllMaterials().subscribe(data => this.materialList = data);
         this.productTypeService.getAllProductTypes().subscribe(data => this.adminProductTypes = data);
         this.categoryService.getAllCategories().subscribe(data => this.categoryList = data);
+        this.productColorService.getAllProductColors().subscribe(data => this.productColorList = data);
         this.initDependentItemsDone = true;
       }
 
@@ -65,6 +72,7 @@ export class CurrentProductsComponent implements OnInit {
         this.technologyForm.setValue(this.adminProduct.technologyIDs);
         this.materialForm.setValue(this.adminProduct.materialIDs);
         this.categoryForm.setValue(this.adminProduct.categoryIDs);
+        this.productColorForm.setValue(this.adminProduct.productColorIDs);
       });
     }
   }
@@ -73,6 +81,7 @@ export class CurrentProductsComponent implements OnInit {
     this.adminProduct.technologyIDs = this.technologyForm.value;
     this.adminProduct.materialIDs = this.materialForm.value;
     this.adminProduct.categoryIDs = this.categoryForm.value;
+    this.adminProduct.productColorIDs = this.productColorForm.value;
 
     this.productService.updateProduct(this.adminProduct);
     this.adminProduct = null;

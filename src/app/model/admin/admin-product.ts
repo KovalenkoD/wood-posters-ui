@@ -16,6 +16,7 @@ export class AdminProduct {
     public categoryIDs: number[],
     public productTypeID : number,
     public materialIDs: number[],
+    public productColorIDs: number[],
     public popular: number,
     public imagePresentation: number,
     public images: string[],
