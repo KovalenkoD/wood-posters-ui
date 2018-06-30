@@ -84,6 +84,11 @@ import { SingleCategoryComponent } from './components/common/admin/categories/si
 import { CurrentCategoriesComponent } from './components/common/admin/categories/current-categories/current-categories.component';
 import { SingleMaterialComponent} from './components/common/admin/material/single-material/single-material.component';
 import { MaterialsComponent } from './components/common/admin/material/materials.component';
+
+import { CurrentColorsComponent } from './components/common/admin/colors/current-colors/current-colors.component';
+import { SingleColorComponent} from './components/common/admin/colors/single-color/single-color.component';
+import { ColorsComponent } from './components/common/admin/colors/colors.component';
+
 import { OrdersComponent } from './components/common/admin/orders/orders.component';
 import { CurrentOrdersComponent } from './components/common/admin/orders/current-orders/current-orders.component';
 
@@ -195,6 +200,9 @@ const appRoutes: Routes = [
     SingleTypeComponent,
     CurrentTypesComponent,
     MaterialsComponent,
+    ColorsComponent,
+    CurrentColorsComponent,
+    SingleColorComponent,
     CurrentMaterialsComponent,
     OrdersComponent,
     CurrentOrdersComponent,

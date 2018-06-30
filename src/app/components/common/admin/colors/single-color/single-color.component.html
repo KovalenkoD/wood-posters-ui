@@ -1,0 +1,17 @@
+<div class="simple-color-container">
+  <div class="simple-color-container__with-border">
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameRU" placeholder="Название RU">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameEN" placeholder="Название EN">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameUA" placeholder="Название UA">
+    </mat-form-field>
+
+    <button mat-button (click)="createProductColor()" color="primary">Создать</button>
+  </div>
+</div>

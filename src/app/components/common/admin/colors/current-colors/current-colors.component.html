@@ -1,0 +1,32 @@
+<div class="current-colors">
+  <div class="current-colors__list current-colors__column">
+    <div *ngFor="let adminBaseNameObject of adminBaseNameObjects">
+      <span class="current-colors__list-item"(click)="modifyProductColor(adminBaseNameObject)">{{adminBaseNameObject.nameRU}}</span>
+    </div>
+  </div>
+
+  <div *ngIf="adminBaseNameObject && modify" class="current-colors__modify current-colors__column">
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameRU" placeholder="Название RU">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameEN" placeholder="Название EN">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="adminBaseNameObject.nameUA" placeholder="Название UA">
+    </mat-form-field>
+
+    <button mat-button (click)="updateProductColor()" color="primary">Сохранить</button>
+    <button mat-button (click)="deleteProductColorQuestion()" class="current-colors__modify-delete" color="primary">Delete</button>
+
+    <div *ngIf="delete">
+      <div class="current-colors__modify__delete-message">Вы точно хотете удалить этот материал?</div>
+      <div>
+        <button mat-button class="current-colors__modify__modify" (click)="deleteProductColor()">Да</button>
+        <button mat-button class="current-colors__modify__modify" (click)="deleteProductColorQuestion(false)">Нет</button>
+      </div>
+    </div>
+  </div>
+</div>
