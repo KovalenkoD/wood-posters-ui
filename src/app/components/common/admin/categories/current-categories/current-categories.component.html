@@ -13,7 +13,7 @@
     <button mat-button class="current-categories__view__modify" (click)="modifyCategory()">Modify</button>
     <button mat-button class="current-categories__view__modify" (click)="showDeleteMessage()">Delete</button>
     <div *ngIf="deleteMessage">
-      <div class="current-categories__view__delete-message">Вы точно хотете удалить эту категорию?</div>
+      <div class="current-categories__view__delete-message">Вы точно хотете удалить этот тип?</div>
       <div>
         <button mat-button class="current-categories__view__modify" (click)="deleteCategory()">Да</button>
         <button mat-button class="current-categories__view__modify" (click)="showDeleteMessage(false)">Нет</button>

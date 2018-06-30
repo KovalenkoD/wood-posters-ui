@@ -49,22 +49,16 @@
     <div class="simple-collection-container__column">
       <div class="simple-collection-container__column-block">
         <div class="simple-collection-container__column-block-name">Разновидность</div>
-        <mat-form-field class="simple-collection-container__column-mat-form-field">
-          <mat-select placeholder="Технологии" [formControl]="technologyForm" multiple required>
-            <mat-option *ngFor="let technology of technologyList" [value]="technology.id">{{technology.name}}</mat-option>
-          </mat-select>
-          <mat-error *ngIf="technologyForm.hasError('required')">Выбери технологию</mat-error>
-        </mat-form-field>
 
         <mat-form-field class="simple-collection-container__column-mat-form-field">
-          <mat-select placeholder="Категория" [(value)]="adminProduct.productTypeID" required>
+          <mat-select placeholder="Тип" [(value)]="adminProduct.productTypeID" required>
             <mat-option>None</mat-option>
             <mat-option *ngFor="let adminProductType of adminProductTypes" [value]="adminProductType.id">{{adminProductType.nameRU}}</mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field class="simple-collection-container__column-mat-form-field">
-          <mat-select placeholder="Продукт тип" [formControl]="categoryForm" multiple required>
+          <mat-select placeholder="Категории" [formControl]="categoryForm" multiple required>
             <mat-option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</mat-option>
           </mat-select>
           <mat-error *ngIf="categoryForm.hasError('required')">Выбери Тип</mat-error>
@@ -75,6 +69,13 @@
             <mat-option *ngFor="let material of materialList" [value]="material.id">{{material.name}}</mat-option>
           </mat-select>
           <mat-error *ngIf="materialForm.hasError('required')">Выбери материал</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="simple-collection-container__column-mat-form-field">
+          <mat-select placeholder="Технологии" [formControl]="technologyForm" multiple required>
+            <mat-option *ngFor="let technology of technologyList" [value]="technology.id">{{technology.name}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="technologyForm.hasError('required')">Выбери технологию</mat-error>
         </mat-form-field>
 
         <mat-form-field class="simple-collection-container__column-mat-form-field">
