@@ -10,6 +10,9 @@ import {ProductColorService} from "../../../services/product.color.service";
 
 import {FilterResultService} from "../../../services/filter-result.service";
 
+import {isNullOrUndefined} from "util";
+
+
 
 @Component({
   selector: 'app-filter-sidebar',
@@ -54,15 +57,21 @@ export class FilterSidebarComponent implements OnInit {
   }
 
   clear(){
-    this.categoryList.forEach(category => {category.checked = false});
-    this.materialList.forEach(material => {material.checked = false});
-    this.productColorList.forEach(productColor => {productColor.checked = false});
-    this.technologyList.forEach(technology => {technology.checked = false});
+    this.cleanList(this.categoryList);
+    this.cleanList(this.materialList);
+    this.cleanList(this.productColorList);
+    this.cleanList(this.technologyList);
 
     this.filterResultService.categoryFilters.next([]);
     this.filterResultService.materialFilters.next([]);
     this.filterResultService.colorFilters.next([]);
     this.filterResultService.technologyFilters.next([]);
+  }
+
+  cleanList(list: any[]){
+    if(!isNullOrUndefined){
+      list.forEach(item => {item.checked = false});
+    }
   }
 
   getSelectedItemsLength(listOfItems) : number {

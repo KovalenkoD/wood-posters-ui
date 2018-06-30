@@ -8,14 +8,14 @@
   <div class="filter-sidebar__body">
     <mat-accordion multi="true">
 
-      <mat-expansion-panel>
+      <mat-expansion-panel *ngIf="categoryList">
         <mat-expansion-panel-header
           collapsedHeight="59px"
           expandedHeight="59px"
           >
           Категории <span>{{getSelectedItemsLength(categoryList)}}</span>
         </mat-expansion-panel-header>
-        <div class="filter-sidebar__items" *ngIf="categoryList">
+        <div class="filter-sidebar__items">
           <div class="filter-sidebar__item" *ngFor="let category of (categoryList ? categoryList.slice(0,categoryLimit): [])">
             <mat-checkbox [checked]="category.checked" (change)="onChange($event, i, category)">{{category.name}}</mat-checkbox>
           </div>
@@ -23,14 +23,14 @@
         </div>
       </mat-expansion-panel>
 
-      <mat-expansion-panel>
+      <mat-expansion-panel *ngIf="materialList">
         <mat-expansion-panel-header
           collapsedHeight="59px"
           expandedHeight="59px"
           >
           Материал <span>{{getSelectedItemsLength(materialList)}}</span>
         </mat-expansion-panel-header>
-        <div class="filter-sidebar__items" *ngIf="materialList">
+        <div class="filter-sidebar__items">
           <div class="filter-sidebar__item" *ngFor="let material of (materialList ? materialList.slice(0,materialLimit): [])">
             <mat-checkbox [checked]="material.checked" (change)="onChangeMaterial($event, i, material)">{{material.name}}</mat-checkbox>
           </div>
@@ -38,14 +38,14 @@
         </div>
       </mat-expansion-panel>
 
-      <mat-expansion-panel>
+      <mat-expansion-panel *ngIf="productColorList">
         <mat-expansion-panel-header
           collapsedHeight="59px"
           expandedHeight="59px"
           >
           Цвета <span>{{getSelectedItemsLength(productColorList)}}</span>
         </mat-expansion-panel-header>
-        <div class="filter-sidebar__items" *ngIf="productColorList">
+        <div class="filter-sidebar__items">
           <div class="filter-sidebar__item" *ngFor="let productColor of (productColorList ? productColorList.slice(0,productColorLimit): [])">
             <mat-checkbox [checked]="productColor.checked" (change)="onChangeColor($event, i, productColor)">{{productColor.name}}</mat-checkbox>
           </div>
@@ -53,14 +53,14 @@
         </div>
       </mat-expansion-panel>
 
-      <mat-expansion-panel>
+      <mat-expansion-panel *ngIf="technologyList">
         <mat-expansion-panel-header
           collapsedHeight="59px"
           expandedHeight="59px"
           >
-          Технологии <span>{{getSelectedItemsLength(categoryList)}}</span>
+          Техника <span>{{getSelectedItemsLength(categoryList)}}</span>
         </mat-expansion-panel-header>
-        <div class="filter-sidebar__items" *ngIf="technologyList">
+        <div class="filter-sidebar__items">
           <div class="filter-sidebar__item" *ngFor="let technology of (technologyList ? technologyList.slice(0,technologyLimit): [])">
             <mat-checkbox [checked]="technology.checked" (change)="onChangeTechnology($event, i, technology)">{{technology.name}}</mat-checkbox>
           </div>
