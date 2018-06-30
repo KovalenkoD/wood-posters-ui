@@ -16,6 +16,9 @@ export class TrendsPageComponent implements OnInit {
   products : Product[];
 
   selectedFilterCategories: number[] = [];
+  selectedFilterMaterials: number[] = [];
+  selectedFilterColors: number[] = [];
+  selectedFilterTechnology: number[] = [];
 
   constructor(private productService : ProductService, private filterResultService: FilterResultService) { }
 
@@ -23,6 +26,18 @@ export class TrendsPageComponent implements OnInit {
     this.getMostPopularProductsByType()
     this.filterResultService.categoryFilters.subscribe(selectedFilterCategories => {
       this.selectedFilterCategories = selectedFilterCategories;
+    });
+
+    this.filterResultService.materialFilters.subscribe(selectedFilterMaterials => {
+      this.selectedFilterMaterials = selectedFilterMaterials;
+    });
+
+    this.filterResultService.colorFilters.subscribe(selectedFilterColors => {
+      this.selectedFilterColors = selectedFilterColors;
+    });
+
+    this.filterResultService.technologyFilters.subscribe(selectedFilterTechnology => {
+      this.selectedFilterTechnology = selectedFilterTechnology;
     });
   }
 
@@ -36,7 +51,13 @@ export class TrendsPageComponent implements OnInit {
   }
 
   getFilteredProductResult(){
-    return isNullOrUndefined(this.products) ? [] : this.products.filter(product => this.filterResultService.containsAny(this.selectedFilterCategories, product.categories));
+    let filteredProducts = isNullOrUndefined(this.products) ? [] : this.products.filter(product => this.filterResultService.containsAny(this.selectedFilterCategories, product.categories));
+
+    filteredProducts = filteredProducts.filter(product => this.filterResultService.containsAny(this.selectedFilterMaterials, product.materials));
+    filteredProducts = filteredProducts.filter(product => this.filterResultService.containsAny(this.selectedFilterColors, product.productColors));
+    filteredProducts = filteredProducts.filter(product => this.filterResultService.containsAny(this.selectedFilterTechnology, product.technologies));
+
+    return filteredProducts;
   }
 
 }

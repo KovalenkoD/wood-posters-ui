@@ -22,6 +22,9 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
 
   filteredProducts: Product[] = [];
   selectedFilterCategories: number[] = [];
+  selectedFilterMaterials: number[] = [];
+  selectedFilterColors: number[] = [];
+  selectedFilterTechnology: number[] = [];
 
 
   constructor(private route: ActivatedRoute, private productTypeService:ProductTypeService, private filterResultService: FilterResultService) {}
@@ -39,14 +42,28 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
       this.selectedFilterCategories = selectedFilterCategories;
     });
 
+    this.filterResultService.materialFilters.subscribe(selectedFilterMaterials => {
+      this.selectedFilterMaterials = selectedFilterMaterials;
+    });
+
+    this.filterResultService.colorFilters.subscribe(selectedFilterColors => {
+      this.selectedFilterColors = selectedFilterColors;
+    });
+
+    this.filterResultService.technologyFilters.subscribe(selectedFilterTechnology => {
+      this.selectedFilterTechnology = selectedFilterTechnology;
+    });
+
   }
 
   getFilteredProductResult(){
     this.filteredProducts = this.products.filter(product => this.filterResultService.containsAny(this.selectedFilterCategories, product.categories));
+    this.filteredProducts = this.filteredProducts.filter(product => this.filterResultService.containsAny(this.selectedFilterMaterials, product.materials));
+    this.filteredProducts = this.filteredProducts.filter(product => this.filterResultService.containsAny(this.selectedFilterColors, product.productColors));
+    this.filteredProducts = this.filteredProducts.filter(product => this.filterResultService.containsAny(this.selectedFilterTechnology, product.technologies));
+
     return this.filteredProducts;
   }
-
-
 
   ngOnDestroy() {
     this.sub.unsubscribe();

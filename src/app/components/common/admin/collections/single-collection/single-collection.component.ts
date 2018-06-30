@@ -71,7 +71,7 @@ export class SingleCollectionComponent implements OnInit {
   }
 
   addProductToBundle() {
-    let product = new Product(-1, null, null, null, null, null, null, null, null, null, null, null,null,null);
+    let product = new Product(-1, null, null, null, null, null, null, null, null, null, null, null, null,null,null);
     this.bundleChild.push(new BundleChild(-1, 13, 21, product, false));
   }
 
