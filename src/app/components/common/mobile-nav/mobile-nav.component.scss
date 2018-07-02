@@ -4,6 +4,12 @@
   @include desktop {
     display: none;
   }
+
+  &::ng-deep {
+    .mat-menu-content {
+      width: 180px;
+    }
+  }
 }
 
 .mobile-nav {
@@ -22,9 +28,6 @@
 
     &-wrap {
       position: relative;
-      &:not(:last-child) {
-        margin-right: 40px;
-      }
     }
   }
 
