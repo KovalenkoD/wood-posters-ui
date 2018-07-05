@@ -1,9 +1,9 @@
-<mat-tab-group>
+<mat-tab-group #adminPageTabsGroup>
   <mat-tab label="Продукты"><app-products></app-products></mat-tab>
-  <mat-tab label="Коллекции"><app-collections></app-collections></mat-tab>
-  <mat-tab label="Типы"><app-categories></app-categories></mat-tab>
-  <mat-tab label="Материал"><app-materials></app-materials></mat-tab>
-  <mat-tab label="Категории"><app-types></app-types></mat-tab>
-  <mat-tab label="Технологии"><app-technology></app-technology></mat-tab>
-  <mat-tab label="Цвета"><app-colors></app-colors></mat-tab>
+  <mat-tab label="Коллекции"><app-collections *ngIf="adminPageTabsGroup.selectedIndex == 1"></app-collections></mat-tab>
+  <mat-tab label="Типы"><app-categories *ngIf="adminPageTabsGroup.selectedIndex == 2"></app-categories></mat-tab>
+  <mat-tab label="Материал"><app-materials *ngIf="adminPageTabsGroup.selectedIndex == 3"></app-materials></mat-tab>
+  <mat-tab label="Категории"><app-types *ngIf="adminPageTabsGroup.selectedIndex == 4"></app-types></mat-tab>
+  <mat-tab label="Технологии"><app-technology *ngIf="adminPageTabsGroup.selectedIndex == 5"></app-technology></mat-tab>
+  <mat-tab label="Цвета"><app-colors *ngIf="adminPageTabsGroup.selectedIndex == 6"></app-colors></mat-tab>
 </mat-tab-group>

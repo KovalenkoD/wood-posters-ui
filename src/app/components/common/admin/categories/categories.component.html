@@ -1,4 +1,4 @@
-<mat-tab-group>
-  <mat-tab label="Создать"><app-single-category></app-single-category></mat-tab>
-  <mat-tab label="Текущие Типы"><app-current-categories></app-current-categories></mat-tab>
+<mat-tab-group #tabsGroup>
+  <mat-tab label="Создать"><app-single-category ></app-single-category></mat-tab>
+  <mat-tab label="Текущие Типы"><app-current-categories *ngIf="tabsGroup.selectedIndex == 1"></app-current-categories></mat-tab>
 </mat-tab-group>

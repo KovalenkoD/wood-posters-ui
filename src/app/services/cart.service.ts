@@ -12,6 +12,7 @@ export class CartService {
   public cardIsOpenedChanges: EventEmitter<boolean>;
   public cartResultChanges: EventEmitter<CartResult>;
   public adminNewSalesOrders = new EventEmitter<AdminSalesOrder[]>();
+  public adminAnsweredSalesOrders = new EventEmitter<AdminSalesOrder[]>();
 
   private opened: boolean = false;
   private addItemsToCartUrl = 'quote/addOrdersToSalesOrder';
@@ -105,6 +106,13 @@ export class CartService {
        this.adminNewSalesOrders.next(data);
      });
   }
+
+  getAdminAnsweredSalesOrders() : void {
+    this.getSalesOrdersByStatus(1).subscribe(data => {
+      this.adminAnsweredSalesOrders.next(data);
+    });
+  }
+
 
   changeSalesOrderStatus(salesOrderId: number, status:number) : void {
     this.restService.post(this.changeSalesOrderStatusURL, {salesOrderId: salesOrderId, status: status}).subscribe();

@@ -1,4 +1,4 @@
-<mat-tab-group>
+<mat-tab-group #tabsGroup>
   <mat-tab label="Создать"><app-single-material></app-single-material></mat-tab>
-  <mat-tab label="Текущие Материалы"><app-current-materials></app-current-materials></mat-tab>
+  <mat-tab label="Текущие Материалы"><app-current-materials *ngIf="tabsGroup.selectedIndex == 1"></app-current-materials></mat-tab>
 </mat-tab-group>

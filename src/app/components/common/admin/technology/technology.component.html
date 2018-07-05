@@ -1,4 +1,4 @@
-<mat-tab-group>
+<mat-tab-group #tabsGroup>
   <mat-tab label="Создать"><app-single-technology></app-single-technology></mat-tab>
-  <mat-tab label="Текущие Технологии"><app-current-technologies></app-current-technologies></mat-tab>
+  <mat-tab label="Текущие Технологии"><app-current-technologies *ngIf="tabsGroup.selectedIndex == 1"></app-current-technologies></mat-tab>
 </mat-tab-group>

@@ -91,6 +91,7 @@ import { ColorsComponent } from './components/common/admin/colors/colors.compone
 
 import { OrdersComponent } from './components/common/admin/orders/orders.component';
 import { CurrentOrdersComponent } from './components/common/admin/orders/current-orders/current-orders.component';
+import { AnsweredOrdersComponent } from './components/common/admin/orders/answered-orders/answered-orders.component';
 
 import { CurrentMaterialsComponent } from './components/common/admin/material/current-materials/current-materials.component';
 import { TypesComponent } from './components/common/admin/type/types.component';
@@ -206,6 +207,7 @@ const appRoutes: Routes = [
     CurrentMaterialsComponent,
     OrdersComponent,
     CurrentOrdersComponent,
+    AnsweredOrdersComponent,
     SingleCategoryComponent,
     SingleMaterialComponent,
     TypesComponent,
