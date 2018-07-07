@@ -1,7 +1,7 @@
 <mat-tab-group #orderTabsGroup>
   <mat-tab label="Новые"><app-current-orders></app-current-orders></mat-tab>
   <mat-tab label="Отвеченные"><app-answered-orders *ngIf="orderTabsGroup.selectedIndex == 1"></app-answered-orders></mat-tab>
-  <mat-tab label="В пути"><app-current-orders *ngIf="orderTabsGroup.selectedIndex == 2"></app-current-orders></mat-tab>
-  <mat-tab label="Завершенные"><app-current-orders *ngIf="orderTabsGroup.selectedIndex == 3"></app-current-orders></mat-tab>
-  <mat-tab label="Отмененные"><app-current-orders *ngIf="orderTabsGroup.selectedIndex == 4"></app-current-orders></mat-tab>
+  <mat-tab label="В пути"><app-on-the-way-orders *ngIf="orderTabsGroup.selectedIndex == 2"></app-on-the-way-orders></mat-tab>
+  <mat-tab label="Завершенные"><app-finished-orders *ngIf="orderTabsGroup.selectedIndex == 3"></app-finished-orders></mat-tab>
+  <mat-tab label="Отмененные"><app-canceled-orders *ngIf="orderTabsGroup.selectedIndex == 4"></app-canceled-orders></mat-tab>
 </mat-tab-group>

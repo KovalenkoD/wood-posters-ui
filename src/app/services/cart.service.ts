@@ -13,6 +13,9 @@ export class CartService {
   public cartResultChanges: EventEmitter<CartResult>;
   public adminNewSalesOrders = new EventEmitter<AdminSalesOrder[]>();
   public adminAnsweredSalesOrders = new EventEmitter<AdminSalesOrder[]>();
+  public adminOnTheWaySalesOrders = new EventEmitter<AdminSalesOrder[]>();
+  public adminFinishedSalesOrders = new EventEmitter<AdminSalesOrder[]>();
+  public adminCanceledSalesOrders = new EventEmitter<AdminSalesOrder[]>();
 
   private opened: boolean = false;
   private addItemsToCartUrl = 'quote/addOrdersToSalesOrder';
@@ -113,6 +116,23 @@ export class CartService {
     });
   }
 
+  getAdminOnTheWaySalesOrders() : void {
+    this.getSalesOrdersByStatus(2).subscribe(data => {
+      this.adminOnTheWaySalesOrders.next(data);
+    });
+  }
+
+  getAdminFinishedSalesOrders() : void {
+    this.getSalesOrdersByStatus(3).subscribe(data => {
+      this.adminFinishedSalesOrders.next(data);
+    });
+  }
+
+  getAdminCanceledSalesOrders() : void {
+    this.getSalesOrdersByStatus(4).subscribe(data => {
+      this.adminCanceledSalesOrders.next(data);
+    });
+  }
 
   changeSalesOrderStatus(salesOrderId: number, status:number) : void {
     this.restService.post(this.changeSalesOrderStatusURL, {salesOrderId: salesOrderId, status: status}).subscribe();
