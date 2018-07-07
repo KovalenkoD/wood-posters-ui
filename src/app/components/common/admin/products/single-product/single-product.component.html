@@ -128,6 +128,20 @@
     </div>
 
     <div class="simple-product-container__column">
+      <div class="simple-product-container__column-product-single">
+        <a class="product-single"
+           [ngStyle]="{'background-color': adminProduct.background}">
+          <div class="product-single__category">{{adminProduct.productType?.name}}</div>
+          <div class="product-single__img"
+               [ngStyle]="{'background-image': 'url(' + adminProduct.image + ')', 'background-color': adminProduct.background, 'background-blend-mode': 'darken'}"
+            ></div>
+
+          <div class="product-single__info">
+            <div class="product-single__name">{{adminProduct.russianName}}</div>
+            <div class="product-single__price">{{adminProduct.price}} грн.</div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 
