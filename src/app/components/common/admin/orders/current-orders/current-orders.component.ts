@@ -9,7 +9,6 @@ import {AdminSalesOrder} from "../../../../../model/admin/admin-sales-order";
 })
 export class CurrentOrdersComponent implements OnInit {
 
-  newOrders: number = 5;
   panelOpenState: boolean = false;
   productStatus: number = 0;
 

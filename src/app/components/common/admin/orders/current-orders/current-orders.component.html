@@ -1,8 +1,7 @@
 <div class="current-orders">
   <div class="current-orders__header">
     <div class="current-orders__header-text">
-      Новых заказов
-      <span class="current-orders__header-count">{{newOrders}}</span>
+      Обновить
       <a class="current-orders__header-refresh header__link" (click)="refresh()">
         <img  class="refresh-icon" [class.refresh-icon-disabled]="newOrders == 0" src="assets/images/refresh.png" alt="icon-search">
       </a>
