@@ -5,5 +5,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'http://localhost:8080/'
+  /*serverUrl: 'http://localhost:8080/'*/
+  serverUrl: 'http://w05n6.vps.cloud.net.ua:8080/'
+
 };

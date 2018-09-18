@@ -2,12 +2,44 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="754dcc05c8100aa297bb950caa4795ae97999919" datatype="html">
+        <source>О нас</source>
+        <target>About us</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/header/header.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/mobile-nav/mobile-nav.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="b4703be7a39a0cec20b8744b0c7ef49aea74e34c" datatype="html">
         <source>В тренде</source>
-        <target>In trend</target>
+        <target>In the trend</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/navigation/navigation.component.ts</context>
           <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/mobile-nav/mobile-nav.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="29649bbc1b08f36c2a26e1967c742cd9191ae13a" datatype="html">
+        <source>Каталог</source>
+        <target>Catalog</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/navigation/navigation.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/categories-result/categories-result.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/mobile-nav/mobile-nav.component.ts</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="86dc8ead9e5d94b0272bc98eb42bc8388b5388fc" datatype="html">
@@ -16,6 +48,392 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/navigation/navigation.component.ts</context>
           <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/mobile-nav/mobile-nav.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7ac6083dde4f59f9faa361f61d349b9bd4344f3" datatype="html">
+        <source>Информация о покупателе</source>
+        <target>Buyer information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="de2b6400bc9ec2eb0261e0519dae518b35eac4a0" datatype="html">
+        <source>
+        У вас нет выбранных товаров, вы можете вернутся на главную страницу и сделать заказ.
+      </source>
+      <target>You do not have the selected products, you can return to the main page and place an order.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6820e497f09c1718df8daf69fe0600f1ed19f831" datatype="html">
+        <source>Доставка и оплата</source>
+        <target>Shipping and payment</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f3ac7f72a678ca3411d698bd87300cf11cff04f8" datatype="html">
+        <source>Вернуться к покупкам</source>
+        <target>Back to shopping</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="772f7615abd4f5413a0a5a2497cc5290cd083822" datatype="html">
+        <source>Заказать</source>
+        <target>To order</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e789f60f7a58b5657456faaea38781953a00dbdf" datatype="html">
+        <source>Приветствуем тебя в нашем магазине!</source>
+        <target>Welcome to our store!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="832fe0b4a2d26ef51569f8c8d3b7fe71c086c7a4" datatype="html">
+        <source>
+        WoodPosters – это украинский бренд трёх друзей, которые не побоялись
+        объединить усилия, чтобы создавать безумно крутой и стильный декор из
+        дерева.
+        Всё началось в 2017 году, когда нам пришла идея реанимировать моду на
+        постеры. Мы с теплотой вспоминаем времена, когда все стены комнат
+        завешивались бумажными плакатами с изображениями любимых героев и
+        музыкантов, спортсменов и актёров, автомобилей и мотоциклов. Так и был
+        придуман наш новый продукт – состаренный вручную деревянный постер.
+        Это не просто картина. Постер на стене – это декор, который задает
+        настроение и стиль всей комнате. Постер – это образ, с которым связаны
+        наши самые приятные воспоминания и самые заветные мечты. В конце
+        концов постером можно просто &quot;прикрыть дырку на обоях&quot;. Снова пришло
+        время оживить пустые безликие стены!
+        Фундаментом для появления бренда WoodPosters стал долгий опыт нашей
+        работы с деревом в столярной мастерской. Мы нашли свой фирменный
+        &quot;винтажный&quot; стиль в изделиях и уже несколько лет производим различный
+        декор для создания оригинальных и запоминающихся интерьеров жилых
+        помещений, кафе, баров и барбершопов. А наши деревянные постеры,
+        шкатулки, ключницы и вечные календари – это еще и красивый и
+        оригинальный подарок.
+
+        Хочешь подержать в руках и пощупать наш товар перед покупкой? Приходи
+        в наши фирменные магазины или ищи нашу продукцию в лучших магазинах
+        декора и подарков твоего города. Если хочешь купить прямо сейчас –
+        оформляй заказ онлайн.
+        Остались вопросы – пиши нам сообщение в Фейсбук
+        (facebook.com/WoodpostersHandmade) или Инстаграм
+        (instagram.com/wood.posters). Хочется поблагодарить или поругать нас?
+        Оставляй комментарий на нашей странице с отзывами
+        (facebook.com/WoodpostersHandmade/reviews)
+        По вопросам сотрудничества, оптовых и корпоративных заказов,
+        предложений и пожеланий можно написать нам на электронную почту
+        woodposters.ua@gmail.com.
+      </source>
+      <target>
+        I`m Petr, and I`m to lazy to create or translate description to English
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f3ea2058f76684692d016a68d1d4ab4296be4d4b" datatype="html">
+        <source>Наш Телефон</source>
+        <target>Our Phone</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e079f1faac647497d28e875ad645260052043238" datatype="html">
+        <source>556-626-4950</source>
+        <target>556-626-4950</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e6f1bc3769feec0193201153e40bdb0d042a0e12" datatype="html">
+        <source>
+          Связаться с нами
+        </source>
+        <target>Connect with us</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c4b59f689967aa39e67390113124ab7193f40ce1" datatype="html">
+        <source>Подписаться на рассылку</source>
+        <target>Subscribe to newsletter</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="63272194c0c817bfd712ad8821f1d2c95f02be41" datatype="html">
+        <source>Отправить</source>
+        <target>Send</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="067273efeb198424d09eb08a2979e69771fbfa55" datatype="html">
+        <source>Подписаться на новости</source>
+        <target>Subscribe to news</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/subscribe-news/subscribe-news.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a620b77a8bbfa90d279439d3683bc95fa4ec36a3" datatype="html">
+        <source>Подписаться</source>
+        <target>Subscribe</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/subscribe-news/subscribe-news.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="89cdaa15e3dd29c6537cc784c5e3bddc254179d1" datatype="html">
+        <source>Корзина</source>
+        <target>Cart</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/cart/cart.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76e5f8e3293e6c61bc8e06b185cc621cd75bda33" datatype="html">
+        <source>Очистить</source>
+        <target>Clear</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/cart/cart.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a8180e3e1d0032f256ef47369cf9d79080a4a0b2" datatype="html">
+        <source>Итого</source>
+        <target>Total</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/cart/cart.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0ec77dca1bf7f534f6851e35b4aca11baa403cb5" datatype="html">
+        <source>грн.</source>
+        <target>UAH.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/cart/cart.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/payment/summary/summary.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/payment/summary/summary.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b1e6d7a5053494fa6439f2b794514c84b49ddd9c" datatype="html">
+        <source>Оформить</source>
+        <target>Checkout</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/cart/cart.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2cdcd4f6938d77c454e72acec01f36481310afea" datatype="html">
+        <source>Ваш Заказ</source>
+        <target>Your Order</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/payment/summary/summary.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56261fcc3d29cb637ddc64f1c604ac9c5e6854ec" datatype="html">
+        <source>Стоимость</source>
+        <target>Cost</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/payment/summary/summary.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6b4091a111ea76ea700845035112143e78ff01d3" datatype="html">
+        <source>
+          Фильтры
+        </source>
+        <target>Filters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-panel/filter-panel.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b77e77edbf13cc77f51b8ec778d0d5ab0a5c03fa" datatype="html">
+        <source>По цене убывание</source>
+        <target>By Price Decrease</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-panel/filter-panel.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e608f076d6a89588fba1795bd49ad5d9c61349cd" datatype="html">
+        <source>По цене возрастание</source>
+        <target>By price increase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-panel/filter-panel.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="804ce882bae979c98b927a95ae39e133a46b998d" datatype="html">
+        <source>Фильтры</source>
+        <target>Filters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fdace86efc45c0cf2d46abccf053abfd4a008116" datatype="html">
+        <source>Сбросить</source>
+        <target>Reset</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2d8393dcd0819b09e6b7ada99613af5ff5e353ea" datatype="html">
+        <source>Категории</source>
+        <target>Categories</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0259b5fa4e5e7682c0333626db96d16340dcc4ea" datatype="html">
+        <source>Еще</source>
+        <target>More</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d284f3129276a3da131412a1bf575990756d1a72" datatype="html">
+        <source>Материал</source>
+        <target>Material</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1cd68f745b3e81ef24918611eda313ccc7fced54" datatype="html">
+        <source>Цвета</source>
+        <target>Colors</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d0086ff6f5b980e30d41239ac6d524452ccaeae0" datatype="html">
+        <source>Техника</source>
+        <target>Technique</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="771801bb0acce41c24f30fd842a3e39821bc2041" datatype="html">
+        <source>Выбрать</source>
+        <target>Choose</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/wall-gallery-popup/wall-gallery-popup.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1adada5aaa43718f11cfab06a98f302a840b171d" datatype="html">
+        <source>Показать на стене</source>
+        <target>Show on the wall</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8609c2ede274711485c4c84a0efe8ba43bc2f4a6" datatype="html">
+        <source>Размер</source>
+        <target>The size</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7f82c79c02662446af345f97ef6d15c8e2e5160c" datatype="html">
+        <source>Артикул</source>
+        <target>Vendor code</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6e20ac64e450eb569a3401f500a1bc4146a0e8aa" datatype="html">
+        <source>В корзину</source>
+         <target>Add to cart</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6174870e8abc2d0683319af0d14b62cdc4564126" datatype="html">
+        <source>Поделиться</source>
+        <target>Share</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e4b9e754ad2818f55cab777abde79df9d97051e8" datatype="html">
+        <source>+ Еще</source>
+        <target>+ More</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a66db891a4306976f204804142e3a96d5da858bc" datatype="html">
+        <source>Похожие товары</source>
+        <target>Similar products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/similar-products/similar-products.component.ts</context>
+          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
     </body>

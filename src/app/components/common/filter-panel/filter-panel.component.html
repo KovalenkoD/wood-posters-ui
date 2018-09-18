@@ -5,7 +5,7 @@
         <div class="filter-panel__filters-button">
           <span></span><span></span><span></span>
         </div>
-        <div class="filter-panel__filters-name">
+        <div class="filter-panel__filters-name" i18n>
           Фильтры
         </div>
       </div>
@@ -13,8 +13,8 @@
       <div class="filter-panel__sorting">
         <mat-form-field>
             <mat-select [(value)]="ordering" placeholder="Сортировать по" (change)="changeOrdering()">
-              <mat-option value="price:true">По цене убывание</mat-option>
-              <mat-option value="price:false">По цене возрастание</mat-option>
+              <mat-option value="price:true" i18n>По цене убывание</mat-option>
+              <mat-option value="price:false" i18n>По цене возрастание</mat-option>
             </mat-select>
         </mat-form-field>
       </div>

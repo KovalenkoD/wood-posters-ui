@@ -1,5 +1,5 @@
 <div class="payment-page__order" *ngIf="cartResult">
-  <h2 class="payment-page__title">Ваш Заказ <span>{{cartResult.count}}</span></h2>
+  <h2 class="payment-page__title"><span i18n>Ваш Заказ</span><span>{{cartResult.count}}</span></h2>
   <perfect-scrollbar [config]="config" style="max-height: 460px;">
     <div class="payment-page__products">
       <div *ngFor="let cartItem of cartResult.cartItems" class="payment-page__product">
@@ -13,7 +13,7 @@
         <div class="payment-page__product-info">
           <div class="payment-page__product-top">
             <div class="payment-page__product-name">{{cartItem.product.name}}</div>
-            <div class="payment-page__product-price">{{cartItem.calculatedPrice}} грн.</div>
+            <div class="payment-page__product-price">{{cartItem.calculatedPrice}} <span i18n>грн.</span></div>
           </div>
           <div class="payment-page__product-bot">
             <div class="payment-page__product-counter">
@@ -44,7 +44,7 @@
     <div class="payment-page__price-num">3885 грн.</div>
   </div-->
   <div class="payment-page__price _bold">
-    <div class="payment-page__price-title">Стоимость</div>
-    <div class="payment-page__price-num">{{cartResult.fullPrice}} грн.</div>
+    <div class="payment-page__price-title" i18n>Стоимость</div>
+    <div class="payment-page__price-num">{{cartResult.fullPrice}} <span i18n>грн.</span></div>
   </div>
 </div>

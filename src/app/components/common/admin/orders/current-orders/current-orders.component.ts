@@ -11,6 +11,7 @@ export class CurrentOrdersComponent implements OnInit {
 
   panelOpenState: boolean = false;
   productStatus: number = 0;
+  newOrders: number = 0;
 
   adminSalesOrders: AdminSalesOrder[];
 

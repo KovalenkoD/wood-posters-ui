@@ -3,7 +3,7 @@
     <div class="product-details__image-main">
       <img src="{{product.image}}" alt="">
       <button class="product-details__image-open-gallery" (click)="openDialogBasedOnParameter(product.images.length)"></button>
-      <button class="product-details__image-on-wall" *ngIf="product.imagePresentation == 1" (click)="openDialog()">Показать на стене</button>
+      <button class="product-details__image-on-wall" *ngIf="product.imagePresentation == 1" (click)="openDialog()" i18n>Показать на стене</button>
     </div>
     <div class="product-details__images" *ngIf="product.images.length > 0">
       <div class="product-details__images-item" *ngFor="let image of product.images.slice(0,limitVariable); let i = index" [attr.data-index]="i">
@@ -16,20 +16,20 @@
   <div class="product-details__info">
     <div class="product-details__category">{{product.productType.name}}</div>
     <div class="product-details__name">{{product.name}}</div>
-    <div class="product-details__price">{{product.price}} грн.</div>
+    <div class="product-details__price">{{product.price}} <span i18n>грн.</span></div>
     <ul class="product-details__params">
-      <li class="product-details__param"><span class="product-details__param-field"><strong>Размер</strong></span> <span>{{product.size}}</span></li>
-      <li class="product-details__param"><span class="product-details__param-field"><strong>Техника</strong></span>
+      <li class="product-details__param"><span class="product-details__param-field"><strong i18n>Размер</strong></span> <span>{{product.size}}</span></li>
+      <li class="product-details__param"><span class="product-details__param-field"><strong i18n>Техника</strong></span>
         <span *ngFor="let technology of product.technologies; let isLast=last">
             {{technology.name}}{{isLast ? '' : ', '}}
         </span>
       </li>
-      <li class="product-details__param"><span class="product-details__param-field"><strong>Материал</strong></span>
+      <li class="product-details__param"><span class="product-details__param-field"><strong i18n>Материал</strong></span>
         <span *ngFor="let material of product.materials; let isLast=last">
             {{material.name}}{{isLast ? '' : ', '}}
         </span>
       </li>
-      <li class="product-details__param"><span class="product-details__param-field"><strong>Артикул</strong></span> <span>{{product.articul}}</span></li>
+      <li class="product-details__param"><span class="product-details__param-field"><strong i18n>Артикул</strong></span> <span>{{product.articul}}</span></li>
     </ul>
     <div class="product-details__buttons">
       <div class="product-details__counter">
@@ -37,10 +37,10 @@
         <input  value="{{productCount}}" type="text">
         <button (click)="changeProductCountPlus()">+</button>
       </div>
-      <button class="button product-details__button" (click)="addProductToCart(product)">В корзину</button>
+      <button class="button product-details__button" (click)="addProductToCart(product)" i18n>В корзину</button>
     </div>
     <div class="product-details__share">
-      <div class="product-details__share-text">Поделиться</div>
+      <div class="product-details__share-text" i18n>Поделиться</div>
       <div class="product-details__share-icons">
         <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -50,7 +50,7 @@
     </div>
     <div class="product-details__description">
       <p>{{product.description.slice(0, descriptionSliceSize)}}</p>
-      <div class="product-details__description-toggle" *ngIf="product.description.length > descriptionSliceSize" (click)="increaseDescriptionSliceSize()">+ Еще</div>
+      <div class="product-details__description-toggle" *ngIf="product.description.length > descriptionSliceSize" (click)="increaseDescriptionSliceSize()" i18n>+ Еще</div>
     </div>
   </div>
 

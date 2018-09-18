@@ -1,8 +1,8 @@
 <div class="filter-sidebar" [hidden]="hiddenSection">
   <i class="filter-sidebar__close" (click)="hideFilters(true)"></i>
   <div class="filter-sidebar__header">
-    <div class="filter-sidebar__header-title">Фильтры</div>
-    <div class="filter-sidebar__reset" (click)="clear()">Сбросить</div>
+    <div class="filter-sidebar__header-title" i18n>Фильтры</div>
+    <div class="filter-sidebar__reset" (click)="clear()" i18n>Сбросить</div>
   </div>
   <perfect-scrollbar style="max-height: calc(100vh - 110px);">
   <div class="filter-sidebar__body">
@@ -11,54 +11,50 @@
       <mat-expansion-panel *ngIf="categoryList">
         <mat-expansion-panel-header
           collapsedHeight="59px"
-          expandedHeight="59px"
-          >
-          Категории <span>{{getSelectedItemsLength(categoryList)}}</span>
+          expandedHeight="59px">
+          <span i18n>Категории</span> <span>{{getSelectedItemsLength(categoryList)}}</span>
         </mat-expansion-panel-header>
         <div class="filter-sidebar__items">
           <div class="filter-sidebar__item" *ngFor="let category of (categoryList ? categoryList.slice(0,categoryLimit): [])">
             <mat-checkbox [checked]="category.checked" (change)="onChange($event, i, category)">{{category.name}}</mat-checkbox>
           </div>
-          <div class="filter-sidebar__show-more" *ngIf="categoryList.length > 4 && categoryLimit < 5" (click)="showMoreCategories()">Еще</div>
+          <div class="filter-sidebar__show-more" *ngIf="categoryList.length > 4 && categoryLimit < 5" (click)="showMoreCategories()" i18n>Еще</div>
         </div>
       </mat-expansion-panel>
 
       <mat-expansion-panel *ngIf="materialList">
         <mat-expansion-panel-header
           collapsedHeight="59px"
-          expandedHeight="59px"
-          >
-          Материал <span>{{getSelectedItemsLength(materialList)}}</span>
+          expandedHeight="59px">
+          <span i18n>Материал</span> <span>{{getSelectedItemsLength(materialList)}}</span>
         </mat-expansion-panel-header>
         <div class="filter-sidebar__items">
           <div class="filter-sidebar__item" *ngFor="let material of (materialList ? materialList.slice(0,materialLimit): [])">
             <mat-checkbox [checked]="material.checked" (change)="onChangeMaterial($event, i, material)">{{material.name}}</mat-checkbox>
           </div>
-          <div class="filter-sidebar__show-more" *ngIf="materialList.length > 4 && materialLimit < 5" (click)="showMoreMaterial()">Еще</div>
+          <div class="filter-sidebar__show-more" *ngIf="materialList.length > 4 && materialLimit < 5" (click)="showMoreMaterial()" i18n>Еще</div>
         </div>
       </mat-expansion-panel>
 
       <mat-expansion-panel *ngIf="productColorList">
         <mat-expansion-panel-header
           collapsedHeight="59px"
-          expandedHeight="59px"
-          >
-          Цвета <span>{{getSelectedItemsLength(productColorList)}}</span>
+          expandedHeight="59px">
+          <span i18n>Цвета</span> <span>{{getSelectedItemsLength(productColorList)}}</span>
         </mat-expansion-panel-header>
         <div class="filter-sidebar__items">
           <div class="filter-sidebar__item" *ngFor="let productColor of (productColorList ? productColorList.slice(0,productColorLimit): [])">
             <mat-checkbox [checked]="productColor.checked" (change)="onChangeColor($event, i, productColor)">{{productColor.name}}</mat-checkbox>
           </div>
-          <div class="filter-sidebar__show-more" *ngIf="productColorList.length > 4 && productColorLimit < 5" (click)="showMoreProductColor()">Еще</div>
+          <div class="filter-sidebar__show-more" *ngIf="productColorList.length > 4 && productColorLimit < 5" (click)="showMoreProductColor()" i18n>Еще</div>
         </div>
       </mat-expansion-panel>
 
       <mat-expansion-panel *ngIf="technologyList">
         <mat-expansion-panel-header
           collapsedHeight="59px"
-          expandedHeight="59px"
-          >
-          Техника <span>{{getSelectedItemsLength(categoryList)}}</span>
+          expandedHeight="59px">
+          <span i18n>Техника</span><span>{{getSelectedItemsLength(categoryList)}}</span>
         </mat-expansion-panel-header>
         <div class="filter-sidebar__items">
           <div class="filter-sidebar__item" *ngFor="let technology of (technologyList ? technologyList.slice(0,technologyLimit): [])">

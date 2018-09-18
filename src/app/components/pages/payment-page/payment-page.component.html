@@ -2,7 +2,7 @@
   <div class="container payment-page__container">
     <form class="payment-page__form">
       <div class="payment-page__form-row">
-        <h2 class="payment-page__title">Информация о покупателе</h2>
+        <h2 class="payment-page__title" i18n>Информация о покупателе</h2>
         <div class="payment-page__form-inner">
           <div class="input payment-page__form-input">
             <mat-form-field class="example-full-width">
@@ -33,11 +33,11 @@
           </div>-->
         </div>
       </div>
-      <div class="payment-page__form-row" *ngIf="dontHaveItems">
-        У вас нет выбраных товаров, вы можете вернутся на главную страницу и сделать заказ.
+      <div class="payment-page__form-row" *ngIf="dontHaveItems" i18n>
+        У вас нет выбранных товаров, вы можете вернутся на главную страницу и сделать заказ.
       </div>
       <div class="payment-page__form-row">
-        <h2 class="payment-page__title">Доставка и оплата</h2>
+        <h2 class="payment-page__title" i18n>Доставка и оплата</h2>
         <div class="payment-page__form-inner">
           <div class=" payment-page__form-input _select">
             <mat-form-field>
@@ -75,9 +75,9 @@
         <div class="payment-page__form-buttons">
           <a class="payment-page__form-back" [routerLink]="['/home']">
             <i class="fa fa-angle-left"></i>
-            <span>Вернуться к покупкам</span>
+            <span i18n>Вернуться к покупкам</span>
           </a>
-          <button class="button payment-page__form-submit" (click)="submitOrder()">Заказать</button>
+          <button class="button payment-page__form-submit" (click)="submitOrder()" i18n>Заказать</button>
         </div>
       </div>
     </form>
