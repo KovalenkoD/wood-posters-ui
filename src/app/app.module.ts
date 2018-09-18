@@ -64,6 +64,9 @@ import { SubscribeNewsComponent } from './components/common/subscribe-news/subsc
 import { SearchComponent } from './components/common/search/search.component';
 import { ProductSingleComponent } from './components/common/product-single/product-single.component';
 import { CategorySingleComponent } from './components/common/category-single/category-single.component';
+import { NguiInViewComponent } from './components/common/ng-ui-in-view/ngui-in-view.component';
+
+
 import { CartComponent } from './components/common/cart/cart.component';
 import { SummaryComponent } from './components/common/payment/summary/summary.component';
 import { CollectionSingleComponent } from './components/common/collection-single/collection-single.component';
@@ -218,6 +221,7 @@ const appRoutes: Routes = [
     OnTheWayOrdersComponent,
     SingleCategoryComponent,
     SingleMaterialComponent,
+    NguiInViewComponent,
     TypesComponent,
     CurrentCategoriesComponent,
     ProductsComponent,
