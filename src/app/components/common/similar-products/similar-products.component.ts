@@ -28,7 +28,7 @@ export class SimilarProductsComponent implements OnInit {
       speed: 400,
       interval: 5000,
       point: {
-        visible: true,
+        visible: false,
         pointStyles: `
           .ngxcarouselPoint {
             list-style-type: none;
