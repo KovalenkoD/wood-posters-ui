@@ -18,7 +18,7 @@ export class SimilarProductsComponent implements OnInit {
   constructor() { }
 
   removeCurrentProductFromProducts(){
-    return this.products.filter(product => this.product.id != product.id);
+    return this.products ? this.products.filter(product => this.product.id != product.id) : [];
   }
 
   ngOnInit() {

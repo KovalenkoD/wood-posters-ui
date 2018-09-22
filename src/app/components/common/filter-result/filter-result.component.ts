@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../../model/product";
 import {FilterResultService} from "../../../services/filter-result.service";
+import {ProductType} from "../../../model/product-type";
 
 
 @Component({
@@ -11,6 +12,8 @@ import {FilterResultService} from "../../../services/filter-result.service";
 export class FilterResultComponent implements OnInit {
 
   @Input() products: Product[];
+
+  @Input() productType: ProductType;
 
   ordering: string = '0';
 

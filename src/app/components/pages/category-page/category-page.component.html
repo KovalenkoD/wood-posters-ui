@@ -1,6 +1,6 @@
 <div class="category-page">
   <div class="container category-page__container">
     <app-filter-panel [categoryName]="productType?.name" [productSize]="getFilteredProductResult().length" ngui-sticky></app-filter-panel>
-    <app-filter-result [products]="filteredProducts"></app-filter-result>
+    <app-filter-result [productType]="productType" [products]="filteredProducts"></app-filter-result>
   </div>
 </div>

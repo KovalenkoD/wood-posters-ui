@@ -3,12 +3,12 @@
   class="product-single"
   [ngStyle]="{'background-color': product.background}"
 >
-  <div class="product-single__category">{{product.productType.name}}</div>
-  <ngui-in-view>
-    <div *ngIf class="product-single__img"
+  <div class="product-single__category">{{getProductTypeName()}}</div>
+ <!-- <ngui-in-view>-->
+    <div class="product-single__img"
       [ngStyle]="{'background-image': 'url(' + product.image + ')', 'background-color': product.background, 'background-blend-mode': 'darken'}"
     ></div>
-    </ngui-in-view>
+<!--    </ngui-in-view>-->
   <div class="product-single__info">
     <div class="product-single__name">{{product.name}}</div>
     <div class="product-single__price">{{product.price}} грн.</div>
