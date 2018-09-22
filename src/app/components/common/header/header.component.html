@@ -5,6 +5,16 @@
       <div class="header__nav">
         <app-navigation></app-navigation>
       </div>
+      <div class="header__change_language">
+        <mat-form-field *ngIf="languageControl" class="header-mat-form-field">
+          <mat-select [formControl]="languageControl">
+            <mat-option value="ru">Рус</mat-option>
+            <mat-option value="ua">Укр</mat-option>
+            <mat-option value="en">EN</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
       <div class="header__logo">
         <a routerLink="/"><img src="assets/images/logo.svg" alt="WOOD"></a>
       </div>

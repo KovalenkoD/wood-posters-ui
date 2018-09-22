@@ -3,6 +3,26 @@
 .header {
   background-color: $white;
 
+
+  &__change_language {
+    display: none;
+
+    @include ipad {
+      display: inline-block;
+      left: 75%;
+      top: calc(50% - 12px);
+      position: absolute;
+    }
+
+    @include mobile {
+      display: inline-block;
+      position: absolute;
+      left: 20%;
+      top: calc(50% - 12px);
+    }
+
+
+  }
   &__logo {
     position: absolute;
     left: calc(50% - 45px);
