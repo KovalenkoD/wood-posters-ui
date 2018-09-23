@@ -6,9 +6,19 @@
     left: 50%;
     transform: translate(-50%, 0);
 
+    @include ipad {
+      left: calc(50% - 50px)
+    }
+
     @include mobile {
       left: 0;
       transform: translate(0, 0);
+
+     /deep/ .ngx-pagination {
+       font-size: 13px;
+       margin: 0 0 0 0;
+       padding: 0 0 0 0;
+      }
     }
   }
 }

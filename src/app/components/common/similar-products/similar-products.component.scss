@@ -23,7 +23,7 @@
     &__left {
       position: absolute;
       left: 30px;
-      top: 50%;
+      top: calc(50% - 27px);
       transform: translateY(-50%);
       width: 54px;
       height: 54px;
@@ -36,6 +36,10 @@
       transition: all .2s ease;
       cursor: pointer;
 
+      @include mobile {
+        left: 0px;
+      }
+
       &:hover,
       &:focus{
         outline: none;
@@ -45,6 +49,10 @@
     &__right {
       right: 30px;
       left: auto;
+
+      @include mobile {
+        right: 0px;
+      }
     }
   }
 }
