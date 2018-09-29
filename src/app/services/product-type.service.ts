@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ProductType } from '../model/product-type';
 import {Product} from '../model/product';
+import {LigthProduct} from "../model/ligth-product"
 import {Observable} from 'rxjs/Rx';
 
 import {AdminProductType} from "../model/admin/admin-product-type";
@@ -23,7 +24,7 @@ export class ProductTypeService {
     return this.restService.get<ProductType[]>(this.productUrl);
   }
 
-  getProductByTypeId(id:number) : Observable<Product[]> {
+  getProductByTypeId(id:number) : Observable<LigthProduct[]> {
     return this.restService.get(this.productByProductTypeUrl, id);
   }
 

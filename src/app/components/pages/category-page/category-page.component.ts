@@ -5,6 +5,8 @@ import {Product} from "../../../model/product";
 import {Category} from "../../../model/category";
 import {ProductType} from "../../../model/product-type";
 import {FilterResultService} from "../../../services/filter-result.service";
+import {LigthProduct} from "../../../model/ligth-product"
+
 
 
 @Component({
@@ -72,10 +74,20 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
   loadProductTypes(id: number) {
     this.productTypeService.getProductByTypeId(id)
       .subscribe(
-        products => this.products = products,
+      ligthProducts => {
+          let products : Product[] = [];
+          ligthProducts.forEach(ligthProduct => {
+            products.push(this.convertToProduct(ligthProduct));
+          });
+          this.products = products},
         err => {
           console.log(err);
         });
+  }
+
+  convertToProduct(ligtProduct): Product {
+    return new Product(ligtProduct.id, ligtProduct.nm, ligtProduct.sz, ligtProduct.ig, ligtProduct.pr, "", null, ligtProduct.tg, ligtProduct.cg,
+      ligtProduct.ml, ligtProduct.pc, null, 0, ligtProduct.bg, "" )
   }
 
   loadProductTypeById(id: number) {
