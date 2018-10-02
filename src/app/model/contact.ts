@@ -4,6 +4,7 @@ export class Contact {
     public lastName: string,
     public comment: string,
     public phone: string,
-    public email: string
+    public email: string,
+    public delivery: string
   ){}
 }

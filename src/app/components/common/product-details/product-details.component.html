@@ -39,7 +39,7 @@
       </div>
       <button class="button product-details__button" (click)="addProductToCart(product)" i18n>В корзину</button>
     </div>
-    <div class="product-details__share">
+   <!-- <div class="product-details__share">
       <div class="product-details__share-text" i18n>Поделиться</div>
       <div class="product-details__share-icons">
         <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
@@ -47,7 +47,7 @@
         <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
       </div>
-    </div>
+    </div>-->
     <div class="product-details__description">
       <p>{{product.description.slice(0, descriptionSliceSize)}}</p>
       <div class="product-details__description-toggle" *ngIf="product.description.length > descriptionSliceSize" (click)="increaseDescriptionSliceSize()" i18n>+ Еще</div>

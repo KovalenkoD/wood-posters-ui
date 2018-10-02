@@ -30,7 +30,7 @@ export class PaymentPageComponent implements OnInit {
   lastName = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required, Validators.email]);
   phone = new FormControl('', [Validators.required]);
-  contact: Contact = new Contact("","","","","");
+  contact: Contact = new Contact("","","","","","");
 
 
   getFistNameErrorMessage() {

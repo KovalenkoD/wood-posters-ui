@@ -41,15 +41,18 @@
         <div class="payment-page__form-inner">
           <div class=" payment-page__form-input _select">
             <mat-form-field>
-              <mat-select placeholder="Способ доставки" [(ngModel)]="selectedValue1" name="payment">
-                <mat-option>None</mat-option>
-                <mat-option *ngFor="let method of payment.methods" [value]="method">
+              <mat-select placeholder="Способ доставки" [(ngModel)]="contact.delivery" name="payment">
+                <mat-option [value]="'post'">Новая Почта</mat-option>
+                <mat-option [value]="'kiev'">Самовывоз Киев, дарынок</mat-option>
+                <mat-option [value]="'kremenchuk'">Самовывоз Кременчуг, магазин</mat-option>
+                <!--<mat-option>None</mat-option>-->
+                <!--<mat-option *ngFor="let method of payment.methods" [value]="method">
                   {{method}}
-                </mat-option>
+                </mat-option>-->
               </mat-select>
             </mat-form-field>
           </div>
-          <div class=" payment-page__form-input _select">
+          <!--<div class=" payment-page__form-input _select">
             <mat-form-field>
               <mat-select placeholder="Отделение" [(ngModel)]="selectedValue2" name="payment">
                 <mat-option>None</mat-option>
@@ -68,7 +71,7 @@
                 </mat-option>
               </mat-select>
             </mat-form-field>
-          </div>
+          </div>-->
         </div>
       </div>
       <div class="payment-page__form-row">

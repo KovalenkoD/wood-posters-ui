@@ -157,8 +157,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="e079f1faac647497d28e875ad645260052043238" datatype="html">
-        <source>556-626-4950</source>
-        <target>556-626-4950</target>
+        <source>+38-097-340-7233</source>
+        <target>+38-097-340-7233</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
           <context context-type="linenumber">42</context>
