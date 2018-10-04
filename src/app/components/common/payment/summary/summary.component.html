@@ -1,5 +1,5 @@
 <div class="payment-page__order" *ngIf="cartResult">
-  <h2 class="payment-page__title"><span i18n>Ваш Заказ</span><span>{{cartResult.count}}</span></h2>
+  <h2 class="payment-page__title"><span i18n>Ваш Заказ</span><span> {{cartResult.count}}</span></h2>
   <perfect-scrollbar [config]="config" style="max-height: 460px;">
     <div class="payment-page__products">
       <div *ngFor="let cartItem of cartResult.cartItems" class="payment-page__product">

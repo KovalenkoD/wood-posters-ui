@@ -121,14 +121,14 @@
         в наши фирменные магазины или ищи нашу продукцию в лучших магазинах
         декора и подарков твоего города. Если хочешь купить прямо сейчас –
         оформляй заказ онлайн.
-        Остались вопросы – пиши нам сообщение в  <a href="https://www.facebook.com/WoodpostersHandmade/" class="footer__socials-link" target="_blank">Facebook</a>
-        или <a href="https://instagram.com/wood.posters" class="footer__socials-link" target="_blank">Instagram</a>
-        . Хочется поблагодарить или поругать нас?
+        Остались вопросы – пиши нам сообщение в Фейсбук
+        (facebook.com/WoodpostersHandmade) или Инстаграм
+        (instagram.com/wood.posters). Хочется поблагодарить или поругать нас?
         Оставляй комментарий на нашей странице с отзывами
         (facebook.com/WoodpostersHandmade/reviews)
         По вопросам сотрудничества, оптовых и корпоративных заказов,
         предложений и пожеланий можно написать нам на электронную почту
-        <a href="mailto:woodposters.ua@gmail.com">woodpostersua@gmail.com</a>.
+        woodposters.ua@gmail.com.
       </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
