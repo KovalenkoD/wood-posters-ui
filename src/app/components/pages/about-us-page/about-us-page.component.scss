@@ -19,6 +19,14 @@
     text-align: center;
     color: $white-f7;
     margin-bottom: 34px;
+
+    &-divorce{
+      margin: 10px;
+    }
+
+    &-link {
+      text-decoration: underline;
+    }
   }
 
   &__our-phone {

@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="payment-page__form-row" *ngIf="dontHaveItems" i18n>
-        У вас нет выбранных товаров, вы можете вернутся на главную страницу и сделать заказ.
+        У вас нет выбранных товаров, вы можете вернуться на главную страницу и сделать заказ.
       </div>
       <div class="payment-page__form-row">
         <h2 class="payment-page__title" i18n>Доставка и оплата</h2>
@@ -43,7 +43,6 @@
             <mat-form-field>
               <mat-select placeholder="Способ доставки" [(ngModel)]="contact.delivery" name="payment">
                 <mat-option [value]="'post'">Новая Почта</mat-option>
-                <mat-option [value]="'kiev'">Самовывоз Киев, молл Дарынок</mat-option>
                 <mat-option [value]="'kremenchuk'">Самовывоз Кременчуг, ТРК Европа</mat-option>
                 <!--<mat-option>None</mat-option>-->
                 <!--<mat-option *ngFor="let method of payment.methods" [value]="method">
