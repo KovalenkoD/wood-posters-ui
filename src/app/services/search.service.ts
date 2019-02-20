@@ -17,7 +17,7 @@ export class SearchService {
 
   getFullSearchResult(search:string) {
     this.searchSubject.next(search);
-     this.restService.get<Product[]>(this.searchUrl, search).subscribe(
+     this.restService.post<Product[]>(this.searchUrl, search).subscribe(
        products => this.searchProductsSubject.next(products),
            err => {
              console.log(err);
