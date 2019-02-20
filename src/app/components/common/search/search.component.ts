@@ -17,17 +17,16 @@ export class SearchComponent implements OnInit {
 
 
   ngOnInit() {
-    this.products = [];
+    this.search = this.searchService.searchSubject.getValue();
+    this.products = this.searchService.searchProductsSubject.getValue();
+    this.searchService.searchProductsSubject.subscribe(products => {
+      this.products = products;
+    })
   }
 
   getFullSearchResult(lengthForSearch:number = 1) : void {
     if(this.search && this.search.length > lengthForSearch){
-      this.searchService.getFullSearchResult(this.search)
-        .subscribe(
-          products => this.products = products,
-          err => {
-            console.log(err);
-          });
+      this.searchService.getFullSearchResult(this.search);
     }
   }
 
