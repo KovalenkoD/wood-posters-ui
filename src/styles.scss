@@ -233,3 +233,17 @@ div.mat-checkbox-background {
   max-width: 100vw !important;
 }
 
+ngx-image-gallery {
+  & > .galleria {
+    @include mobile {
+      left: 0px !important;
+      right: 0px !important;
+    }
+  }
+
+  & > .control.arrow{
+    @include mobile {
+      top: 88% !important;
+    }
+  }
+}
