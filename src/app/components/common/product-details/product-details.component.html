@@ -37,7 +37,8 @@
         <input  value="{{productCount}}" type="text">
         <button (click)="changeProductCountPlus()">+</button>
       </div>
-      <button class="button product-details__button" (click)="addProductToCart(product)" i18n>В корзину</button>
+      <button class="button product-details__button" (click)="addProductToCart(product)"><span i18n>В корзину</span><i *ngIf="isProductAdded" class="product-details__success blink fa fa-check" aria-hidden="true"></i></button>
+
     </div>
    <!-- <div class="product-details__share">
       <div class="product-details__share-text" i18n>Поделиться</div>

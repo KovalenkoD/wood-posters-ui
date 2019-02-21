@@ -5,6 +5,8 @@ import {Product} from "../../../model/product";
 import {CartService} from "../../../services/cart.service";
 import { NgxImageGalleryComponent, GALLERY_IMAGE, GALLERY_CONF } from "ngx-image-gallery";
 import {isNullOrUndefined} from "util";
+import { map } from 'rxjs/operators'
+import {interval} from "rxjs/observable/interval";
 
 Object.defineProperty(NgxImageGalleryComponent.prototype, "onFirstImage", {
   // if gallery is on : first image
@@ -41,6 +43,8 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
   bigTextDescription: string = 'Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами.';
 
   limitVariable: number = 6;
+
+  public isProductAdded:boolean = false;
 
 
   // get reference to gallery component
@@ -147,6 +151,14 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
 
   addProductToCart(product:Product): void {
     this.cartService.addProductToCart(product.id, this.productCount);
+    this.isProductAdded = true;
+
+    const subscription = interval(3000).subscribe(
+      (x) => {
+        this.isProductAdded = false;
+        subscription.unsubscribe();
+      }
+    );
   }
 
   sortProductArrayBasedOnCurrentProduct() : Product[]{
