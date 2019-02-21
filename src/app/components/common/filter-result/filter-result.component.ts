@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../../model/product";
 import {FilterResultService} from "../../../services/filter-result.service";
 import {ProductType} from "../../../model/product-type";
+import {ScrollToConfigOptions, ScrollToService} from "@nicky-lenaers/ngx-scroll-to";
 
 
 @Component({
@@ -19,12 +20,26 @@ export class FilterResultComponent implements OnInit {
 
   page: number = 1;
 
-  constructor(private filterResultService: FilterResultService) { }
+  constructor(private filterResultService: FilterResultService, private scrollToService: ScrollToService) { }
 
   ngOnInit() {
     this.filterResultService.orderCriteria.subscribe(ordering => {
      this.ordering = ordering;
     });
 
+  }
+
+  public pageChanges(event){
+    this.page = event;
+    this.triggerScrollToOffsetOnly(-9999);
+  }
+
+  public triggerScrollToOffsetOnly(offset: number = 0) {
+
+    const config: ScrollToConfigOptions = {
+      offset
+    };
+
+    this.scrollToService.scrollTo(config);
   }
 }

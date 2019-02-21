@@ -9,7 +9,7 @@
           Фильтры
         </div>
       </div>
-      <div class="filter-panel__category" *ngIf="showProductAndCategoriesLabel">{{categoryName}} <span>{{productSize}}</span></div>
+      <div class="filter-panel__category" *ngIf="showProductAndCategoriesLabel">{{categoryName}} <span>{{productSize}} <span i18n>шт</span>.</span></div>
       <div class="filter-panel__sorting">
         <mat-form-field>
             <mat-select [(value)]="ordering" placeholder="Сортировать по" (change)="changeOrdering()">

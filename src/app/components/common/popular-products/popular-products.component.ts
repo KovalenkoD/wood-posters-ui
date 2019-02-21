@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../../../model/product";
 import {ProductService} from "../../../services/product.service";
+import {ScrollToConfigOptions, ScrollToService} from "@nicky-lenaers/ngx-scroll-to";
+import {FilterResultService} from "../../../services/filter-result.service";
 
 @Component({
   selector: 'app-popular-products',
@@ -15,10 +17,10 @@ export class PopularProductsComponent implements OnInit {
 
   page: number = 1;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private scrollToService: ScrollToService) { }
 
   ngOnInit() {
-    this.getMostPopularProductsByType()
+    this.getMostPopularProductsByType();
     this.page = 1;
   }
 
@@ -29,6 +31,20 @@ export class PopularProductsComponent implements OnInit {
           err => {
           console.log(err);
         });
+  }
+
+  public pageChanges(event){
+    this.page = event;
+    this.triggerScrollToOffsetOnly(-9999);
+  }
+
+  public triggerScrollToOffsetOnly(offset: number = 0) {
+
+    const config: ScrollToConfigOptions = {
+      offset
+    };
+
+    this.scrollToService.scrollTo(config);
   }
 
 }
