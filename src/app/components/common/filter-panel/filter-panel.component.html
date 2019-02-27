@@ -19,10 +19,9 @@
         </mat-form-field>
       </div>
     </div>
-    <!--div class="filter-panel__used-filters">
-      <div class="filter-panel__used-filters-item">Покраска</div>
-      <div class="filter-panel__used-filters-item">Покраска</div>
-    </div-->
+    <div class="filter-panel__used-filters" *ngIf="selectedFilters && selectedFilters.length > 0">
+      <div class="filter-panel__used-filters-item" *ngFor="let selectedFilter of selectedFilters" (click)="removeFilter(selectedFilter)">{{selectedFilter.name}}</div>
+    </div>
   </div>
   <app-filter-sidebar [(hiddenSection)]="hiddenSection"></app-filter-sidebar>
 </div>

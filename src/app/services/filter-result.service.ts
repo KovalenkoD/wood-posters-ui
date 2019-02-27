@@ -1,4 +1,5 @@
 import {EventEmitter, Injectable} from '@angular/core';
+import {BehaviorSubject, Subject} from "rxjs";
 
 @Injectable()
 export class FilterResultService {
@@ -8,7 +9,8 @@ export class FilterResultService {
   public materialFilters: EventEmitter<number[]> ;
   public colorFilters: EventEmitter<number[]> ;
   public technologyFilters: EventEmitter<number[]> ;
-
+  public selectedItems:BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  public removeFilter: Subject<any> = new Subject<any[]>();
   constructor() {
     this.orderCriteria = new EventEmitter();
     this.categoryFilters = new EventEmitter();

@@ -14,6 +14,8 @@ export class FilterPanelComponent implements OnInit {
 
   @Input() showProductAndCategoriesLabel: boolean = true;
 
+  selectedFilters: any[];
+
   ordering: string;
 
   hiddenSection: boolean;
@@ -21,6 +23,10 @@ export class FilterPanelComponent implements OnInit {
   constructor(private filterResultService: FilterResultService) { }
 
   ngOnInit() {
+    this.selectedFilters = this.filterResultService.selectedItems.value;
+    this.filterResultService.selectedItems.subscribe(items => {
+      this.selectedFilters = items;
+    });
     this.hiddenSection = true;
   }
 
@@ -30,5 +36,9 @@ export class FilterPanelComponent implements OnInit {
 
   changeOrdering(){
     this.filterResultService.orderCriteria.next(this.ordering);
+  }
+
+  removeFilter(selectedFilter){
+    this.filterResultService.removeFilter.next(selectedFilter);
   }
 }

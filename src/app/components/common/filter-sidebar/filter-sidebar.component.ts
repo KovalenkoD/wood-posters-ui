@@ -49,6 +49,33 @@ export class FilterSidebarComponent implements OnInit {
       }
     });
 
+    this.filterResultService.removeFilter.subscribe(filterForRemove => {
+      this.removeFilter(filterForRemove);
+    });
+
+  }
+
+  removeFilter(filterForRemove){
+    let category = this.categoryList.find(item => item.id == filterForRemove.id && item.name == filterForRemove.name);
+    if(category) {
+      this.onChange(category);
+      return
+    }
+    let material = this.materialList.find(item => item.id == filterForRemove.id && item.name == filterForRemove.name);
+    if(material) {
+      this.onChangeMaterial(material);
+      return
+    }
+    let technology = this.technologyList.find(item => item.id == filterForRemove.id && item.name == filterForRemove.name);
+    if(technology) {
+      this.onChangeTechnology(technology);
+      return
+    }
+    let color = this.productColorList.find(item => item.id == filterForRemove.id && item.name == filterForRemove.name);
+    if(color) {
+      this.onChangeColor(color);
+      return
+    }
   }
 
   hideFilters(hide: boolean) {
@@ -98,24 +125,37 @@ export class FilterSidebarComponent implements OnInit {
     this.technologyLimit = 999;
   }
 
-  onChange(event, index, item) {
+  onChange(item) {
     item.checked = !item.checked;
     this.filterResultService.categoryFilters.next(this.getSelectedCategoriesIds());
+    this.filterResultService.selectedItems.next(this.getSelectedAllItems());
   }
 
-  onChangeMaterial(event, index, item) {
+  onChangeMaterial(item) {
     item.checked = !item.checked;
     this.filterResultService.materialFilters.next(this.getSelectedMaterialIds());
+    this.filterResultService.selectedItems.next(this.getSelectedAllItems());
   }
 
-  onChangeColor(event, index, item) {
+  onChangeColor(item) {
     item.checked = !item.checked;
     this.filterResultService.colorFilters.next(this.getSelectedColorIds());
+    this.filterResultService.selectedItems.next(this.getSelectedAllItems());
   }
 
-  onChangeTechnology(event, index, item) {
+  onChangeTechnology(item) {
     item.checked = !item.checked;
     this.filterResultService.technologyFilters.next(this.getSelectedTechnologiesIds());
+    this.filterResultService.selectedItems.next(this.getSelectedAllItems());
+  }
+
+  getSelectedAllItems(): any[] {
+    let selectedItems = [];
+    let selectedCategories = this.getSelectedItems(this.categoryList);
+    let selectedMaterial = this.getSelectedItems(this.materialList);
+    let selectedTechnology = this.getSelectedItems(this.technologyList);
+    let selectedProductColor = this.getSelectedItems(this.productColorList);
+    return selectedCategories.concat(selectedMaterial).concat(selectedTechnology).concat(selectedProductColor);
   }
 
   getSelectedCategoriesIds(): number[] {
@@ -139,6 +179,4 @@ export class FilterSidebarComponent implements OnInit {
     selectedFilter.forEach(category => {selectedFilterIDs.push(category.id)});
     return selectedFilterIDs;
   }
-
-
 }
