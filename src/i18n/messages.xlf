@@ -147,6 +147,13 @@
           <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="5ebf7ac32fd22fa8b895c2a168fb7da9c718b1d8" datatype="html">
+        <source>Инстаграм</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="c0108e8565429064bb31131847a6c70d52baec67" datatype="html">
         <source>Хочется поблагодарить или поругать нас? Оставляй комментарий на нашей странице с</source>
         <context-group purpose="location">
