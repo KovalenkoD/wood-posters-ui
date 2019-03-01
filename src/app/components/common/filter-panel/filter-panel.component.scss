@@ -113,6 +113,10 @@
     justify-content: center;
     margin-top: 15px;
 
+    @include mobile {
+      margin-top: 40px;
+    }
+
     &-item {
       position: relative;
       cursor: pointer;
