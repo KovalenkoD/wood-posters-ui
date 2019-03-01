@@ -13,6 +13,13 @@
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="d4f3355cb9f419b776cbbd19ef63628df68a5c1b" datatype="html">
+        <source>Все права защищены</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/footer/footer.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="29649bbc1b08f36c2a26e1967c742cd9191ae13a" datatype="html">
         <source>Каталог</source>
         <context-group purpose="location">
@@ -116,18 +123,31 @@
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="ed5f971e7af894fe9a554ed5e413a3e4e6706a4e" datatype="html">
+        <source>
+            Хочешь подержать в руках и пощупать наш товар перед покупкой? Приходи
+            в наши фирменные магазины или ищи нашу продукцию в лучших магазинах
+            декора и подарков твоего города. Если хочешь купить прямо сейчас –
+            оформляй заказ онлайн.
+            Остались вопросы – пиши нам сообщение в
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="69a497e5d3578b4faea3f5c3c93f1f005951f212" datatype="html">
         <source>или </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c0108e8565429064bb31131847a6c70d52baec67" datatype="html">
         <source>Хочется поблагодарить или поругать нас? Оставляй комментарий на нашей странице с</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9a9def68b875b4185a8ff1d9ea7d8a5c2e046fa3" datatype="html">
@@ -137,14 +157,14 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="104f554087f9cb941d6b9c6f6e655634f64bfaf4" datatype="html">
         <source>Наш телефон</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e6f1bc3769feec0193201153e40bdb0d042a0e12" datatype="html">
@@ -153,21 +173,37 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c4b59f689967aa39e67390113124ab7193f40ce1" datatype="html">
         <source>Подписаться на рассылку</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="63272194c0c817bfd712ad8821f1d2c95f02be41" datatype="html">
         <source>Отправить</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="be77713f4468ba1355757d013e72655a031d8e72" datatype="html">
+        <source>
+        Популярные товары
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/popular-products/popular-products.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e53a684f5097b08fdf5f1924a8da041d992db265" datatype="html">
+        <source>Перейти в каталог</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/popular-products/popular-products.component.ts</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="067273efeb198424d09eb08a2979e69771fbfa55" datatype="html">
