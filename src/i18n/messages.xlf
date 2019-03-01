@@ -64,6 +64,10 @@
           <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
           <context context-type="linenumber">80</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/thank-you-page/thank-you-page.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="772f7615abd4f5413a0a5a2497cc5290cd083822" datatype="html">
         <source>Заказать</source>
@@ -150,6 +154,13 @@
           <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1125cba3f7b3cfcb899366f310aee54eb1b60515" datatype="html">
+        <source>отзывами</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="9a9def68b875b4185a8ff1d9ea7d8a5c2e046fa3" datatype="html">
         <source>
           По вопросам сотрудничества, оптовых и корпоративных заказов,
@@ -165,6 +176,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
           <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/thank-you-page/thank-you-page.component.ts</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e6f1bc3769feec0193201153e40bdb0d042a0e12" datatype="html">
@@ -188,6 +203,24 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
           <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bd692f2eb1f469d5c3ab09acbf57081f716f1256" datatype="html">
+        <source>Заказ успешно отправлен.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/thank-you-page/thank-you-page.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bf237b58fc234aea68ca64e1a9343f475ef949e5" datatype="html">
+        <source>
+        Спасибо за использование нашего сайта.
+        Надеемся вы будете в восторге от покупок.
+        В ближайшее время с вами свяжется наш оператор.
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/thank-you-page/thank-you-page.component.ts</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="be77713f4468ba1355757d013e72655a031d8e72" datatype="html">
