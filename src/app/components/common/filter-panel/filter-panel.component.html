@@ -15,12 +15,14 @@
             <mat-select [(value)]="ordering" placeholder="Сортировать по" (change)="changeOrdering()">
               <mat-option value="name:false" i18n>Название а-я</mat-option>
               <mat-option value="name:true" i18n>Название я-а</mat-option>
+              <mat-option value="createdDate:true" i18n>Новинки</mat-option>
             </mat-select>
         </mat-form-field>
       </div>
     </div>
     <div class="filter-panel__used-filters" *ngIf="selectedFilters && selectedFilters.length > 0">
-      <div class="filter-panel__used-filters-item" *ngFor="let selectedFilter of selectedFilters" (click)="removeFilter(selectedFilter)">{{selectedFilter.name}}</div>
+      <div class="filter-panel__used-filters-item" *ngFor="let selectedFilter of selectedFilters"><i class="fa fa-times" (click)="removeFilter(selectedFilter)"></i>
+        {{selectedFilter.name}}</div>
     </div>
   </div>
   <app-filter-sidebar [(hiddenSection)]="hiddenSection"></app-filter-sidebar>

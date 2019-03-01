@@ -6,6 +6,7 @@ import {Category} from "../../../model/category";
 import {ProductType} from "../../../model/product-type";
 import {FilterResultService} from "../../../services/filter-result.service";
 import {LigthProduct} from "../../../model/ligth-product"
+import {isNullOrUndefined} from "util";
 
 
 
@@ -34,8 +35,14 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.products = [];
     this.sub = this.route.params.subscribe(params => {
-      this.filterResultService.clearFilters.next(true);
       this.id = +params['id']; // (+) converts string 'id' to a number
+      let currentCategory = this.filterResultService.selectedCategory.getValue();
+      if(!isNullOrUndefined(currentCategory) && currentCategory != this.id){
+        this.filterResultService.clearFilters.next(true);
+      } else {
+        this.filterResultService.clearFilters.next(false);
+      }
+      this.filterResultService.selectedCategory.next(this.id);
       this.loadProductTypes(this.id);
       this.loadProductTypeById(this.id);
     });
@@ -87,7 +94,7 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
 
   convertToProduct(ligtProduct): Product {
     return new Product(ligtProduct.id, ligtProduct.nm, ligtProduct.sz, ligtProduct.ig, ligtProduct.pr, "", null, ligtProduct.tg, ligtProduct.cg,
-      ligtProduct.ml, ligtProduct.pc, null, 0, ligtProduct.bg, "" )
+      ligtProduct.ml, ligtProduct.pc, null, 0, ligtProduct.bg, "" , ligtProduct.cd)
   }
 
   loadProductTypeById(id: number) {

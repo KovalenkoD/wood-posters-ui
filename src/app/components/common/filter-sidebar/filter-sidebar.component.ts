@@ -38,10 +38,10 @@ export class FilterSidebarComponent implements OnInit {
      private productColorService: ProductColorService, private technologyService: TechnologyService, private filterResultService: FilterResultService) { }
 
   ngOnInit() {
-    this.categoryService.getAllCategories().subscribe(data => this.categoryList = data);
-    this.materialService.getAllMaterials().subscribe(data => this.materialList = data);
-    this.productColorService.getAllProductColors().subscribe(data => this.productColorList = data);
-    this.technologyService.getAllTechnologies().subscribe(data => this.technologyList = data);
+    this.categoryService.getAllCategories().subscribe(data => this.initCategoryList(data));
+    this.materialService.getAllMaterials().subscribe(data => this.initMaterialsList(data));
+    this.productColorService.getAllProductColors().subscribe(data => this.initProductColorsList(data));
+    this.technologyService.getAllTechnologies().subscribe(data => this.initTechnologyList(data));
 
     this.filterResultService.clearFilters.subscribe(data => {
       if(data){
@@ -53,6 +53,50 @@ export class FilterSidebarComponent implements OnInit {
       this.removeFilter(filterForRemove);
     });
 
+  }
+
+  initCategoryList(categoryList:Category[]){
+    let selectedCategories = this.filterResultService.categoryFilters.getValue();
+    if(!isNullOrUndefined(selectedCategories) && selectedCategories.length > 0){
+      categoryList.forEach(category => {
+        category.checked = selectedCategories.indexOf(category.id) > -1;
+      })
+    }
+
+    this.categoryList = categoryList;
+  }
+
+  initMaterialsList(materialsList:Material[]){
+    let selectedMaterials = this.filterResultService.materialFilters.getValue();
+    if(!isNullOrUndefined(selectedMaterials) && selectedMaterials.length > 0){
+      materialsList.forEach(material => {
+        material.checked = selectedMaterials.indexOf(material.id) > -1;
+      })
+    }
+
+    this.materialList = materialsList;
+  }
+
+  initProductColorsList(productColorList:ProductColor[]){
+    let selectedProductColor = this.filterResultService.colorFilters.getValue();
+    if(!isNullOrUndefined(selectedProductColor) && selectedProductColor.length > 0){
+      productColorList.forEach(productColor => {
+        productColor.checked = selectedProductColor.indexOf(productColor.id) > -1;
+      })
+    }
+
+    this.productColorList = productColorList
+  }
+
+  initTechnologyList(technologyList:Technology[]){
+    let selectedTechnology = this.filterResultService.technologyFilters.getValue();
+    if(!isNullOrUndefined(selectedTechnology) && selectedTechnology.length > 0){
+      technologyList.forEach(technology => {
+        technology.checked = selectedTechnology.indexOf(technology.id) > -1;
+      })
+    }
+
+    this.technologyList = technologyList
   }
 
   removeFilter(filterForRemove){
@@ -93,10 +137,11 @@ export class FilterSidebarComponent implements OnInit {
     this.filterResultService.materialFilters.next([]);
     this.filterResultService.colorFilters.next([]);
     this.filterResultService.technologyFilters.next([]);
+    this.filterResultService.selectedItems.next([]);
   }
 
   cleanList(list: any[]){
-    if(!isNullOrUndefined){
+    if(!isNullOrUndefined(list)){
       list.forEach(item => {item.checked = false});
     }
   }

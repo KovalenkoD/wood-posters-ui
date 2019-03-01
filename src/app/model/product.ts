@@ -20,6 +20,7 @@ export class Product {
     public images: [string],
     public imagePresentation: number,
     public background: string,
-    public articul:string
+    public articul:string,
+    public createdDate:Date
   ){}
 }

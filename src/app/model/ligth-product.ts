@@ -16,10 +16,11 @@ export class LigthProduct {
     public ml: [Material],
     public pc: [ProductColor],
     public bg: string,
-    public sz: string
+    public sz: string,
+    public cd: Date,
   ){}
 
   public convertToProduct(): Product {
-    return new Product(this.id, this.nm, this.sz, this.ig, this.pr, "", null, this.tg, this.cg, this.ml, this.pc, null, 0, this.bg, "" )
+    return new Product(this.id, this.nm, this.sz, this.ig, this.pr, "", null, this.tg, this.cg, this.ml, this.pc, null, 0, this.bg, "" , this.cd)
   }
 }

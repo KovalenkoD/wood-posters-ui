@@ -130,7 +130,7 @@
 
       &:before,
       &:after {
-        content: "";
+/*        content: "";
         position: absolute;
         right: calc(100% + 6px);
         top: calc(50% - 1px);
@@ -138,7 +138,7 @@
         height: 1px;
         background-color: $black;
         transform: rotate(45deg);
-        transition: all .2s ease;
+        transition: all .2s ease;*/
       }
 
       &:before {
