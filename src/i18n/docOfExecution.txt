@@ -22,3 +22,11 @@ ng serve --aot \
            --i18n-file=src/i18n/messages.en.xlf \
            --locale=en \
            --i18n-format=xlf
+
+
+ng serve --aot \
+          --i18n-file=src/i18n/messages.ua.new.xlf \
+          --locale=en \
+          --i18n-format=xlf
+
+
