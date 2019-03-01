@@ -7,23 +7,19 @@
         <target>Про нас</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/header/header.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/mobile-nav/mobile-nav.component.ts</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="b4703be7a39a0cec20b8744b0c7ef49aea74e34c" datatype="html">
-        <source>В тренде</source>
-        <target>В тренді</target>
+      <trans-unit id="d4f3355cb9f419b776cbbd19ef63628df68a5c1b" datatype="html">
+        <source>Все права защищены</source>
+        <target>Усі права захищені</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/common/navigation/navigation.component.ts</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/common/mobile-nav/mobile-nav.component.ts</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="sourcefile">app/components/common/footer/footer.component.ts</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="29649bbc1b08f36c2a26e1967c742cd9191ae13a" datatype="html">
@@ -31,7 +27,7 @@
         <target>Каталог</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/navigation/navigation.component.ts</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/categories-result/categories-result.component.ts</context>
@@ -39,19 +35,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/mobile-nav/mobile-nav.component.ts</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="86dc8ead9e5d94b0272bc98eb42bc8388b5388fc" datatype="html">
-        <source>Коллекции</source>
-        <target>Колекції</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/common/navigation/navigation.component.ts</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/common/mobile-nav/mobile-nav.component.ts</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c7ac6083dde4f59f9faa361f61d349b9bd4344f3" datatype="html">
@@ -62,11 +46,11 @@
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="de2b6400bc9ec2eb0261e0519dae518b35eac4a0" datatype="html">
+      <trans-unit id="ec74a820ca66abb0b89947e874a75fbf179de745" datatype="html">
         <source>
-        У вас нет выбранных товаров, вы можете вернутся на главную страницу и сделать заказ.
+        У вас нет выбранных товаров, вы можете вернуться на главную страницу и сделать заказ.
       </source>
-      <target>У вас немає обраних товарів, ви можете повернутися на головну сторінку і зробити замовлення.</target>
+      <target>Немає обраних товарів, поверніться на головну сторінку та зробіть замовлення. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
           <context context-type="linenumber">36</context>
@@ -85,7 +69,11 @@
         <target>Повернутися до покупок</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/thank-you-page/thank-you-page.component.ts</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="772f7615abd4f5413a0a5a2497cc5290cd083822" datatype="html">
@@ -93,114 +81,171 @@
         <target>Замовити</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/payment-page/payment-page.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e789f60f7a58b5657456faaea38781953a00dbdf" datatype="html">
         <source>Приветствуем тебя в нашем магазине!</source>
-        <target>Вітаємо тебе в нашому магазині!</target>
+        <target>Вітаємо тебе у нашому магазині!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="832fe0b4a2d26ef51569f8c8d3b7fe71c086c7a4" datatype="html">
+      <trans-unit id="30932e7be270b21f1dbb0418625eae61cd6989c2" datatype="html">
         <source>
-        WoodPosters – это украинский бренд трёх друзей, которые не побоялись
-        объединить усилия, чтобы создавать безумно крутой и стильный декор из
-        дерева.
-        Всё началось в 2017 году, когда нам пришла идея реанимировать моду на
-        постеры. Мы с теплотой вспоминаем времена, когда все стены комнат
-        завешивались бумажными плакатами с изображениями любимых героев и
-        музыкантов, спортсменов и актёров, автомобилей и мотоциклов. Так и был
-        придуман наш новый продукт – состаренный вручную деревянный постер.
-        Это не просто картина. Постер на стене – это декор, который задает
-        настроение и стиль всей комнате. Постер – это образ, с которым связаны
-        наши самые приятные воспоминания и самые заветные мечты. В конце
-        концов постером можно просто &quot;прикрыть дырку на обоях&quot;. Снова пришло
-        время оживить пустые безликие стены!
-        Фундаментом для появления бренда WoodPosters стал долгий опыт нашей
-        работы с деревом в столярной мастерской. Мы нашли свой фирменный
-        &quot;винтажный&quot; стиль в изделиях и уже несколько лет производим различный
-        декор для создания оригинальных и запоминающихся интерьеров жилых
-        помещений, кафе, баров и барбершопов. А наши деревянные постеры,
-        шкатулки, ключницы и вечные календари – это еще и красивый и
-        оригинальный подарок.
-
-        Хочешь подержать в руках и пощупать наш товар перед покупкой? Приходи
-        в наши фирменные магазины или ищи нашу продукцию в лучших магазинах
-        декора и подарков твоего города. Если хочешь купить прямо сейчас –
-        оформляй заказ онлайн.
-        Остались вопросы – пиши нам сообщение в Фейсбук
-        (facebook.com/WoodpostersHandmade) или Инстаграм
-        (instagram.com/wood.posters). Хочется поблагодарить или поругать нас?
-        Оставляй комментарий на нашей странице с отзывами
-        (facebook.com/WoodpostersHandmade/reviews)
-        По вопросам сотрудничества, оптовых и корпоративных заказов,
-        предложений и пожеланий можно написать нам на электронную почту
-        woodposters.ua@gmail.com.
-      </source>
-      <target>
-        WoodPosters – це український бренд трьох друзів, які не побоялися об’єднати
-        зусилля, щоб створити неймовірно крутий і стильний декор з деревини.
-        Все почалося у 2017 році, коли нам на думку спала ідея реанімувати моду на
-        постери. Ми з теплотою згадуємо часи, коли всі стіни кімнат були завішані
-        паперовими плакатами із зображенням улюблених героїв і музикантів,
-        спортсменів і акторів, автівок та мотоциклів. Так і був вигаданий наш новий
-        продукт – зістарений вручну дерев’яний постер. Це не просто картина.
-        Постер на стіні – це декор, який задає настрій і стиль усій кімнаті. Постер –
-        це образ, з яким пов’язані наші найприємніші спогади і найжаданіші мрії. В
-        решті решт постером можна просто &quot;прикрити дірку на шпалерах&quot;. Знову
-        прийшов час оживити порожні безликі стіни!
-
-        Підґрунтям для появи бренда WoodPosters став наш тривалий досвід роботи
-        з деревиною у столярній майстерні. Ми винайшли свій фірмовий &quot;вінтажний&quot;
-        стиль у виробах і вже декілька років виробляємо різноманітний декор для
-        створення оригінальних і таких, що запам’ятовуються, інтер’єрів жилих
-        помешкань, кафе, барів та барбершопів. А наші дерев’яні постери, шкатулки,
-        ключниці і вічні календарі – це ще й красивий та оригінальний подарунок.
-        Хочеш потримати в руках і відчути на дотик наш товар перед купівлею?
-        Завітай в наші фірмові магазини або шукай нашу продукцію в найкращих
-        магазинах декору і подарунків твого міста. Якщо хочеш купити прямо зараз –
-        оформлюй замовлення онлайн.
-        Залишилися питання – пиши нам повідомлення в Фейсбук
-        (facebook.com/WoodpostersHandmade) або Інстаграм
-        (instagram.com/wood.posters). Хочеться подякувати або посварити нас?
-        Залишай коментар на нашій сторінці з відгуками
-        (facebook.com/WoodpostersHandmade/reviews)
-        З питань співпраці, гуртових і корпоративних замовлень, пропозицій і
-        побажать можна написати нам на електронну пошту
-        woodposters.ua@gmail.com.
-      </target>
+          WoodPosters – это украинский бренд трёх друзей, которые не побоялись
+          объединить усилия, чтобы создавать безумно крутой и стильный декор из
+          дерева.
+        </source>
+        <target>
+          WoodPosters – це український бренд трьох друзів, які не побоялися об’єднати
+          зусилля, щоб створити неймовірно крутий і стильний декор з деревини.
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f3ea2058f76684692d016a68d1d4ab4296be4d4b" datatype="html">
-        <source>Наш Телефон</source>
-        <target>Наш Телефон</target>
+      <trans-unit id="f3c4a2b60a589eb3254cffc224753d25bdee33c0" datatype="html">
+        <source>
+          Всё началось в 2017 году, когда нам пришла идея реанимировать моду на
+          постеры. Мы с теплотой вспоминаем времена, когда все стены комнат
+          завешивались бумажными плакатами с изображениями любимых героев и
+          музыкантов, спортсменов и актёров, автомобилей и мотоциклов. Так и был
+          придуман наш новый продукт – состаренный вручную деревянный постер.
+          Это не просто картина. Постер на стене – это декор, который задает
+          настроение и стиль всей комнате. Постер – это образ, с которым связаны
+          наши самые приятные воспоминания и самые заветные мечты. В
+          конце концов постером можно просто &quot;прикрыть дырку на обоях&quot;. Снова пришло
+          время оживить пустые безликие стены!
+        </source>
+        <target>
+          Усе почалося у 2017 році, коли нам на думку спала ідея реанімувати моду на
+          постери. Ми з теплотою згадуємо часи, коли всі стіни кімнат були завішані
+          паперовими плакатами із зображенням улюблених героїв і музикантів, спортсменів і акторів, автівок та мотоциклів. Так і був вигаданий наш новий
+          продукт – зістарений вручну дерев’яний постер. Це не просто картина.
+          Постер на стіні – це декор, який задає настрій і стиль усій кімнаті. Постер –
+          це образ, з яким пов’язані наші найприємніші спогади і найжаданіші мрії.
+          Врешті-решт постером можна просто &quot;прикрити дірку на шпалерах&quot;. Знову
+          прийшов час оживити порожні безликі стіни!
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="e079f1faac647497d28e875ad645260052043238" datatype="html">
-        <source>+38-097-340-7233</source>
-        <target>+38-097-340-7233</target>
+      <trans-unit id="07ce755b53d92aa24303300ccf841db06c6aacf1" datatype="html">
+        <source>
+          Фундаментом для появления бренда WoodPosters стал долгий опыт нашей
+          работы с деревом в столярной мастерской. Мы нашли свой фирменный
+          &quot;винтажный&quot; стиль в изделиях и уже несколько лет производим различный
+          декор для создания оригинальных и запоминающихся интерьеров жилых
+          помещений, кафе, баров и барбершопов. А наши деревянные постеры,
+          шкатулки, ключницы и вечные календари – это еще и красивый и
+          оригинальный подарок.
+        </source>
+        <target>
+          Підґрунтям для появи бренда WoodPosters став наш тривалий досвід роботи
+          з деревиною у столярній майстерні. Ми винайшли свій фірмовий &quot;вінтажний&quot;
+          стиль у виробах і вже декілька років виробляємо різноманітний декор для
+          створення оригінальних і таких, що запам’ятовуються, інтер’єрів житлових
+          помешкань, кафе, барів та барбершопів. А наші дерев’яні постери, шкатулки,
+          ключниці і вічні календарі – це ще й красивий та оригінальний подарунок.
+         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed5f971e7af894fe9a554ed5e413a3e4e6706a4e" datatype="html">
+        <source>
+            Хочешь подержать в руках и пощупать наш товар перед покупкой? Приходи
+            в наши фирменные магазины или ищи нашу продукцию в лучших магазинах
+            декора и подарков твоего города. Если хочешь купить прямо сейчас –
+            оформляй заказ онлайн.
+            Остались вопросы – пиши нам сообщение в
+          </source>
+          <target>
+            Хочеш потримати в руках і відчути на дотик наш товар перед купівлею?
+            Завітай до наших фірмових магазинів або шукай нашу продукцію в найкращих
+            магазинах декору і подарунків твого міста. Якщо хочеш купити прямо зараз –
+            оформлюй замовлення онлайн.
+            Залишилися питання – пиши нам повідомлення в
+          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="69a497e5d3578b4faea3f5c3c93f1f005951f212" datatype="html">
+        <source>или </source>
+        <target>або </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+        <trans-unit id="5ebf7ac32fd22fa8b895c2a168fb7da9c718b1d8" datatype="html">
+          <source>Инстаграм</source>
+          <target>Інстаграм</target>
+          <context-group purpose="location">
+            <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+            <context context-type="linenumber">46</context>
+          </context-group>
+        </trans-unit>
+      <trans-unit id="c0108e8565429064bb31131847a6c70d52baec67" datatype="html">
+        <source>Хочется поблагодарить или поругать нас? Оставляй комментарий на нашей странице с</source>
+        <target>Хочеться подякувати або посварити нас? Залишай коментар на нашій сторінці з</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1125cba3f7b3cfcb899366f310aee54eb1b60515" datatype="html">
+        <source>отзывами</source>
+        <target>відгуками</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9a9def68b875b4185a8ff1d9ea7d8a5c2e046fa3" datatype="html">
+        <source>
+          По вопросам сотрудничества, оптовых и корпоративных заказов,
+          предложений и пожеланий можно написать нам на электронную почту
+        </source>
+        <target>
+          З питань співпраці, гуртових і корпоративних замовлень, пропозицій і
+          побажать можна написати нам на електронну пошту
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="104f554087f9cb941d6b9c6f6e655634f64bfaf4" datatype="html">
+        <source>Наш телефон</source>
+        <target>Наш телефон</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/thank-you-page/thank-you-page.component.ts</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e6f1bc3769feec0193201153e40bdb0d042a0e12" datatype="html">
         <source>
           Связаться с нами
         </source>
-        <target>Зв'язатися з нами</target>
+        <target>
+          Зв'язатися з нами
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c4b59f689967aa39e67390113124ab7193f40ce1" datatype="html">
@@ -208,7 +253,7 @@
         <target>Підписатися на розсилку</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="63272194c0c817bfd712ad8821f1d2c95f02be41" datatype="html">
@@ -216,7 +261,49 @@
         <target>Відправити</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/pages/about-us-page/about-us-page.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bd692f2eb1f469d5c3ab09acbf57081f716f1256" datatype="html">
+        <source>Заказ успешно отправлен.</source>
+        <target>Замовлення успішно відправлене.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/thank-you-page/thank-you-page.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bf237b58fc234aea68ca64e1a9343f475ef949e5" datatype="html">
+        <source>
+        Спасибо за использование нашего сайта.
+        Надеемся вы будете в восторге от покупок.
+        В ближайшее время с вами свяжется наш оператор.
+      </source>
+      <target>
+        Дякуємо, що відвідали наш сайт.
+        Сподіваємося, що ви будете задоволені покупкою.
+        В найближчий час вам зателефонує наш оператор.
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/pages/thank-you-page/thank-you-page.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+     <trans-unit id="be77713f4468ba1355757d013e72655a031d8e72" datatype="html">
+      <source>
+        Популярные товары
+      </source>
+      <target>Популярні товари</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/popular-products/popular-products.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e53a684f5097b08fdf5f1924a8da041d992db265" datatype="html">
+        <source>Перейти в каталог</source>
+        <target>Перейти до каталогу</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/popular-products/popular-products.component.ts</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="067273efeb198424d09eb08a2979e69771fbfa55" datatype="html">
@@ -243,6 +330,22 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3ca32dd5b6d7303e40dd8759fefa252d4e316f25" datatype="html">
+        <source>шт</source>
+        <target>шт</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/cart/cart.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/payment/summary/summary.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/filter-panel/filter-panel.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="76e5f8e3293e6c61bc8e06b185cc621cd75bda33" datatype="html">
         <source>Очистить</source>
         <target>Очистити</target>
@@ -259,9 +362,9 @@
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="0ec77dca1bf7f534f6851e35b4aca11baa403cb5" datatype="html">
-        <source>грн.</source>
-        <target>грн.</target>
+      <trans-unit id="18c1fc39a9d49c6cbd31da7281c54d133a86b137" datatype="html">
+        <source>грн</source>
+        <target>грн</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/cart/cart.component.ts</context>
           <context context-type="linenumber">49</context>
@@ -307,23 +410,25 @@
         <source>
           Фильтры
         </source>
-        <target>Фільтри</target>
+        <target>
+          Фільтри
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/filter-panel/filter-panel.component.ts</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="b77e77edbf13cc77f51b8ec778d0d5ab0a5c03fa" datatype="html">
-        <source>По цене убывание</source>
-        <target>За ціною спадання</target>
+      <trans-unit id="f749c0aa34a45a2ee6df2ff36cd42a2dd3591c54" datatype="html">
+        <source>Название а-я</source>
+        <target>Назва а-я</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/filter-panel/filter-panel.component.ts</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="e608f076d6a89588fba1795bd49ad5d9c61349cd" datatype="html">
-        <source>По цене возрастание</source>
-        <target>За ціною зростання</target>
+      <trans-unit id="19beb9e311f94954c6e5e85354bab5fbe5952aeb" datatype="html">
+        <source>Название я-а</source>
+        <target>Назва я-а</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/filter-panel/filter-panel.component.ts</context>
           <context context-type="linenumber">17</context>
@@ -331,7 +436,9 @@
       </trans-unit>
       <trans-unit id="804ce882bae979c98b927a95ae39e133a46b998d" datatype="html">
         <source>Фильтры</source>
-        <target>Фільтри</target>
+        <target>
+          Фільтри
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/filter-sidebar/filter-sidebar.component.ts</context>
           <context context-type="linenumber">4</context>
@@ -441,20 +548,12 @@
           <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6174870e8abc2d0683319af0d14b62cdc4564126" datatype="html">
-        <source>Поделиться</source>
-        <target>Поділитися</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
-          <context context-type="linenumber">43</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="e4b9e754ad2818f55cab777abde79df9d97051e8" datatype="html">
         <source>+ Еще</source>
         <target>+ Ще</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/common/product-details/product-details.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a66db891a4306976f204804142e3a96d5da858bc" datatype="html">
