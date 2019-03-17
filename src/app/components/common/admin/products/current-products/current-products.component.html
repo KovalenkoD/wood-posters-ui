@@ -109,6 +109,13 @@
               <mat-option [value]="0">Нет</mat-option>
             </mat-select>
           </mat-form-field>
+
+          <mat-form-field class="current-product-container__column-mat-form-field">
+            <mat-select placeholder="Отображать" [(value)]="adminProduct.visible">
+              <mat-option [value]="1">Да</mat-option>
+              <mat-option [value]="0">Нет</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
 
 

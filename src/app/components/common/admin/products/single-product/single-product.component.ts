@@ -20,7 +20,7 @@ import {CategoryService} from "../../../../../services/category.service";
 })
 export class SingleProductComponent implements OnInit {
 
-  adminProduct: AdminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], [], 0, 1, [], "", "", [], null, "");
+  adminProduct: AdminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], [], 0, 1, [], "", "", [], null, "", 1);
 
   technologyForm = new FormControl();
 
@@ -64,7 +64,7 @@ export class SingleProductComponent implements OnInit {
     this.adminProduct.productColorIDs = this.productColorForm.value;
     this.adminProduct.categoryIDs = this.categoryForm.value;
     this.productService.createProduct(this.adminProduct);
-    this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], [], 0, 1, [], "", "", [], null, "");
+    this.adminProduct = new AdminProduct(-1, "" ,"" ,"" , 0, false, "25 x 25 x 25", [], "", "", "", [], -1, [], [], 0, 1, [], "", "", [], null, "", 1);
   }
 
 }

@@ -24,6 +24,7 @@ export class AdminProduct {
     public bundleImage: string,
     public bundleProductItems: AdminBundleProductItem[] = [],
     public background: string,
-    public articul:string
+    public articul:string,
+    public visible: number
   ){}
 }
