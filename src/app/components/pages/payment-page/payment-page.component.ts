@@ -56,6 +56,7 @@ export class PaymentPageComponent implements OnInit {
  }
 
   submitOrder(): void {
+    (window as any).fbq('track', 'Purchase', {value: this.cartResult.fullPrice, currency: 'UA'});
     if(!this.hasErrorsInForm() && !this.isCartDoesntHasItems()){
       this.cartService.submitOrder(this.contact);
       this.router.navigate(['thank-you']);

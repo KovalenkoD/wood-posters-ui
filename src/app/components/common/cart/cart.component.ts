@@ -61,6 +61,7 @@ export class CartComponent implements OnInit {
   }
 
   navigateToPayment() : void {
+    (window as any).fbq('track', 'InitiateCheckout');
     this.cartService.closeCart();
     this.router.navigateByUrl('/payment');
   }

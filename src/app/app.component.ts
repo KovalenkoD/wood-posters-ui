@@ -1,5 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
 import {LocaleService} from "./services/locale.service";
+import {FacebookPixelService} from "./services/facebook.pixel.service";
 
 
 @Component({
@@ -10,7 +11,9 @@ import {LocaleService} from "./services/locale.service";
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private localeService: LocaleService) {}
+  constructor(private localeService: LocaleService, private facebookPixelService: FacebookPixelService) {
+    facebookPixelService.load();
+  }
 
   ngOnInit() {
     let pathName = window.location.pathname;

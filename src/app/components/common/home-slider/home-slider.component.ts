@@ -100,6 +100,7 @@ export class HomeSliderComponent implements OnInit {
   }
 
   addProductToCart(product:Product): void {
+    (window as any).fbq('track', 'AddToCart');
     this.cartService.addProductToCart(product.id, 1);
   }
 

@@ -120,6 +120,7 @@ import {SingleCollectionComponent} from "./components/common/admin/collections/s
 import { TechnologyComponent } from './components/common/admin/technology/technology.component';
 import { CurrentTechnologiesComponent } from './components/common/admin/technology/current-technologies/current-technologies.component';
 import { SingleTechnologyComponent } from './components/common/admin/technology/single-technology/single-technology.component';
+import {FacebookPixelService} from "./services/facebook.pixel.service";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -269,7 +270,18 @@ const appRoutes: Routes = [
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    CartService,ProductTypeService, ProductService,SearchService, TechnologyService, MaterialService,ProductColorService, CategoryService,LocaleService, RestService, FilterResultService
+    CartService,
+    ProductTypeService,
+    ProductService,
+    SearchService,
+    TechnologyService,
+    MaterialService,
+    ProductColorService,
+    CategoryService,
+    LocaleService,
+    RestService,
+    FilterResultService,
+    FacebookPixelService
   ],
   entryComponents: [ WallGalleryPopupComponent],
   bootstrap: [AppComponent]
